@@ -22,25 +22,16 @@ export default function NewsletterSection() {
     setMessage("")
 
     try {
-      // Submit directly to Substack
-      const response = await fetch("https://thebuildlog.substack.com/api/v1/free", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: email.trim(),
-          redirect: false
-        })
-      })
-
-      if (response.ok) {
-        setStatus("success")
-        setMessage("Successfully subscribed to The Build Log!")
-        setEmail("")
-      } else {
-        throw new Error("Subscription failed")
-      }
+      // Redirect to Substack subscription with pre-filled email
+      const substackUrl = "https://thebuildlog.substack.com"
+      const subscribeUrl = `${substackUrl}/subscribe?email=${encodeURIComponent(email.trim())}`
+      
+      // Open Substack subscription in new tab
+      window.open(subscribeUrl, '_blank')
+      
+      setStatus("success")
+      setMessage("Opening Substack to complete your subscription...")
+      setEmail("")
     } catch (error) {
       console.error('Newsletter subscription error:', error)
       setStatus("error")
