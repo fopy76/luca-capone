@@ -43,7 +43,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="text-center md:text-right">
+          <div className="w-full md:w-auto text-center md:text-right">
             <p className="text-base text-gray-400 mb-2">
               © 2025 Luca Capone. All rights reserved.
             </p>
