@@ -27,7 +27,7 @@ export default function DriveSection() {
     {
       number: "01",
       title: "Curiosity",
-      description: "The spark that turns 'what if' into 'let's find out'"
+      description: "The spark that turns &apos;what if&apos; into &apos;let&apos;s find out&apos;"
     },
     {
       number: "02", 
@@ -37,7 +37,7 @@ export default function DriveSection() {
     {
       number: "03",
       title: "Learning",
-      description: "The bridge between who I was and who I'm becoming"
+      description: "The bridge between who I was and who I&apos;m becoming"
     },
     {
       number: "04",
