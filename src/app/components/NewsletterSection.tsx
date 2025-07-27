@@ -72,7 +72,7 @@ export default function NewsletterSection() {
         </p>
 
         <form onSubmit={handleSubmit(onSubmit)} className="max-w-md mx-auto mb-6">
-          <div className="flex gap-4">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
             <input
               type="email"
               {...register("email", {
@@ -87,7 +87,7 @@ export default function NewsletterSection() {
                 }
               })}
               placeholder="Enter your email"
-              className={`flex-1 px-4 py-3 rounded-lg border-0 focus:ring-2 focus:outline-none transition-all duration-200 text-base ${
+              className={`w-full px-4 py-3 rounded-lg border-0 focus:ring-2 focus:outline-none transition-all duration-200 text-base ${
                 errors.email || status === "error" 
                   ? "focus:ring-red-400 bg-red-50" 
                   : "focus:ring-brand-green bg-white"
@@ -97,7 +97,7 @@ export default function NewsletterSection() {
             <button
               type="submit"
               disabled={isSubmitting || status === "loading"}
-              className="font-semibold px-8 py-3 rounded-lg transition-all duration-200 flex items-center gap-2 min-w-[100px] justify-center text-white"
+              className="font-semibold px-6 sm:px-8 py-3 rounded-lg transition-all duration-200 flex items-center justify-center gap-2 text-white whitespace-nowrap"
               style={{ 
                 backgroundColor: isSubmitting || status === "loading" ? "#4CAF50AA" : "#4CAF50",
                 cursor: isSubmitting || status === "loading" ? "not-allowed" : "pointer"
