@@ -1,36 +1,92 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Luca Capone - Personal Portfolio
 
-## Getting Started
+Personal portfolio website showcasing AI product development journey. Built with Next.js, TypeScript, and shadcn/ui.
 
-First, run the development server:
+## 🚀 Features
+
+- Modern, responsive design with smooth animations
+- Hero section with call-to-action buttons
+- About section highlighting AI product development experience
+- Portfolio showcase of projects and achievements
+- Newsletter signup for the "Build Log"
+- Social proof and testimonials section
+- Mobile-first responsive design
+- Optimized for performance and accessibility
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 15 with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS v4
+- **Components**: shadcn/ui
+- **Animations**: CSS transitions and keyframes
+- **Deployment**: Ready for Vercel/Netlify
+
+## 📦 Installation & Development
 
 ```bash
+# Clone the repository
+git clone https://github.com/yourusername/luca-capone.git
+cd luca-capone
+
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🏗️ Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/
+│   ├── components/     # Reusable UI components
+│   │   ├── HeroSection.tsx
+│   │   ├── AboutSection.tsx
+│   │   ├── PortfolioSection.tsx
+│   │   ├── NewsletterSection.tsx
+│   │   ├── SocialProofSection.tsx
+│   │   ├── Navigation.tsx
+│   │   └── Footer.tsx
+│   ├── globals.css    # Global styles and CSS variables
+│   ├── layout.tsx     # Root layout component
+│   └── page.tsx       # Home page
+└── lib/
+    └── utils.ts       # Utility functions
+```
 
-## Learn More
+## 🎨 Design System
 
-To learn more about Next.js, take a look at the following resources:
+- **Brand Colors**: Blue (#2563EB) and Green (#4CAF50)
+- **Typography**: Modern sans-serif with proper hierarchy
+- **Spacing**: 8px grid system for consistent layouts
+- **Animations**: Smooth transitions and micro-interactions
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📱 Responsive Design
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The website is fully responsive and optimized for:
+- Desktop (1200px+)
+- Tablet (768px - 1199px)
+- Mobile (320px - 767px)
 
-## Deploy on Vercel
+## 🚀 Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project is ready to deploy on:
+- **Vercel** (recommended for Next.js)
+- **Netlify**
+- **GitHub Pages** (with static export)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📄 License
+
+MIT License - feel free to use this code for your own projects.
+
+## 🤝 Contributing
+
+This is a personal portfolio project, but suggestions and feedback are welcome!
+
+---
+
+Built with ❤️ by Luca Capone
