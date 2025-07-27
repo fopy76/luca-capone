@@ -70,8 +70,8 @@ export default function HeroSection() {
             onClick={scrollToNewsletter}
             className="text-white font-semibold px-8 py-4 rounded-lg transition-all duration-200 text-lg transform hover:scale-105 hover:shadow-lg"
             style={{ backgroundColor: "#4CAF50" }}
-            onMouseEnter={(e) => e.target.style.backgroundColor = "#388E3C"}
-            onMouseLeave={(e) => e.target.style.backgroundColor = "#4CAF50"}
+            onMouseEnter={(e) => (e.target as HTMLElement).style.backgroundColor = "#388E3C"}
+            onMouseLeave={(e) => (e.target as HTMLElement).style.backgroundColor = "#4CAF50"}
           >
             Join the Build Log
           </button>
@@ -79,10 +79,10 @@ export default function HeroSection() {
           <button
             onClick={scrollToPortfolio}
             className="text-white font-medium flex items-center gap-2 transition-colors duration-200 text-lg"
-            onMouseEnter={(e) => e.target.style.color = "#4CAF50"}
-            onMouseLeave={(e) => e.target.style.color = "white"}
+            onMouseEnter={(e) => (e.target as HTMLElement).style.color = "#4CAF50"}
+            onMouseLeave={(e) => (e.target as HTMLElement).style.color = "white"}
           >
-            See What I'm Building ↓
+            See What I&apos;m Building ↓
           </button>
         </div>
 
