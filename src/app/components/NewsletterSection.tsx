@@ -11,7 +11,7 @@ export default function NewsletterSection() {
           Raw, unfiltered updates from a Gen X founder building AI products
         </p>
 
-        {/* Substack Embed - Minimal Height */}
+        {/* Substack Embed - Minimal Height with Poppins Font */}
         <div className="max-w-md mx-auto mb-6">
           <iframe 
             src="https://thebuildlog.substack.com/embed" 
@@ -20,7 +20,8 @@ export default function NewsletterSection() {
             style={{
               border: "none",
               background: "transparent",
-              borderRadius: "12px"
+              borderRadius: "12px",
+              fontFamily: "Poppins, sans-serif"
             }}
             frameBorder="0" 
             scrolling="no"
