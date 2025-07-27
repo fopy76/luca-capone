@@ -104,12 +104,12 @@ export default function NewsletterSection() {
               }}
               onMouseEnter={(e) => {
                 if (!isSubmitting && status !== "loading") {
-                  e.target.style.backgroundColor = "#388E3C"
+                  (e.target as HTMLElement).style.backgroundColor = "#388E3C"
                 }
               }}
               onMouseLeave={(e) => {
                 if (!isSubmitting && status !== "loading") {
-                  e.target.style.backgroundColor = "#4CAF50"
+                  (e.target as HTMLElement).style.backgroundColor = "#4CAF50"
                 }
               }}
             >

@@ -143,8 +143,8 @@ export default function PortfolioSection() {
               <button 
                 className="w-full text-white font-semibold py-3 rounded-lg transition-all duration-200 transform hover:scale-[1.02] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                 style={{ backgroundColor: "#2563EB" }}
-                onMouseEnter={(e) => e.target.style.backgroundColor = "#1E40AF"}
-                onMouseLeave={(e) => e.target.style.backgroundColor = "#2563EB"}
+                            onMouseEnter={(e) => (e.target as HTMLElement).style.backgroundColor = "#1E40AF"}
+            onMouseLeave={(e) => (e.target as HTMLElement).style.backgroundColor = "#2563EB"}
                 type="button"
               >
                 {getButtonAction(product.status)}
