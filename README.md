@@ -92,3 +92,4 @@ This is a personal portfolio project, but suggestions and feedback are welcome!
 Built with ❤️ by Luca Capone
 # Force rebuild
 
+# Force Vercel to use latest commit
