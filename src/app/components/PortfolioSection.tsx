@@ -70,7 +70,7 @@ export default function PortfolioSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -8, boxShadow: "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)" }}
-              className={`${product.category ? "lg:col-span-2" : ""}`}
+              className={`${index === 0 || index === 3 ? "lg:col-span-2" : ""}`}
             >
               <Card className="h-full flex flex-col relative">
                 <CardHeader>
