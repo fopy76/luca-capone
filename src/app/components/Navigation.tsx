@@ -70,14 +70,14 @@ export default function Navigation() {
           <div className="flex-shrink-0">
             <button
               onClick={() => scrollToSection("")}
-              className={`font-grotesk transition-all duration-300 ${
+              className={`transition-all duration-300 ${
                 isScrolled
                   ? "text-xl md:text-2xl text-foreground"
                   : "text-2xl md:text-3xl text-foreground"
               }`}
             >
-              <span className="font-bold">Luca</span>
-              <span className="font-normal ml-1">Capone</span>
+              <span className="font-grotesk font-bold">Luca</span>
+              <span className="font-grotesk font-normal ml-1">Capone</span>
             </button>
           </div>
 
