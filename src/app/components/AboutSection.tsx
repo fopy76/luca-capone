@@ -27,7 +27,7 @@ export default function AboutSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex justify-center md:order-1 order-1"
           >
-            <div className="w-[400px] h-[400px] rounded-full overflow-hidden shadow-xl">
+            <div className="w-full max-w-[300px] md:max-w-[400px] aspect-square rounded-full overflow-hidden shadow-xl mx-auto">
               <Image
                 src="/images/luca-profile.png"
                 alt="Luca Capone - Gen X AI Builder"
