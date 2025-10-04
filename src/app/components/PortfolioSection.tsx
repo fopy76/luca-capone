@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import Image from "next/image"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 
@@ -11,6 +12,7 @@ interface Product {
   url: string
   category?: string
   ctaText?: string
+  icon?: string
 }
 
 export default function PortfolioSection() {
@@ -21,6 +23,7 @@ export default function PortfolioSection() {
       features: ["AI Time Blocking", "Smart Scheduling", "Productivity Analytics"],
       url: "https://www.peakblox.ai",
       category: "SaaS",
+      icon: "/images/peakblox_icon.png",
     },
     {
       name: "Kikko",
@@ -67,8 +70,19 @@ export default function PortfolioSection() {
               whileHover={{ y: -8, boxShadow: "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)" }}
               className={`${product.category ? "lg:col-span-2" : ""}`}
             >
-              <Card className="h-full flex flex-col">
+              <Card className="h-full flex flex-col relative">
                 <CardHeader>
+                  {product.icon && (
+                    <div className="absolute top-4 right-4 w-12 h-12">
+                      <Image
+                        src={product.icon}
+                        alt={`${product.name} icon`}
+                        width={48}
+                        height={48}
+                        className="rounded-lg"
+                      />
+                    </div>
+                  )}
                   {product.category && (
                     <div className="bg-primary text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full inline-block mb-3 w-fit">
                       {product.category}
