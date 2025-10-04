@@ -9,17 +9,17 @@ interface Product {
   tagline: string
   features: string[]
   url: string
-  featured?: boolean
+  category?: string
 }
 
 export default function PortfolioSection() {
   const products: Product[] = [
     {
-      name: "VibeFlow AI",
-      tagline: "Your AI-powered creative partner.",
-      features: ["Smart content generation", "Real-time collaboration", "Multi-platform export"],
+      name: "Peakblox",
+      tagline: "AI-powered time blocking for ambitious solopreneurs and side hustlers.",
+      features: ["AI Time Blocking", "Smart Scheduling", "Productivity Analytics"],
       url: "#",
-      featured: true,
+      category: "SaaS",
     },
     {
       name: "BuildSync",
@@ -52,13 +52,13 @@ export default function PortfolioSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -8, boxShadow: "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)" }}
-              className={`${product.featured ? "lg:col-span-2" : ""}`}
+              className={`${product.category ? "lg:col-span-2" : ""}`}
             >
               <Card className="h-full flex flex-col">
                 <CardHeader>
-                  {product.featured && (
+                  {product.category && (
                     <div className="bg-primary text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full inline-block mb-3 w-fit">
-                      Featured
+                      {product.category}
                     </div>
                   )}
                   <CardTitle className="font-grotesk text-2xl">{product.name}</CardTitle>
