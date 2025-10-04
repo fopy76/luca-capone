@@ -18,7 +18,7 @@ export default function PortfolioSection() {
       name: "Peakblox",
       tagline: "AI-powered time blocking for ambitious solopreneurs and side hustlers.",
       features: ["AI Time Blocking", "Smart Scheduling", "Productivity Analytics"],
-      url: "#",
+      url: "https://www.peakblox.ai",
       category: "SaaS",
     },
     {
