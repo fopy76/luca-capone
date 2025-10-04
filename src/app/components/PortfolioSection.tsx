@@ -32,6 +32,7 @@ export default function PortfolioSection() {
       url: "https://www.kikko.ai",
       category: "Mobile App",
       ctaText: "Join the Waiting List",
+      icon: "/images/kikko_icon.png",
     },
     {
       name: "AidLoom",
