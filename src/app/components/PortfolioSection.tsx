@@ -10,6 +10,7 @@ interface Product {
   features: string[]
   url: string
   category?: string
+  ctaText?: string
 }
 
 export default function PortfolioSection() {
@@ -22,10 +23,12 @@ export default function PortfolioSection() {
       category: "SaaS",
     },
     {
-      name: "BuildSync",
-      tagline: "Turn ideas into shipped products faster.",
-      features: ["Automated workflows", "Team coordination", "Progress tracking"],
-      url: "#",
+      name: "Kikko",
+      tagline: "AI-powered assistant that helps parents manage children's schedules and school communication.",
+      features: ["Smart scheduling", "AI chat assistant", "School coordination"],
+      url: "https://www.kikko.ai",
+      category: "Mobile App",
+      ctaText: "Join the Waiting List",
     },
     {
       name: "InsightPulse",
@@ -84,7 +87,7 @@ export default function PortfolioSection() {
                     size="lg"
                     onClick={() => window.open(product.url, '_blank')}
                   >
-                    Learn More
+                    {product.ctaText || "Learn More"}
                   </Button>
                 </CardFooter>
               </Card>
