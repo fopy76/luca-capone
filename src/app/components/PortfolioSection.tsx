@@ -49,6 +49,7 @@ export default function PortfolioSection() {
       url: "https://www.bizarrechat.app",
       category: "Mobile App",
       ctaText: "Check It Out",
+      icon: "/images/bizarrechat_icon.png",
     },
   ]
 
