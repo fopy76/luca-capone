@@ -32,7 +32,7 @@ export default function AboutSection() {
               alt="Luca Capone - Gen X AI Builder"
               width={400}
               height={400}
-              className="rounded-2xl shadow-xl"
+              className="rounded-full shadow-xl"
               priority
             />
           </motion.div>
