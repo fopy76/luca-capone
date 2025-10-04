@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
-const poppins = Poppins({
-  variable: "--font-poppins",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-grotesk",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "700"],
   display: "swap",
 });
+
+// Satoshi will be imported via CSS in globals.css from Fontshare
 
 export const metadata: Metadata = {
   title: "Luca Capone - Gen X AI Builder",
@@ -63,7 +65,7 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#2563EB" />
         <meta name="theme-color" content="#2563EB" />
       </head>
-      <body className={`${poppins.variable} font-sans antialiased`}>
+      <body className={`${spaceGrotesk.variable} font-sans antialiased`}>
         {children}
       </body>
     </html>

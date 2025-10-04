@@ -13,9 +13,9 @@ export default function Navigation() {
       setIsScrolled(window.scrollY > 100)
       
       // Active section detection
-      const sections = ["hero", "about", "products", "newsletter", "contact"]
+      const sections = ["hero", "products", "my-story", "connect"]
       let current = ""
-      
+
       for (const section of sections) {
         const element = document.getElementById(section === "hero" ? "" : section)
         if (element) {
@@ -35,8 +35,7 @@ export default function Navigation() {
   }, [])
 
   const scrollToSection = (sectionId: string) => {
-    const targetId = sectionId === "contact" ? "contact" : sectionId.toLowerCase()
-    const element = document.getElementById(targetId)
+    const element = document.getElementById(sectionId)
     if (element) {
       const navHeight = 64 // Height of fixed navigation
       const elementPosition = element.getBoundingClientRect().top
@@ -46,16 +45,15 @@ export default function Navigation() {
         top: offsetPosition,
         behavior: "smooth"
       })
-      
+
       setIsMobileMenuOpen(false) // Close mobile menu after selection
     }
   }
 
   const menuItems = [
-    { label: "About", id: "about" },
     { label: "Products", id: "products" },
-    { label: "Newsletter", id: "newsletter" },
-    { label: "Contact", id: "contact" }
+    { label: "My Story", id: "my-story" },
+    { label: "Connect", id: "connect" }
   ]
 
   return (
@@ -72,32 +70,36 @@ export default function Navigation() {
           <div className="flex-shrink-0">
             <button
               onClick={() => scrollToSection("")}
-              className={`transition-all duration-300 ${
-                isScrolled 
-                  ? "text-lg md:text-xl" 
-                  : "text-xl md:text-2xl"
+              className={`font-grotesk font-bold transition-all duration-300 ${
+                isScrolled
+                  ? "text-xl md:text-2xl text-foreground"
+                  : "text-2xl md:text-3xl text-foreground"
               }`}
-              style={{ color: isScrolled ? "#111827" : "white" }}
             >
-              <span className="font-bold">Luca</span>
-              <span className="ml-1 font-normal">Capone</span>
+              L/C
             </button>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="flex items-center space-x-8">
+            <div className="flex items-center space-x-6">
               {menuItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
                   className={`text-sm font-medium transition-all duration-300 ${
-                    isScrolled ? "text-gray-700 hover:text-gray-900" : "text-white hover:text-gray-200"
+                    isScrolled ? "text-foreground/70 hover:text-foreground" : "text-foreground/70 hover:text-foreground"
                   }`}
                 >
                   {item.label}
                 </button>
               ))}
+              <button
+                onClick={() => scrollToSection("products")}
+                className="bg-primary text-primary-foreground px-5 py-2 rounded-lg text-sm font-semibold hover:bg-primary/90 transition-all duration-200 transform hover:scale-105"
+              >
+                Explore Products
+              </button>
             </div>
           </div>
 
@@ -105,9 +107,7 @@ export default function Navigation() {
           <div className="md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`relative w-6 h-6 transition-colors duration-300 ${
-                isScrolled ? "text-gray-700" : "text-white"
-              }`}
+              className="relative w-6 h-6 text-foreground"
               aria-label="Toggle menu"
             >
               {/* Hamburger icon */}
@@ -134,20 +134,27 @@ export default function Navigation() {
 
         {/* Mobile menu overlay */}
         {isMobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg border-t border-gray-200">
-            <div className="px-4 py-6 space-y-4">
+          <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg border-t border-border">
+            <div className="px-4 py-6 space-y-3">
               {menuItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`block w-full text-left px-4 py-2 text-base font-medium text-gray-700 hover:text-accent hover:bg-gray-50 rounded-lg transition-all duration-200 ${
-                    activeSection === item.id ? "text-accent bg-gray-50" : ""
+                  className={`block w-full text-left px-4 py-2 text-base font-medium text-foreground/70 hover:text-foreground hover:bg-muted rounded-lg transition-all duration-200 ${
+                    activeSection === item.id ? "text-foreground bg-muted" : ""
                   }`}
                   style={{ minHeight: "44px" }} // Accessibility: 44px touch target
                 >
                   {item.label}
                 </button>
               ))}
+              <button
+                onClick={() => scrollToSection("products")}
+                className="w-full bg-primary text-primary-foreground px-4 py-3 rounded-lg text-base font-semibold hover:bg-primary/90 transition-all duration-200"
+                style={{ minHeight: "44px" }}
+              >
+                Explore Products
+              </button>
             </div>
           </div>
         )}

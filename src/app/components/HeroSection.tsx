@@ -26,63 +26,49 @@ export default function HeroSection() {
   }
 
   const scrollToPortfolio = () => scrollToSection("products")
-  const scrollToNewsletter = () => scrollToSection("newsletter")
 
   return (
-    <section id="hero" className="relative h-screen flex items-center justify-center" style={{backgroundColor: "#2563EB"}}>
-      <div className="text-center text-white max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="hero" className="relative h-screen flex items-center justify-center bg-background">
+      <div className="text-center max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main headline with staggered animation */}
-        <h1 
-          className={`text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight transition-all duration-700 ease-out ${
-            isLoaded 
-              ? "opacity-100 translate-y-0" 
+        <h1
+          className={`font-grotesk text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-foreground transition-all duration-700 ease-out ${
+            isLoaded
+              ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-5"
           }`}
           style={{ transitionDelay: "0.2s" }}
         >
-          Gen X. Non-technical.<br />
-          Building & shipping AI<br />
-          products anyway.
+          Building software with soul,<br />
+          powered by curiosity.
         </h1>
 
         {/* Subheadline with animation */}
-        <p 
-          className={`text-lg md:text-xl mb-12 text-blue-100 max-w-4xl mx-auto transition-all duration-700 ease-out ${
-            isLoaded 
-              ? "opacity-100 translate-y-0" 
+        <p
+          className={`font-sans text-lg md:text-xl mb-12 text-muted-foreground max-w-4xl mx-auto transition-all duration-700 ease-out ${
+            isLoaded
+              ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-5"
           }`}
           style={{ transitionDelay: "0.4s" }}
         >
-          Proving that age and technical skills are no longer barriers to building in the AI era
+          I'm a Gen X father of two with no formal tech background, proving that anyone can learn to build meaningful products with today's AI tools. This is my journey.
         </p>
 
-        {/* CTA Buttons with animation */}
-        <div 
-          className={`flex flex-col sm:flex-row gap-4 justify-center items-center transition-all duration-700 ease-out ${
-            isLoaded 
-              ? "opacity-100 scale-100" 
+        {/* CTA Button with animation */}
+        <div
+          className={`flex justify-center transition-all duration-700 ease-out ${
+            isLoaded
+              ? "opacity-100 scale-100"
               : "opacity-0 scale-95"
           }`}
           style={{ transitionDelay: "0.6s" }}
         >
           <button
-            onClick={scrollToNewsletter}
-            className="text-white font-semibold px-8 py-4 rounded-lg transition-all duration-200 text-lg transform hover:scale-105 hover:shadow-lg"
-            style={{ backgroundColor: "#4CAF50" }}
-            onMouseEnter={(e) => (e.target as HTMLElement).style.backgroundColor = "#388E3C"}
-            onMouseLeave={(e) => (e.target as HTMLElement).style.backgroundColor = "#4CAF50"}
-          >
-            Join the Build Log
-          </button>
-
-          <button
             onClick={scrollToPortfolio}
-            className="text-white font-medium flex items-center gap-2 transition-colors duration-200 text-lg"
-            onMouseEnter={(e) => (e.target as HTMLElement).style.color = "#4CAF50"}
-            onMouseLeave={(e) => (e.target as HTMLElement).style.color = "white"}
+            className="bg-primary text-primary-foreground font-semibold px-8 py-4 rounded-lg transition-all duration-200 text-lg transform hover:scale-105 hover:bg-primary/90 shadow-md hover:shadow-xl"
           >
-            See What I&apos;m Building ↓
+            See My Products
           </button>
         </div>
 
