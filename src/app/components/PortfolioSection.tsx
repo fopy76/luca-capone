@@ -38,6 +38,14 @@ export default function PortfolioSection() {
       category: "Web Platform",
       ctaText: "Join the Waiting List",
     },
+    {
+      name: "BizarreChat",
+      tagline: "Generate hilarious AI conversations between celebrities, historical figures, and fictional characters in seconds.",
+      features: ["AI Content Creation", "Social Media", "Entertainment"],
+      url: "https://www.bizarrechat.app",
+      category: "Mobile App",
+      ctaText: "Check It Out",
+    },
   ]
 
   return (
