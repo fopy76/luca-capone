@@ -27,14 +27,16 @@ export default function AboutSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex justify-center md:order-1 order-1"
           >
-            <Image
-              src="/images/luca-profile.png"
-              alt="Luca Capone - Gen X AI Builder"
-              width={400}
-              height={400}
-              className="rounded-full shadow-xl"
-              priority
-            />
+            <div className="w-[400px] h-[400px] rounded-full overflow-hidden shadow-xl">
+              <Image
+                src="/images/luca-profile.png"
+                alt="Luca Capone - Gen X AI Builder"
+                width={400}
+                height={400}
+                className="object-cover w-full h-full"
+                priority
+              />
+            </div>
           </motion.div>
 
           {/* Text content */}
