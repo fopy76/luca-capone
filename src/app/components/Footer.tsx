@@ -95,7 +95,7 @@ export default function Footer() {
         {/* Footer Bottom */}
         <div className="mt-16 pt-8 border-t border-background/20 text-center">
           <p className="text-background/60 text-sm">
-            © 2025 Luca Capone. All rights reserved. Built with AI ✨
+            © 2025 Luca Capone. All rights reserved.
           </p>
         </div>
       </div>
