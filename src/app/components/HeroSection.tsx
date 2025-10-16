@@ -26,6 +26,7 @@ export default function HeroSection() {
   }
 
   const scrollToPortfolio = () => scrollToSection("products")
+  const scrollToNewsletter = () => scrollToSection("connect")
 
   return (
     <section id="hero" className="relative h-screen flex items-center justify-center bg-background">
@@ -55,9 +56,9 @@ export default function HeroSection() {
           I'm a Gen X father of two with no formal tech background, proving that anyone can learn to build meaningful products with today's AI tools. This is my journey.
         </p>
 
-        {/* CTA Button with animation */}
+        {/* CTA Buttons with animation */}
         <div
-          className={`flex justify-center transition-all duration-700 ease-out ${
+          className={`flex flex-col sm:flex-row justify-center gap-4 transition-all duration-700 ease-out ${
             isLoaded
               ? "opacity-100 scale-100"
               : "opacity-0 scale-95"
@@ -69,6 +70,12 @@ export default function HeroSection() {
             className="bg-primary text-primary-foreground font-semibold px-8 py-4 rounded-lg transition-all duration-200 text-lg transform hover:scale-105 hover:bg-primary/90 shadow-md hover:shadow-xl"
           >
             See My Products
+          </button>
+          <button
+            onClick={scrollToNewsletter}
+            className="bg-background text-foreground border-2 border-primary font-semibold px-8 py-4 rounded-lg transition-all duration-200 text-lg transform hover:scale-105 hover:bg-primary/10 shadow-md hover:shadow-xl"
+          >
+            Join the Newsletter
           </button>
         </div>
 

@@ -53,6 +53,7 @@ export default function Navigation() {
   const menuItems = [
     { label: "Products", id: "products" },
     { label: "My Story", id: "my-story" },
+    { label: "Newsletter", id: "connect" },
     { label: "Connect", id: "connect" }
   ]
 
