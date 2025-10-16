@@ -67,10 +67,13 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <h3 className="font-grotesk text-2xl font-bold mb-4">Second-Act Builders Newsletterr</h3>
+            <h3 className="font-grotesk text-2xl font-bold mb-4">Second-Act Builders Newsletter</h3>
             <p className="text-background/80 mb-6">
             Building AI products at 48 with no coding skills. Bi-weekly field reports 
             with real numbers, honest failures, and playbooks you can steal.
+            </p>
+            <p className="text-background/80 mb-6">
+            For Gen X professionals who thought they were too late to start.
             </p>
 
             {/* Substack Embed */}
