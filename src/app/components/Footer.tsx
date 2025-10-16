@@ -77,20 +77,18 @@ export default function Footer() {
             </p>
 
             {/* Substack Embed */}
-            <div className="mb-4">
+            <div className="bg-card rounded-xl border shadow-sm p-6">
               <iframe
-                src="https://thebuildlog.substack.com/embed"
+                src="https://secondactbuilders.substack.com/embed"
                 width="100%"
-                height="120"
+                height="320"
                 style={{
                   border: "none",
-                  background: "transparent",
-                  borderRadius: "12px",
-                  fontFamily: "Satoshi, sans-serif"
+                  background: "transparent"
                 }}
                 frameBorder="0"
                 scrolling="no"
-                title="Subscribe to The Build Log"
+                title="Subscribe to Second-Act Builders Newsletter"
               />
             </div>
           </motion.div>
