@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Twitter, Github, Linkedin } from "lucide-react"
+import { Twitter, Mail } from "lucide-react"
 
 export default function Footer() {
   return (
@@ -31,31 +31,20 @@ export default function Footer() {
             </p>
             <div className="flex flex-col space-y-4">
               <a
-                href="https://twitter.com/lucacapone"
+                href="mailto:hello@lucacapone.io"
+                className="flex items-center gap-3 text-background/80 hover:text-primary transition-colors duration-200 group"
+              >
+                <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                <span>hello@lucacapone.io</span>
+              </a>
+              <a
+                href="https://x.com/LucaCaponeX"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-background/80 hover:text-primary transition-colors duration-200 group"
               >
                 <Twitter className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 <span>Twitter/X</span>
-              </a>
-              <a
-                href="https://github.com/lucacapone"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 text-background/80 hover:text-primary transition-colors duration-200 group"
-              >
-                <Github className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                <span>GitHub</span>
-              </a>
-              <a
-                href="https://linkedin.com/in/lucacapone"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 text-background/80 hover:text-primary transition-colors duration-200 group"
-              >
-                <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                <span>LinkedIn</span>
               </a>
             </div>
           </motion.div>
