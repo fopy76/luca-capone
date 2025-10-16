@@ -38,7 +38,7 @@ export default function PortfolioSection() {
       name: "AidLoom",
       tagline: "Candidate-first cockpit for discovering and managing UN/INGO job opportunities.",
       features: ["Job search & tracking", "AI-powered tailoring", "International careers"],
-      url: "https://www.aidloom.com",
+      url: "https://aidloom.vercel.app/",
       category: "Web Platform",
       ctaText: "Join the Waiting List",
     },
