@@ -12,11 +12,44 @@ const spaceGrotesk = Space_Grotesk({
 // Satoshi will be imported via CSS in globals.css from Fontshare
 
 export const metadata: Metadata = {
-  title: "Luca Capone - Gen X AI Builder",
-  description: "Gen X. Non-technical. Building & shipping AI products anyway. Proving that age and technical skills are no longer barriers to building in the AI era.",
-  keywords: "Gen X, AI builder, non-technical founder, AI products, entrepreneur",
-  authors: [{ name: "Luca Capone" }],
-  robots: "index, follow",
+  metadataBase: new URL('https://lucacapone.io'),
+  title: {
+    default: "Luca Capone - Gen X AI Builder",
+    template: "%s | Luca Capone"
+  },
+  description: "Gen X non-technical founder building AI products at 48. Creator of Peakblox, Kikko, AidLoom, and BizarreChat. Proving age and coding skills are no barriers in the AI era. Building with Claude, ChatGPT, and no-code tools.",
+  keywords: [
+    "Gen X entrepreneur",
+    "AI builder",
+    "non-technical founder",
+    "AI products",
+    "no-code development",
+    "AI-first development",
+    "second-act career",
+    "age 48 founder",
+    "building with AI",
+    "Claude Code",
+    "ChatGPT",
+    "Peakblox",
+    "Kikko",
+    "AidLoom",
+    "BizarreChat",
+    "SaaS builder"
+  ],
+  authors: [{ name: "Luca Capone", url: "https://lucacapone.io" }],
+  creator: "Luca Capone",
+  publisher: "Luca Capone",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   icons: {
     icon: [
       { url: '/favicon.ico' },
@@ -33,18 +66,32 @@ export const metadata: Metadata = {
   },
   manifest: '/site.webmanifest',
   openGraph: {
-    title: "Luca Capone - Gen X AI Builder",
-    description: "Gen X. Non-technical. Building & shipping AI products anyway.",
-    url: "https://lucacapone.io",
-    siteName: "Luca Capone",
-    locale: "en_US",
     type: "website",
+    locale: "en_US",
+    url: "https://lucacapone.io",
+    siteName: "Luca Capone - Gen X AI Builder",
+    title: "Luca Capone - Gen X AI Builder",
+    description: "Building AI products at 48 with no coding skills. Creator of Peakblox, Kikko, AidLoom, and BizarreChat.",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Luca Capone - Gen X AI Builder",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Luca Capone - Gen X AI Builder",
-    description: "Gen X. Non-technical. Building & shipping AI products anyway.",
+    description: "Building AI products at 48 with no coding skills. Proving age is not a barrier.",
+    creator: "@LucaCaponeX",
+    images: ["/opengraph-image"],
   },
+  alternates: {
+    canonical: "https://lucacapone.io",
+  },
+  category: "technology",
 };
 
 export const viewport = {
