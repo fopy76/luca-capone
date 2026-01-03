@@ -18,6 +18,15 @@ interface Product {
 export default function PortfolioSection() {
   const products: Product[] = [
     {
+      name: "BurnoutRadar",
+      tagline: "Science-backed burnout assessment for founders and builders who can't afford to crash.",
+      features: ["10-Dimension Assessment", "AI Recovery Plans", "Progress Tracking"],
+      url: "https://www.burnoutradar.com",
+      category: "Web App",
+      ctaText: "Try It Free",
+      icon: "/images/burnoutradar_icon.png",
+    },
+    {
       name: "Peakblox",
       tagline: "AI-powered time blocking for ambitious solopreneurs and side hustlers.",
       features: ["AI Time Blocking", "Smart Scheduling", "Productivity Analytics"],
