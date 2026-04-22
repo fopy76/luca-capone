@@ -1,16 +1,34 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-
-/* Import Satoshi font from Fontshare */
-@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap');
+@import "./styles/tokens.css";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: 'Satoshi', var(--font-grotesk), system-ui, sans-serif;
+  --font-sans: var(--font-body);
   --font-grotesk: var(--font-grotesk);
+
+  /* Audit semantic tokens exposed as Tailwind utilities.
+     Values flow through to tokens.css `:root` definitions.
+     Shadcn tokens (--color-accent, --color-background, etc.) stay untouched below. */
+  --color-bg-subtle: var(--color-bg-subtle);
+  --color-bg-muted: var(--color-bg-muted);
+  --color-bg-inverse: var(--color-bg-inverse);
+  --color-text: var(--color-text);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-muted: var(--color-text-muted);
+  --color-text-subtle: var(--color-text-subtle);
+  --color-text-inverse: var(--color-text-inverse);
+  --color-border-strong: var(--color-border-strong);
+  --color-accent-hover: var(--color-accent-hover);
+  --color-accent-subtle: var(--color-accent-subtle);
+  --color-on-accent: var(--color-on-accent);
+  --color-success: var(--color-success);
+  --color-warning: var(--color-warning);
+  --color-danger: var(--color-danger);
+  --color-info: var(--color-info);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -57,12 +75,12 @@
   --popover-foreground: oklch(0.205 0 0);
   /* Sunny Yellow for primary */
   --primary: oklch(0.88 0.15 95);  /* #FACF39 Sunny Yellow */
-  --primary-foreground: oklch(0.205 0 0);  /* #1A1A1A for text on yellow */
+  --primary-foreground: #1C1C1E;  /* Tightened for WCAG AAA on yellow (7.99:1) */
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
   /* Light Beige for muted */
   --muted: oklch(0.96 0.01 85);  /* #F5F3F0 Light Beige */
-  --muted-foreground: oklch(0.6 0 0);  /* #888888 Stone Grey */
+  --muted-foreground: #6E6E70;  /* Tightened for WCAG AA body text (5.0:1 on white) */
   /* Keep accent same as primary for consistency */
   --accent: oklch(0.88 0.15 95);  /* #FACF39 Sunny Yellow */
   --accent-foreground: oklch(0.205 0 0);
