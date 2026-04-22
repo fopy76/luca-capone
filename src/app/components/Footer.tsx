@@ -58,11 +58,10 @@ export default function Footer() {
           >
             <h3 className="font-grotesk text-2xl font-bold mb-4">Second-Act Builders Newsletter</h3>
             <p className="text-background/80 mb-6">
-            Building AI products at 48 with no coding skills. Bi-weekly field reports 
-            with real numbers, honest failures, and playbooks you can steal.
+              Building AI products in life&apos;s margins with no CS background. Weekly field reports with real numbers, honest failures, and playbooks you can steal.
             </p>
             <p className="text-background/80 mb-6">
-            For Gen X professionals who thought they were too late to start.
+              For 40+ professionals who thought they were too late to start.
             </p>
 
             {/* Substack Embed */}
@@ -86,7 +85,7 @@ export default function Footer() {
         {/* Footer Bottom */}
         <div className="mt-16 pt-8 border-t border-background/20 text-center">
           <p className="text-background/60 text-sm">
-            © 2025 Luca Capone. All rights reserved.
+            © 2026 Luca Capone. All rights reserved.
           </p>
         </div>
       </div>

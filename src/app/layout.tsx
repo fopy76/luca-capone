@@ -9,32 +9,26 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap",
 });
 
-// Satoshi will be imported via CSS in globals.css from Fontshare
-
 export const metadata: Metadata = {
   metadataBase: new URL('https://lucacapone.io'),
   title: {
-    default: "Luca Capone - Gen X AI Builder",
+    default: "Luca Capone - Second-Act Builders",
     template: "%s | Luca Capone"
   },
-  description: "Gen X non-technical founder building AI products at 48. Creator of Peakblox, Kikko, AidLoom, and BizarreChat. Proving age and coding skills are no barriers in the AI era. Building with Claude, ChatGPT, and no-code tools.",
+  description: "I'm Luca, 49. Building AI products in life's margins with no CS background. Field reports, playbooks, and honest numbers for 40+ professionals.",
   keywords: [
-    "Gen X entrepreneur",
+    "Second-Act Builders",
     "AI builder",
     "non-technical founder",
     "AI products",
-    "no-code development",
-    "AI-first development",
+    "vibe coding",
     "second-act career",
-    "age 48 founder",
     "building with AI",
     "Claude Code",
-    "ChatGPT",
-    "Peakblox",
-    "Kikko",
-    "AidLoom",
+    "BurnoutRadar",
+    "PairHabit",
     "BizarreChat",
-    "SaaS builder"
+    "Kikko",
   ],
   authors: [{ name: "Luca Capone", url: "https://lucacapone.io" }],
   creator: "Luca Capone",
@@ -69,22 +63,22 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://lucacapone.io",
-    siteName: "Luca Capone - Gen X AI Builder",
-    title: "Luca Capone - Gen X AI Builder",
-    description: "Building AI products at 48 with no coding skills. Creator of Peakblox, Kikko, AidLoom, and BizarreChat.",
+    siteName: "Luca Capone - Second-Act Builders",
+    title: "Luca Capone - Second-Act Builders",
+    description: "Building AI products in the margins of a full-time job and two kids. Field reports, playbooks, honest numbers.",
     images: [
       {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Luca Capone - Gen X AI Builder",
+        alt: "Luca Capone - Second-Act Builders",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Luca Capone - Gen X AI Builder",
-    description: "Building AI products at 48 with no coding skills. Proving age is not a barrier.",
+    title: "Luca Capone - Second-Act Builders",
+    description: "Building AI products in the margins of a full-time job and two kids.",
     creator: "@LucaCaponeX",
     images: ["/opengraph-image"],
   },
@@ -105,12 +99,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="light">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <meta name="msapplication-TileColor" content="#2563EB" />
-        <meta name="theme-color" content="#2563EB" />
+        <meta name="msapplication-TileColor" content="#FACF39" />
+        <meta name="theme-color" content="#FACF39" />
       </head>
       <body className={`${spaceGrotesk.variable} font-sans antialiased`}>
         {children}

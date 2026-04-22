@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
-export const alt = 'Luca Capone - Gen X AI Builder'
+export const alt = 'Luca Capone - Second-Act Builders'
 export const size = {
   width: 1200,
   height: 630,
@@ -13,15 +13,14 @@ export default async function Image() {
     (
       <div
         style={{
-          fontSize: 60,
-          background: 'linear-gradient(135deg, #2563EB 0%, #1E40AF 100%)',
+          background: '#FACF39',
           width: '100%',
           height: '100%',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          color: 'white',
+          color: '#1C1C1E',
           padding: '80px',
         }}
       >
@@ -36,55 +35,38 @@ export default async function Image() {
         >
           <div
             style={{
-              fontSize: 72,
-              fontWeight: 'bold',
-              marginBottom: 20,
-              letterSpacing: '-0.02em',
+              fontSize: 22,
+              fontWeight: 700,
+              letterSpacing: '0.14em',
+              textTransform: 'uppercase',
+              opacity: 0.75,
+              marginBottom: 28,
             }}
           >
-            Luca Capone
+            Luca Capone · Second-Act Builders
           </div>
           <div
             style={{
-              fontSize: 36,
-              fontWeight: 'normal',
-              opacity: 0.95,
-              marginBottom: 30,
-              maxWidth: '900px',
+              fontSize: 72,
+              fontWeight: 700,
+              lineHeight: 1.05,
+              letterSpacing: '-0.02em',
+              maxWidth: 980,
+              marginBottom: 28,
+            }}
+          >
+            Building AI products in the margins of a full-time job and two kids.
+          </div>
+          <div
+            style={{
+              fontSize: 26,
+              fontWeight: 500,
+              opacity: 0.85,
+              maxWidth: 880,
               lineHeight: 1.4,
             }}
           >
-            Gen X. Non-technical. Building AI products anyway.
-          </div>
-          <div
-            style={{
-              display: 'flex',
-              gap: 30,
-              fontSize: 28,
-              opacity: 0.9,
-            }}
-          >
-            <div style={{
-              background: 'rgba(255,255,255,0.2)',
-              padding: '12px 24px',
-              borderRadius: '8px'
-            }}>
-              48 years old
-            </div>
-            <div style={{
-              background: 'rgba(255,255,255,0.2)',
-              padding: '12px 24px',
-              borderRadius: '8px'
-            }}>
-              4 AI Products
-            </div>
-            <div style={{
-              background: 'rgba(255,255,255,0.2)',
-              padding: '12px 24px',
-              borderRadius: '8px'
-            }}>
-              Zero Code
-            </div>
+            Started coding in March 2025 with zero CS background. Field reports, playbooks, honest numbers.
           </div>
         </div>
       </div>

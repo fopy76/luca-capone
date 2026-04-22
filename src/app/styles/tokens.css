@@ -1,0 +1,181 @@
+/* ---------------------------------------------------------------------------
+   lucacapone.io — Semantic design tokens (CSS custom properties)
+   Generated: 2026-04-22
+   Source of truth: ../AUDIT.md §3 (color), §4 (spacing), §2 (typography)
+
+   How to integrate (Next.js + Tailwind):
+   1. Drop this file into `app/styles/` or import into `globals.css`:
+        @import "./tokens-css.css";
+   2. Reference semantic tokens in components:
+        className="bg-[hsl(var(--color-bg))] text-[hsl(var(--color-text))]"
+      Or better: extend tailwind.config.js (see tokens-tailwind.js) so you can
+      write `bg-bg text-text` instead.
+   3. Flip dark mode by toggling `data-theme="dark"` on <html>.
+
+   Rules:
+   - Never use white on --color-accent. On-accent foreground MUST be --color-on-accent (dark).
+   - Muted gray (--color-text-subtle) is UI-only: icons, borders, placeholder text. Never body copy.
+   - All text/bg pairings in this file have been WCAG 2.1 AA verified (see AUDIT Appendix A).
+   --------------------------------------------------------------------------- */
+
+:root,
+[data-theme="light"] {
+  /* -- Surface ------------------------------------------------------------ */
+  --color-bg:                 #FFFFFF;
+  --color-bg-subtle:          #F5F5F7;
+  --color-bg-muted:           #E8E8EA;
+  --color-bg-inverse:         #1C1C1E;
+
+  /* -- Text --------------------------------------------------------------- */
+  --color-text:               #1C1C1E;   /* AAA on white (16.8:1) */
+  --color-text-secondary:     #434345;   /* AAA on white (10.0:1) */
+  --color-text-muted:         #6E6E70;   /* AA on white  (5.0:1) */
+  --color-text-subtle:        #8E8E93;   /* UI ONLY — fails AA for body */
+  --color-text-inverse:       #FFFFFF;
+
+  /* -- Border ------------------------------------------------------------- */
+  --color-border:             #E5E5EA;
+  --color-border-strong:      #C7C7CC;
+
+  /* -- Accent (brand yellow) --------------------------------------------- */
+  --color-accent:             #FACF39;
+  --color-accent-hover:       #F4BE00;
+  --color-accent-subtle:      #FDF3C2;   /* 15% tint — use for badge bgs */
+  --color-on-accent:          #1C1C1E;   /* NEVER white */
+
+  /* -- Status ------------------------------------------------------------- */
+  --color-success:            #16A34A;
+  --color-warning:            #D97706;
+  --color-danger:             #DC2626;
+  --color-info:               #2563EB;
+
+  /* -- Interaction ------------------------------------------------------- */
+  --color-focus-ring:         #FACF39;   /* accent doubles as focus ring */
+
+  /* -- Shadows ------------------------------------------------------------ */
+  --shadow-sm:  0 1px 2px 0 rgba(28, 28, 30, 0.04);
+  --shadow-md:  0 4px 12px -2px rgba(28, 28, 30, 0.08);
+  --shadow-lg:  0 16px 40px -8px rgba(28, 28, 30, 0.12);
+
+  /* -- Radius ------------------------------------------------------------- */
+  --radius-sm:     4px;
+  --radius-md:     8px;      /* buttons, inputs */
+  --radius-lg:     12px;     /* cards, modals */
+  --radius-full:   9999px;   /* pills, avatars */
+
+  /* -- Spacing (8pt grid) ------------------------------------------------- */
+  --space-xs:   4px;
+  --space-sm:   8px;
+  --space-md:   16px;
+  --space-lg:   24px;
+  --space-xl:   32px;
+  --space-2xl:  48px;
+  --space-3xl:  64px;
+  --space-4xl:  96px;
+
+  /* -- Typography --------------------------------------------------------- */
+  --font-display: "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body:    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI Variable", "Segoe UI", Roboto, sans-serif;
+
+  /* Type scale — 1.25 Major Third, fluid via clamp() */
+  --text-display: clamp(3rem, 5vw + 1.5rem, 5rem);       /* 48 -> 80 */
+  --text-h1:      clamp(2.25rem, 3vw + 1.5rem, 3.5rem);  /* 36 -> 56 */
+  --text-h2:      clamp(1.75rem, 2vw + 1rem, 2.5rem);    /* 28 -> 40 */
+  --text-h3:      clamp(1.375rem, 1vw + 1rem, 1.5rem);   /* 22 -> 24 */
+  --text-lead:    1.125rem;   /* 18 */
+  --text-body:    1rem;       /* 16 */
+  --text-small:   0.875rem;   /* 14 */
+
+  /* Line heights */
+  --leading-display: 1.1;
+  --leading-h1:      1.1;
+  --leading-h2:      1.2;
+  --leading-h3:      1.2;
+  --leading-lead:    1.4;
+  --leading-body:    1.6;
+  --leading-small:   1.4;
+
+  /* Letter spacing */
+  --tracking-display: -0.02em;
+  --tracking-h1:      -0.02em;
+  --tracking-default: 0;
+
+  /* Weights (4 total — resist adding a 5th) */
+  --weight-body:    400;
+  --weight-medium:  500;
+  --weight-semi:    600;
+  --weight-bold:    700;
+}
+
+/* ---------------------------------------------------------------------------
+   Dark mode — same semantic names, different values.
+   Yellow accent carries over. --color-on-accent stays dark in both modes
+   (this is the rule that prevents the 1.49:1 failure permanently).
+   --------------------------------------------------------------------------- */
+
+[data-theme="dark"] {
+  --color-bg:                 #0A0A0B;
+  --color-bg-subtle:          #18181B;
+  --color-bg-muted:           #27272A;
+  --color-bg-inverse:         #FFFFFF;
+
+  --color-text:               #FAFAFA;
+  --color-text-secondary:     #D4D4D8;
+  --color-text-muted:         #A1A1AA;
+  --color-text-subtle:        #71717A;
+  --color-text-inverse:       #18181B;
+
+  --color-border:             #27272A;
+  --color-border-strong:      #3F3F46;
+
+  --color-accent:             #FACF39;
+  --color-accent-hover:       #FCDD66;
+  --color-accent-subtle:      #423A12;
+  --color-on-accent:          #1C1C1E;   /* still dark text on yellow */
+
+  --color-success:            #22C55E;
+  --color-warning:            #F59E0B;
+  --color-danger:             #EF4444;
+  --color-info:               #3B82F6;
+
+  --shadow-sm:  0 1px 2px 0 rgba(0, 0, 0, 0.4);
+  --shadow-md:  0 4px 12px -2px rgba(0, 0, 0, 0.5);
+  --shadow-lg:  0 16px 40px -8px rgba(0, 0, 0, 0.6);
+}
+
+/* Auto dark mode for users who haven't toggled manually. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-bg:                 #0A0A0B;
+    --color-bg-subtle:          #18181B;
+    --color-bg-muted:           #27272A;
+    --color-bg-inverse:         #FFFFFF;
+
+    --color-text:               #FAFAFA;
+    --color-text-secondary:     #D4D4D8;
+    --color-text-muted:         #A1A1AA;
+    --color-text-subtle:        #71717A;
+    --color-text-inverse:       #18181B;
+
+    --color-border:             #27272A;
+    --color-border-strong:      #3F3F46;
+
+    --color-accent-hover:       #FCDD66;
+    --color-accent-subtle:      #423A12;
+
+    --shadow-sm:  0 1px 2px 0 rgba(0, 0, 0, 0.4);
+    --shadow-md:  0 4px 12px -2px rgba(0, 0, 0, 0.5);
+    --shadow-lg:  0 16px 40px -8px rgba(0, 0, 0, 0.6);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Selection color uses the brand accent. Base element styles (html/body/headings)
+   are handled by the existing `@layer base` block in globals.css and shadcn
+   primitives, so we only add what doesn't conflict.
+   --------------------------------------------------------------------------- */
+
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-on-accent);
+}

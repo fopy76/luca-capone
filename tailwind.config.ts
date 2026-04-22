@@ -63,18 +63,6 @@ const config: Config = {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // Add our brand colors without conflicts
-        "brand-primary": "#2563EB",
-        "brand-accent": "#4CAF50",
-        "brand-green": {
-          DEFAULT: "#4CAF50",
-          dark: "#388E3C",
-        },
-        "brand-green-dark": "#388E3C",
-        "brand-blue": {
-          DEFAULT: "#2563EB", 
-          dark: "#1E40AF",
-        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -82,7 +70,15 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        sans: ["Satoshi", "system-ui", "sans-serif"],
+        sans: [
+          "system-ui",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI Variable",
+          "Segoe UI",
+          "Roboto",
+          "sans-serif",
+        ],
         grotesk: ["var(--font-grotesk)", "system-ui", "sans-serif"],
       },
       spacing: {
