@@ -38,8 +38,8 @@ const products: Product[] = [
     statusLabel: "Beta",
     features: ["iOS", "For couples"],
     ctaText: "Join the beta",
-    url: "#newsletter",
-    external: false,
+    url: "https://www.pairhabit.app/",
+    external: true,
     iconInitial: "P",
   },
   {
@@ -60,8 +60,8 @@ const products: Product[] = [
     statusLabel: "Waitlist",
     features: ["Family"],
     ctaText: "See what's coming",
-    url: "#newsletter",
-    external: false,
+    url: "https://www.memopod.app/",
+    external: true,
     iconInitial: "M",
   },
   {
@@ -71,8 +71,8 @@ const products: Product[] = [
     statusLabel: "Waitlist",
     features: ["Family"],
     ctaText: "Join the waitlist",
-    url: "#newsletter",
-    external: false,
+    url: "https://www.kikko.ai/",
+    external: true,
     icon: "/images/kikko_icon.png",
   },
   {
