@@ -3,14 +3,6 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 
-function SectionLabel({ children }: { children: React.ReactNode }) {
-  return (
-    <p className="font-grotesk text-xs font-bold uppercase tracking-[0.08em] text-text-secondary mb-3">
-      {children}
-    </p>
-  )
-}
-
 export default function AboutSection() {
   const scrollToNewsletter = () => {
     const element = document.getElementById("newsletter")
@@ -46,35 +38,31 @@ export default function AboutSection() {
             </h2>
           </div>
 
-          <p className="text-lg md:text-xl font-medium text-text leading-snug mb-10">
+          <p className="text-lg md:text-xl font-medium text-text leading-snug mb-6">
             Italian Army Special Ops. UN security across four continents. Two kids. One full-time job. Started coding at 48.
           </p>
 
-          <div className="mb-10">
-            <SectionLabel>Before</SectionLabel>
-            <p className="text-[17px] text-text-secondary leading-[1.7]">
-              I&apos;m Luca. I&apos;ve spent 25+ years in international security. Nine of them as a Captain in the Italian Army Special Operations Forces, deployed to Bosnia, Iraq, and Afghanistan. Then humanitarian security with the UN system took me from South Sudan to Pakistan to Somalia, with field missions across another ten countries. These days I run security programs for a European institution.
-            </p>
-          </div>
+          <p className="text-[17px] text-text-secondary leading-[1.7] mb-5">
+            I&apos;m Luca. I&apos;ve spent 25+ years in international security. Nine of them as a Captain in the Italian Army Special Operations Forces, deployed to Bosnia, Iraq, and Afghanistan. Then humanitarian security with the UN system took me from South Sudan to Pakistan to Somalia, with field missions across another ten countries. These days I run security programs for a European institution.
+          </p>
 
-          <div className="mb-10">
-            <SectionLabel>Why now</SectionLabel>
-            <p className="text-[17px] text-text-secondary leading-[1.7] mb-5">
-              In March 2025 I opened Cursor for the first time. Something had changed. AI had finally made it possible for a non-technical person to ship real software.
-            </p>
-            <blockquote className="border-l-[3px] border-accent pl-5 py-2">
-              <p className="font-grotesk text-lg md:text-xl font-medium text-text leading-[1.4] tracking-tight">
-                &ldquo;25 years of pattern recognition is screaming at me that this shift is bigger than the previous three combined. Sitting it out is not a neutral choice.&rdquo;
-              </p>
-            </blockquote>
-          </div>
+          <p className="text-[17px] text-text-secondary leading-[1.7] mb-5">
+            In March 2025 I opened Cursor for the first time. Something had changed. AI had finally made it possible for a non-technical person to ship real software.
+          </p>
 
-          <div className="mb-10">
-            <SectionLabel>How I build</SectionLabel>
-            <p className="text-[17px] text-text-secondary leading-[1.7]">
-              I build between 9 and 11 PM on weeknights, on Saturday mornings when the house is quiet, and on lunch breaks that aren&apos;t meetings. Claude Code is my primary tool. Cursor shows up occasionally. The approach is vibe coding: describe what you want, ship it, iterate.
+          <p className="text-[17px] text-text-secondary leading-[1.7] mb-5">
+            In my 25 years in security, I&apos;ve watched three technology shifts land: the internet, mobile, and the cloud. Every time, half my peers said &ldquo;I&apos;m fine with what I have.&rdquo; The curious ones are mostly still here.
+          </p>
+
+          <blockquote className="border-l-[3px] border-accent pl-5 py-2 my-6">
+            <p className="font-grotesk text-lg md:text-xl font-medium text-text leading-[1.4] tracking-tight">
+              &ldquo;25 years of pattern recognition is screaming at me that this shift is bigger than the previous three combined. Sitting it out is not a neutral choice.&rdquo;
             </p>
-          </div>
+          </blockquote>
+
+          <p className="text-[17px] text-text-secondary leading-[1.7] mb-5">
+            I build between 9 and 11 PM on weeknights, on Saturday mornings when the house is quiet, and on lunch breaks that aren&apos;t meetings. Claude Code is my primary tool. Cursor shows up occasionally. The approach is vibe coding: describe what you want, ship it, iterate.
+          </p>
 
           <p className="text-[17px] text-text-secondary leading-[1.7] mb-8">
             If a 49-year-old Italian guy with a full-time job, two kids, and zero CS background can build AI products in the margins of his life, what&apos;s your excuse? That&apos;s what Second-Act Builders is about. Welcome.
