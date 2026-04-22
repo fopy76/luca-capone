@@ -11,6 +11,7 @@ interface Product {
   tagline: string
   status: ProductStatus
   statusLabel: string
+  features: string[]
   ctaText: string
   url: string
   external: boolean
@@ -24,6 +25,7 @@ const products: Product[] = [
     tagline: "10-dimension burnout assessment with AI recovery plans. $19 one-time Pro.",
     status: "launched",
     statusLabel: "Launched",
+    features: ["Free + Pro", "AI-powered", "Instant"],
     ctaText: "Try it free",
     url: "https://www.burnoutradar.com",
     external: true,
@@ -34,6 +36,7 @@ const products: Product[] = [
     tagline: "Couples habit tracker with shared micro-habits and reward stakes.",
     status: "beta",
     statusLabel: "Beta",
+    features: ["iOS", "For couples"],
     ctaText: "Join the beta",
     url: "#newsletter",
     external: false,
@@ -44,6 +47,7 @@ const products: Product[] = [
     tagline: "AI chat with celebrities and historical figures. Genuinely weird on purpose.",
     status: "beta",
     statusLabel: "Beta",
+    features: ["iOS", "AI"],
     ctaText: "Try the beta",
     url: "https://www.bizarrechat.app",
     external: true,
@@ -54,6 +58,7 @@ const products: Product[] = [
     tagline: "Family memory preservation: voice, photo, video, text.",
     status: "waitlist",
     statusLabel: "Waitlist",
+    features: ["Family"],
     ctaText: "See what's coming",
     url: "#newsletter",
     external: false,
@@ -64,6 +69,7 @@ const products: Product[] = [
     tagline: "AI parenting assistant for schedules and school communication.",
     status: "waitlist",
     statusLabel: "Waitlist",
+    features: ["Family"],
     ctaText: "Join the waitlist",
     url: "#newsletter",
     external: false,
@@ -74,6 +80,7 @@ const products: Product[] = [
     tagline: "Coming soon. Next in line for the build-in-public cycle.",
     status: "waitlist",
     statusLabel: "Waitlist",
+    features: ["Planning"],
     ctaText: "Join the waitlist",
     url: "#newsletter",
     external: false,
@@ -120,9 +127,20 @@ function ProductCardInner({ product }: { product: Product }) {
         {product.name}
       </h3>
 
-      <p className="text-base text-text-secondary mb-6 leading-relaxed flex-grow">
+      <p className="text-base text-text-secondary mb-4 leading-relaxed">
         {product.tagline}
       </p>
+
+      <div className="flex flex-wrap gap-1.5 mb-6">
+        {product.features.map((feature) => (
+          <span
+            key={feature}
+            className="inline-block bg-bg-muted text-text-secondary text-xs font-medium px-2 py-0.5 rounded-sm"
+          >
+            {feature}
+          </span>
+        ))}
+      </div>
 
       <span className="inline-flex items-center gap-1 text-text font-semibold text-sm group-hover:text-accent-hover transition-colors mt-auto">
         {product.ctaText}
