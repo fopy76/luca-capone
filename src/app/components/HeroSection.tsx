@@ -64,7 +64,7 @@ export default function HeroSection() {
           style={{ transitionDelay: "0.6s" }}
         >
           <button
-            onClick={() => scrollToSection("connect")}
+            onClick={() => scrollToSection("newsletter")}
             className="bg-accent text-on-accent font-semibold px-8 py-4 rounded-md text-base md:text-lg shadow-sm hover:bg-accent-hover hover:shadow-md motion-safe:hover:-translate-y-0.5 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 min-h-[44px]"
           >
             Get the weekly field report

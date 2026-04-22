@@ -1,89 +1,94 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Twitter, Mail } from "lucide-react"
+import { Twitter, Mail, Instagram, Youtube, Linkedin } from "lucide-react"
+
+function RedditIcon({ className, ...props }: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+      aria-hidden="true"
+      {...props}
+    >
+      <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056L14.166 5.5l-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z" />
+    </svg>
+  )
+}
+
+type SocialIconProps = React.SVGProps<SVGSVGElement> & { className?: string }
+
+const socials: {
+  label: string
+  href: string
+  Icon: React.ComponentType<SocialIconProps>
+}[] = [
+  { label: "X (Twitter)", href: "https://x.com/LucaCaponeX", Icon: Twitter },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/luca76/", Icon: Linkedin },
+  { label: "YouTube", href: "https://www.youtube.com/@LucaCaponeYT", Icon: Youtube },
+  { label: "Instagram", href: "https://www.instagram.com/lucacapone.builds/", Icon: Instagram },
+  { label: "Reddit", href: "https://www.reddit.com/user/LucaCapone/", Icon: RedditIcon },
+]
 
 export default function Footer() {
   return (
-    <footer id="connect" className="py-20 bg-foreground text-background">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer id="connect" className="py-16 bg-foreground text-background">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="font-grotesk text-3xl md:text-5xl font-bold text-center mb-16"
+          className="font-grotesk text-2xl md:text-3xl font-bold mb-4"
         >
-          Connect & Subscribe
+          Connect
         </motion.h2>
 
-        <div className="grid md:grid-cols-2 gap-12">
-          {/* Left: Connect - Social Links */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="text-background/75 mb-8 max-w-md mx-auto"
+        >
+          I&apos;m always open to connecting with fellow builders and creators. Drop a line or find me on any of these.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="flex flex-col items-center gap-6"
+        >
+          <a
+            href="mailto:hello@lucacapone.io"
+            className="inline-flex items-center gap-3 text-background/85 hover:text-accent transition-colors duration-200 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-foreground rounded-sm px-2 py-1"
           >
-            <h3 className="font-grotesk text-2xl font-bold mb-4">Connect</h3>
-            <p className="text-background/80 mb-6">
-              I&apos;m always open to connecting with fellow builders and creators. Find me on my socials.
-            </p>
-            <div className="flex flex-col space-y-4">
-              <a
-                href="mailto:hello@lucacapone.io"
-                className="flex items-center gap-3 text-background/80 hover:text-primary transition-colors duration-200 group"
-              >
-                <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                <span>hello@lucacapone.io</span>
-              </a>
-              <a
-                href="https://x.com/LucaCaponeX"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 text-background/80 hover:text-primary transition-colors duration-200 group"
-              >
-                <Twitter className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                <span>Twitter/X</span>
-              </a>
-            </div>
-          </motion.div>
+            <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" aria-hidden="true" />
+            <span className="font-medium">hello@lucacapone.io</span>
+          </a>
 
-          {/* Right: Newsletter */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            <h3 className="font-grotesk text-2xl font-bold mb-4">Second-Act Builders Newsletter</h3>
-            <p className="text-background/80 mb-6">
-              Building AI products in life&apos;s margins with no CS background. Weekly field reports with real numbers, honest failures, and playbooks you can steal.
-            </p>
-            <p className="text-background/80 mb-6">
-              For 40+ professionals who thought they were too late to start.
-            </p>
+          <ul className="flex flex-wrap items-center justify-center gap-2 sm:gap-3" aria-label="Social links">
+            {socials.map(({ label, href, Icon }) => (
+              <li key={label}>
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  title={label}
+                  className="flex items-center justify-center w-11 h-11 rounded-full border border-background/20 text-background/80 hover:text-on-accent hover:bg-accent hover:border-accent transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-foreground"
+                >
+                  <Icon className="w-5 h-5" aria-hidden="true" />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </motion.div>
 
-            {/* Substack Embed */}
-            <div className="bg-card rounded-xl border shadow-sm p-6">
-              <iframe
-                src="https://secondactbuilders.substack.com/embed"
-                width="100%"
-                height="320"
-                style={{
-                  border: "none",
-                  background: "transparent"
-                }}
-                frameBorder="0"
-                scrolling="no"
-                title="Subscribe to Second-Act Builders Newsletter"
-              />
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Footer Bottom */}
-        <div className="mt-16 pt-8 border-t border-background/20 text-center">
+        <div className="mt-12 pt-8 border-t border-background/20">
           <p className="text-background/60 text-sm">
             © 2026 Luca Capone. All rights reserved.
           </p>
