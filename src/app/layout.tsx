@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import StructuredData from "./components/StructuredData";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -10,15 +11,19 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap",
 });
 
+const siteDescription =
+  "I'm Luca, 49. Building AI products in life's margins with no CS background. Field reports, playbooks, and honest numbers for 40+ professionals.";
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://lucacapone.io'),
   title: {
     default: "Luca Capone - Second-Act Builders",
     template: "%s | Luca Capone"
   },
-  description: "I'm Luca, 49. Building AI products in life's margins with no CS background. Field reports, playbooks, and honest numbers for 40+ professionals.",
+  description: siteDescription,
   keywords: [
     "Second-Act Builders",
+    "Second-Act Builders newsletter",
     "AI builder",
     "non-technical founder",
     "AI products",
@@ -26,10 +31,14 @@ export const metadata: Metadata = {
     "second-act career",
     "building with AI",
     "Claude Code",
+    "Gen X founder",
+    "solopreneur AI",
     "BurnoutRadar",
     "PairHabit",
     "BizarreChat",
+    "MemoPod",
     "Kikko",
+    "Fatto",
   ],
   authors: [{ name: "Luca Capone", url: "https://lucacapone.io" }],
   creator: "Luca Capone",
@@ -66,7 +75,7 @@ export const metadata: Metadata = {
     url: "https://lucacapone.io",
     siteName: "Luca Capone - Second-Act Builders",
     title: "Luca Capone - Second-Act Builders",
-    description: "Building AI products in the margins of a full-time job and two kids. Field reports, playbooks, honest numbers.",
+    description: siteDescription,
     images: [
       {
         url: "/opengraph-image",
@@ -79,7 +88,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Luca Capone - Second-Act Builders",
-    description: "Building AI products in the margins of a full-time job and two kids.",
+    description: siteDescription,
     creator: "@LucaCaponeX",
     images: ["/opengraph-image"],
   },
@@ -106,6 +115,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <meta name="msapplication-TileColor" content="#FACF39" />
         <meta name="theme-color" content="#FACF39" />
+        <StructuredData />
       </head>
       <body className={`${spaceGrotesk.variable} font-sans antialiased`}>
         {children}

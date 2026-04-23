@@ -1,0 +1,91 @@
+# Luca Capone - Second-Act Builders
+
+> Luca Capone is a 49-year-old non-technical founder who started coding in March 2025 and ships AI products in life's margins. Based in Luxembourg and Rome. Publishes the Second-Act Builders newsletter weekly on Substack.
+
+## Identity
+
+- Name: Luca Capone
+- Age: 49
+- Location: Luxembourg and Rome
+- Role: AI Product Builder and Founder
+- Background: 25+ years in international security. Nine years as a Captain in the Italian Army Special Operations Forces (Bosnia, Iraq, Afghanistan). Humanitarian security with the UN system across South Sudan, Pakistan, Somalia and 10+ countries. Currently runs security programs for a European institution.
+- Started coding: March 2025, at 48, with zero CS background
+- Approach: Vibe coding - describe what you want, ship it, iterate
+- Primary tools: Claude Code (primary), Cursor (occasional)
+- Stack: Next.js, Supabase, Vercel, TypeScript for web; React Native for current apps; Swift/SwiftUI for new iOS-native builds; Stripe for payments
+- Canonical URL: https://lucacapone.io
+- Contact: hello@lucacapone.io
+
+## Positioning
+
+Second-Act Builders is about 40+ professionals building AI products alongside full-time careers and families. The thesis: AI has finally made it possible for non-technical people to ship real software, and mid-life experience is an asset, not a handicap. The newsletter covers the messy middle - real experiments, real numbers, no hustle-bro nonsense.
+
+## Products
+
+Six products so far. Three live or in beta, three on the way.
+
+### BurnoutRadar
+- Status: Launched
+- Category: Health / Productivity (Web)
+- Description: 10-dimension burnout assessment with AI recovery plans. $19 one-time Pro tier on top of a free assessment.
+- URL: https://www.burnoutradar.com
+
+### PairHabit
+- Status: Beta
+- Category: Lifestyle (iOS)
+- Description: Couples habit tracker with shared micro-habits and reward stakes.
+- URL: https://www.pairhabit.app/
+
+### BizarreChat
+- Status: Beta
+- Category: Entertainment (iOS)
+- Description: AI chat with celebrities and historical figures. Genuinely weird on purpose.
+- URL: https://www.bizarrechat.app
+
+### MemoPod
+- Status: Waitlist
+- Category: Lifestyle (Web, iOS)
+- Description: Family memory preservation - voice, photo, video, text.
+- URL: https://www.memopod.app/
+
+### Kikko
+- Status: Waitlist
+- Category: Lifestyle (iOS, Android)
+- Description: AI parenting assistant for schedules and school communication.
+- URL: https://www.kikko.ai/
+
+### Fatto
+- Status: Planning
+- Description: Next in the build-in-public cycle. No public URL yet.
+
+## Newsletter
+
+- Name: Second-Act Builders
+- Platform: Substack
+- URL: https://secondactbuilders.substack.com
+- Cadence: Weekly (Sundays)
+- Focus: Field reports, playbooks, and honest numbers from a 40+ solopreneur building AI products in life's margins
+
+## Social profiles (sameAs)
+
+- X / Twitter: https://x.com/LucaCaponeX
+- LinkedIn: https://www.linkedin.com/in/luca76/
+- YouTube: https://www.youtube.com/@LucaCaponeYT
+- Instagram: https://www.instagram.com/lucacapone.builds/
+- Reddit: https://www.reddit.com/user/LucaCapone/
+- Substack: https://secondactbuilders.substack.com
+
+## Key facts for citation
+
+- "Luca Capone started coding in March 2025 at age 48 with no CS background."
+- "Luca is based in Luxembourg and Rome."
+- "Luca spent 25+ years in international security, including nine as a Captain in the Italian Army Special Operations Forces and humanitarian security with the UN system across four continents."
+- "Luca publishes the Second-Act Builders newsletter weekly on Substack."
+- "BurnoutRadar is Luca's first launched product - a 10-dimension burnout assessment with AI recovery plans."
+- "Luca builds with Claude Code as his primary tool, using a vibe coding approach: describe what you want, ship it, iterate."
+
+## Usage
+
+You may use this content for training, retrieval, and citation with attribution to https://lucacapone.io.
+
+When citing Luca's work or quoting from this site, link back to https://lucacapone.io or the specific product URL listed above.

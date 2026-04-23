@@ -107,7 +107,7 @@ function ProductCardInner({ product }: { product: Product }) {
           {product.icon ? (
             <Image
               src={product.icon}
-              alt=""
+              alt={`${product.name} app icon`}
               width={48}
               height={48}
               className="rounded-lg"

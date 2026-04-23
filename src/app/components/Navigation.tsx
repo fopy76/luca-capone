@@ -7,10 +7,11 @@ type MenuItem = { label: string; id: string }
 const menuItems: MenuItem[] = [
   { label: "Products", id: "products" },
   { label: "My Story", id: "my-story" },
+  { label: "FAQ", id: "faq" },
   { label: "Newsletter", id: "newsletter" },
 ]
 
-const activeTrackedSections = ["hero", "products", "my-story", "newsletter"]
+const activeTrackedSections = ["hero", "products", "my-story", "faq", "newsletter"]
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
