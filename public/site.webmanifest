@@ -1,7 +1,7 @@
 {
-  "name": "Luca Capone - Gen X AI Builder",
+  "name": "Luca Capone - Second-Act Builders",
   "short_name": "Luca Capone",
-  "description": "Gen X. Non-technical. Building & shipping AI products anyway.",
+  "description": "I'm Luca, 49. Building AI products in life's margins with no CS background. Field reports, playbooks, and honest numbers for 40+ professionals.",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -14,8 +14,8 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#2563EB",
+  "theme_color": "#FACF39",
   "background_color": "#ffffff",
   "display": "standalone",
   "start_url": "/"
-} 
+}
