@@ -12,7 +12,7 @@ const faqs: FAQ[] = [
     question: "Who is Luca Capone?",
     answer: (
       <>
-        I&apos;m a 49-year-old non-technical founder based in Luxembourg and Rome. 25+ years in international security, nine of them as a Captain in the Italian Army Special Operations Forces (Bosnia, Iraq, Afghanistan), then humanitarian security with the UN system across another ten countries. These days I run security programs for a European institution and ship AI products in life&apos;s margins. I write the weekly Second-Act Builders newsletter on Substack.
+        I&apos;m a 50-year-old non-technical founder based in Luxembourg and Rome. 25+ years in international security, nine of them as a Captain in the Italian Army Special Operations Forces (Bosnia, Iraq, Afghanistan), then humanitarian security with the UN system across another ten countries. These days I run security programs for a European institution and ship AI products in life&apos;s margins. I write the weekly Second-Act Builders newsletter on Substack.
       </>
     ),
   },
@@ -81,7 +81,7 @@ const faqs: FAQ[] = [
     question: "When did you start coding?",
     answer: (
       <>
-        March 2025, at 48, with zero CS background. I opened Cursor for the first time because AI had finally made it possible for a non-technical person to ship real software.
+        March 2025, at 49, with zero CS background. I opened Cursor for the first time because AI had finally made it possible for a non-technical person to ship real software.
       </>
     ),
   },

@@ -9,7 +9,7 @@ export default function NewsletterSection() {
           Second-Act Builders, weekly.
         </h2>
         <p className="text-base md:text-lg text-text-secondary mb-10 max-w-xl mx-auto leading-relaxed">
-          The messy middle of building AI products at 49. Real experiments, real numbers, no hustle-bro nonsense. Free forever.
+          The messy middle of building AI products at 50. Real experiments, real numbers, no hustle-bro nonsense. Free forever.
         </p>
 
         <div className="max-w-md mx-auto bg-background border border-border-strong rounded-lg shadow-sm p-4">

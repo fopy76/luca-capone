@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 232 56" width="232" height="56" fill="none" role="img" aria-label="Proudly Built in Italy" style="color:#0B1226">
+  <title>Proudly Built in Italy</title>
+  <!-- Tricolore inverted vs the canonical lockup: red top, green bottom. -->
+  <path d="M18 14 8 28 18 42" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M46 14 56 28 46 42" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <g transform="rotate(20 32 28)">
+    <clipPath id="biiSlashLockup"><rect x="26.5" y="11" width="11" height="34" rx="5.5"/></clipPath>
+    <g clip-path="url(#biiSlashLockup)">
+      <rect x="26.5" y="11" width="11" height="11.34" fill="#CE2B37"/>
+      <rect x="26.5" y="22.34" width="11" height="11.33" fill="#FFFFFF"/>
+      <rect x="26.5" y="33.67" width="11" height="11.33" fill="#009246"/>
+    </g>
+    <rect x="26.5" y="11" width="11" height="34" rx="5.5" fill="none" stroke="currentColor" stroke-width="2.5"/>
+  </g>
+  <text x="80" y="26" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="15" font-weight="400" fill="currentColor">Proudly</text>
+  <text x="80" y="46" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="18" font-weight="600" fill="currentColor">Built in Italy</text>
+</svg>

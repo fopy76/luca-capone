@@ -39,7 +39,7 @@ export default function AboutSection() {
           </div>
 
           <p className="text-lg md:text-xl font-medium text-text leading-snug mb-6">
-            Italian Army Special Ops. UN security across four continents. Two kids. One full-time job. Started coding at 48.
+            Italian Army Special Ops. UN security across four continents. Two kids. One full-time job. Started coding at 49.
           </p>
 
           <p className="text-[17px] text-text-secondary leading-[1.7] mb-5">
@@ -65,7 +65,7 @@ export default function AboutSection() {
           </p>
 
           <p className="text-[17px] text-text-secondary leading-[1.7] mb-8">
-            If a 49-year-old Italian guy with a full-time job, two kids, and zero CS background can build AI products in the margins of his life, what&apos;s your excuse? That&apos;s what Second-Act Builders is about. Welcome.
+            If a 50-year-old Italian guy with a full-time job, two kids, and zero CS background can build AI products in the margins of his life, what&apos;s your excuse? That&apos;s what Second-Act Builders is about. Welcome.
           </p>
 
           <button

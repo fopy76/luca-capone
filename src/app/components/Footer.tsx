@@ -17,6 +17,38 @@ function RedditIcon({ className, ...props }: React.SVGProps<SVGSVGElement>) {
   )
 }
 
+// "Proudly Built in Italy" brand lockup (inverted tricolore). Linework + wordmark use
+// currentColor so they inherit the footer text colour; the slash keeps the flag colours.
+function BuiltInItaly({ className, ...props }: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      viewBox="0 0 232 56"
+      fill="none"
+      role="img"
+      aria-label="Proudly Built in Italy"
+      className={className}
+      {...props}
+    >
+      <title>Proudly Built in Italy</title>
+      <path d="M18 14 8 28 18 42" stroke="currentColor" strokeWidth="5.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M46 14 56 28 46 42" stroke="currentColor" strokeWidth="5.5" strokeLinecap="round" strokeLinejoin="round" />
+      <g transform="rotate(20 32 28)">
+        <clipPath id="biiSlashLockup">
+          <rect x="26.5" y="11" width="11" height="34" rx="5.5" />
+        </clipPath>
+        <g clipPath="url(#biiSlashLockup)">
+          <rect x="26.5" y="11" width="11" height="11.34" fill="#CE2B37" />
+          <rect x="26.5" y="22.34" width="11" height="11.33" fill="#FFFFFF" />
+          <rect x="26.5" y="33.67" width="11" height="11.33" fill="#009246" />
+        </g>
+        <rect x="26.5" y="11" width="11" height="34" rx="5.5" fill="none" stroke="currentColor" strokeWidth="2.5" />
+      </g>
+      <text x="80" y="26" fontFamily="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" fontSize="15" fontWeight="400" fill="currentColor">Proudly</text>
+      <text x="80" y="46" fontFamily="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" fontSize="18" fontWeight="600" fill="currentColor">Built in Italy</text>
+    </svg>
+  )
+}
+
 type SocialIconProps = React.SVGProps<SVGSVGElement> & { className?: string }
 
 const socials: {
@@ -92,6 +124,9 @@ export default function Footer() {
           <p className="text-background/60 text-sm">
             © 2026 Luca Capone. All rights reserved.
           </p>
+          <div className="mt-4 flex justify-center">
+            <BuiltInItaly className="h-7 w-auto text-background/60" />
+          </div>
         </div>
       </div>
     </footer>

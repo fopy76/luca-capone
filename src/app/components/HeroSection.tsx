@@ -54,7 +54,7 @@ export default function HeroSection() {
           }`}
           style={{ transitionDelay: "0.4s" }}
         >
-          I&apos;m Luca, 49, based in Luxembourg and Rome. Started coding in March 2025 with zero CS background. Six products so far. Three live or in beta, three on the way. Weekly field report, every Sunday.
+          I&apos;m Luca, 50, based in Luxembourg and Rome. Started coding in March 2025 with zero CS background. Six products so far. Two launched, one in beta, three on the way. Weekly field report, every Sunday.
         </p>
 
         <div

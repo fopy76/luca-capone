@@ -12,7 +12,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 const siteDescription =
-  "I'm Luca, 49. Building AI products in life's margins with no CS background. Field reports, playbooks, and honest numbers for 40+ professionals.";
+  "I'm Luca, 50. Building AI products in life's margins with no CS background. Field reports, playbooks, and honest numbers for 40+ professionals.";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://lucacapone.io'),

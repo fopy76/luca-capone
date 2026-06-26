@@ -8,7 +8,7 @@ const personSchema = {
   "email": "hello@lucacapone.io",
   "jobTitle": "AI Product Builder & Founder",
   "description":
-    "Luca Capone is a 49-year-old non-technical founder who started coding in March 2025 and ships AI products in life's margins. Creator of BurnoutRadar, PairHabit, and BizarreChat, with MemoPod, Kikko, and Fatto in the pipeline. Based in Luxembourg and Rome.",
+    "Luca Capone is a 50-year-old non-technical founder who started coding in March 2025 and ships AI products in life's margins. Creator of BurnoutRadar, PairHabit, and BizarreChat, with MemoPod, Kikko, and Fatto in the pipeline. Based in Luxembourg and Rome.",
   "address": [
     {
       "@type": "PostalAddress",
@@ -54,7 +54,7 @@ const websiteSchema = {
   "name": "Luca Capone - Second-Act Builders",
   "url": SITE_URL,
   "description":
-    "I'm Luca, 49. Building AI products in life's margins with no CS background. Field reports, playbooks, and honest numbers for 40+ professionals.",
+    "I'm Luca, 50. Building AI products in life's margins with no CS background. Field reports, playbooks, and honest numbers for 40+ professionals.",
   "author": {
     "@type": "Person",
     "name": "Luca Capone",
@@ -173,7 +173,7 @@ const faqSchema = {
       "acceptedAnswer": {
         "@type": "Answer",
         "text":
-          "Luca Capone is a 49-year-old non-technical founder based in Luxembourg and Rome. He spent 25+ years in international security, including nine years as a Captain in the Italian Army Special Operations Forces and humanitarian security roles with the UN system across four continents. He started coding in March 2025 and now ships AI products in the margins of a full-time job, writing the weekly Second-Act Builders newsletter on Substack.",
+          "Luca Capone is a 50-year-old non-technical founder based in Luxembourg and Rome. He spent 25+ years in international security, including nine years as a Captain in the Italian Army Special Operations Forces and humanitarian security roles with the UN system across four continents. He started coding in March 2025 and now ships AI products in the margins of a full-time job, writing the weekly Second-Act Builders newsletter on Substack.",
       },
     },
     {
@@ -200,7 +200,7 @@ const faqSchema = {
       "acceptedAnswer": {
         "@type": "Answer",
         "text":
-          "March 2025, at 48, with zero CS background. Luca opened Cursor for the first time because AI had finally made it possible for a non-technical person to ship real software.",
+          "March 2025, at 49, with zero CS background. Luca opened Cursor for the first time because AI had finally made it possible for a non-technical person to ship real software.",
       },
     },
     {

@@ -1,7 +1,7 @@
 export default function CredibilityStrip() {
   const items = [
     "Building since March 2025",
-    "1 launched, 2 in beta",
+    "2 launched, 1 in beta",
     "Shared openly on X, LinkedIn, Substack",
   ]
 
