@@ -191,7 +191,7 @@ const faqSchema = {
       "acceptedAnswer": {
         "@type": "Answer",
         "text":
-          "Six products so far. Launched: BurnoutRadar (10-dimension burnout assessment with AI recovery plans). In beta: PairHabit (couples habit tracker) and BizarreChat (AI chat with celebrities and historical figures). On the waitlist: MemoPod (family memory preservation), Kikko (AI parenting assistant), and Fatto (next in the build-in-public cycle).",
+          "Six products so far. Launched: BurnoutRadar (10-dimension burnout assessment with AI recovery plans) and PairHabit (couples habit tracker). In beta: BizarreChat (AI chat with celebrities and historical figures). On the waitlist: MemoPod (family memory preservation), Kikko (AI parenting assistant), and Fatto (next in the build-in-public cycle).",
       },
     },
     {

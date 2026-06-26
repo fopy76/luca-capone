@@ -37,16 +37,16 @@ const faqs: FAQ[] = [
         >
           BurnoutRadar
         </a>{" "}
-        (10-dimension burnout assessment with AI recovery plans). In beta:{" "}
+        (10-dimension burnout assessment with AI recovery plans) and{" "}
         <a
-          href="https://www.pairhabit.app/"
+          href="https://apps.apple.com/app/id6759855681"
           target="_blank"
           rel="noopener noreferrer"
           className="underline decoration-accent decoration-2 underline-offset-2 hover:text-accent-hover"
         >
           PairHabit
         </a>{" "}
-        (couples habit tracker) and{" "}
+        (couples habit tracker). In beta:{" "}
         <a
           href="https://www.bizarrechat.app"
           target="_blank"
