@@ -46,7 +46,16 @@ const faqs: FAQ[] = [
         >
           PairHabit
         </a>{" "}
-        (couples habit tracker). In beta:{" "}
+        (couples habit tracker). Live on web:{" "}
+        <a
+          href="https://www.kikko.ai/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline decoration-accent decoration-2 underline-offset-2 hover:text-accent-hover"
+        >
+          Kikko
+        </a>{" "}
+        (AI parenting assistant, iOS app in the works). In beta:{" "}
         <a
           href="https://www.bizarrechat.app"
           target="_blank"
@@ -63,17 +72,8 @@ const faqs: FAQ[] = [
           className="underline decoration-accent decoration-2 underline-offset-2 hover:text-accent-hover"
         >
           MemoPod
-        </a>
-        ,{" "}
-        <a
-          href="https://www.kikko.ai/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline decoration-accent decoration-2 underline-offset-2 hover:text-accent-hover"
-        >
-          Kikko
-        </a>
-        , and Fatto.
+        </a>{" "}
+        and Fatto.
       </>
     ),
   },
@@ -103,7 +103,7 @@ export default function FAQSection() {
   return (
     <section
       id="faq"
-      className="py-20 bg-muted border-t border-border"
+      className="py-20 bg-muted border-t border-border scroll-mt-16"
     >
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div

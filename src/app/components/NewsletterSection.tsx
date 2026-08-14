@@ -2,7 +2,7 @@ export default function NewsletterSection() {
   return (
     <section
       id="newsletter"
-      className="py-20 bg-bg-subtle border-y border-border"
+      className="py-20 bg-bg-subtle border-y border-border scroll-mt-16"
     >
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="font-grotesk text-3xl md:text-5xl font-bold text-text mb-4 tracking-tight">

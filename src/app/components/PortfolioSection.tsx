@@ -66,11 +66,11 @@ const products: Product[] = [
   },
   {
     name: "Kikko",
-    tagline: "AI parenting assistant for schedules and school communication.",
-    status: "waitlist",
-    statusLabel: "Waitlist",
-    features: ["Family"],
-    ctaText: "Join the waitlist",
+    tagline: "AI parenting assistant for schedules and school communication. iOS app in the works.",
+    status: "launched",
+    statusLabel: "Live on Web",
+    features: ["Web", "Family"],
+    ctaText: "Try Kikko",
     url: "https://www.kikko.ai/",
     external: true,
     icon: "/images/kikko_icon.png",
@@ -152,7 +152,7 @@ function ProductCardInner({ product }: { product: Product }) {
 
 export default function PortfolioSection() {
   return (
-    <section id="products" className="py-20 bg-muted">
+    <section id="products" className="py-20 bg-muted scroll-mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="font-grotesk text-3xl md:text-5xl font-bold text-center mb-4 text-text">
           Shipped and shipping

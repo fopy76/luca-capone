@@ -8,7 +8,7 @@ const personSchema = {
   "email": "hello@lucacapone.io",
   "jobTitle": "AI Product Builder & Founder",
   "description":
-    "Luca Capone is a 50-year-old non-technical founder who started coding in March 2025 and ships AI products in life's margins. Creator of BurnoutRadar, PairHabit, and BizarreChat, with MemoPod, Kikko, and Fatto in the pipeline. Based in Luxembourg and Rome.",
+    "Luca Capone is a 50-year-old non-technical founder who started coding in March 2025 and ships AI products in life's margins. Creator of BurnoutRadar, PairHabit, Kikko, and BizarreChat, with MemoPod and Fatto in the pipeline. Based in Luxembourg and Rome.",
   "address": [
     {
       "@type": "PostalAddress",
@@ -147,13 +147,13 @@ const productsSchema = [
     "@type": "SoftwareApplication",
     "name": "Kikko",
     "applicationCategory": "LifestyleApplication",
-    "operatingSystem": "iOS, Android",
+    "operatingSystem": "Web",
     "description":
-      "AI parenting assistant for schedules and school communication.",
+      "AI parenting assistant for schedules and school communication. Live on web, with an iOS app in development.",
     "url": "https://www.kikko.ai/",
     "offers": {
       "@type": "Offer",
-      "category": "Waitlist",
+      "category": "Web App",
     },
     "creator": {
       "@type": "Person",
@@ -191,7 +191,7 @@ const faqSchema = {
       "acceptedAnswer": {
         "@type": "Answer",
         "text":
-          "Six products so far. Launched: BurnoutRadar (10-dimension burnout assessment with AI recovery plans) and PairHabit (couples habit tracker). In beta: BizarreChat (AI chat with celebrities and historical figures). On the waitlist: MemoPod (family memory preservation), Kikko (AI parenting assistant), and Fatto (next in the build-in-public cycle).",
+          "Six products so far. Launched: BurnoutRadar (10-dimension burnout assessment with AI recovery plans) and PairHabit (couples habit tracker). Live on web: Kikko (AI parenting assistant, iOS app in the works). In beta: BizarreChat (AI chat with celebrities and historical figures). On the waitlist: MemoPod (family memory preservation) and Fatto (next in the build-in-public cycle).",
       },
     },
     {
