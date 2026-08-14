@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import Link from "next/link"
 import { Twitter, Mail, Instagram, Youtube, Linkedin } from "lucide-react"
 
 function RedditIcon({ className, ...props }: React.SVGProps<SVGSVGElement>) {
@@ -121,6 +122,14 @@ export default function Footer() {
         </motion.div>
 
         <div className="mt-12 pt-8 border-t border-background/20">
+          <nav aria-label="Site" className="mb-4">
+            <Link
+              href="/now"
+              className="text-background/60 hover:text-accent text-sm font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-foreground rounded-sm px-2 py-1"
+            >
+              What I&apos;m doing now
+            </Link>
+          </nav>
           <p className="text-background/60 text-sm">
             © 2026 Luca Capone. All rights reserved.
           </p>

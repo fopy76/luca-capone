@@ -14,7 +14,7 @@ export default function AboutSection() {
   }
 
   return (
-    <section id="my-story" className="py-20 bg-background border-t border-border">
+    <section id="my-story" className="py-20 bg-background border-t border-border scroll-mt-16">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

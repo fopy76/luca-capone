@@ -1,15 +1,15 @@
 # Luca Capone - Second-Act Builders
 
-> Luca Capone is a 49-year-old non-technical founder who started coding in March 2025 and ships AI products in life's margins. Based in Luxembourg and Rome. Publishes the Second-Act Builders newsletter weekly on Substack.
+> Luca Capone is a 50-year-old non-technical founder who started coding in March 2025 and ships AI products in life's margins. Based in Luxembourg and Rome. Publishes the Second-Act Builders newsletter weekly on Substack.
 
 ## Identity
 
 - Name: Luca Capone
-- Age: 49
+- Age: 50
 - Location: Luxembourg and Rome
 - Role: AI Product Builder and Founder
 - Background: 25+ years in international security. Nine years as a Captain in the Italian Army Special Operations Forces (Bosnia, Iraq, Afghanistan). Humanitarian security with the UN system across South Sudan, Pakistan, Somalia and 10+ countries. Currently runs security programs for a European institution.
-- Started coding: March 2025, at 48, with zero CS background
+- Started coding: March 2025, at 49, with zero CS background
 - Approach: Vibe coding - describe what you want, ship it, iterate
 - Primary tools: Claude Code (primary), Cursor (occasional)
 - Stack: Next.js, Supabase, Vercel, TypeScript for web; React Native for current apps; Swift/SwiftUI for new iOS-native builds; Stripe for payments
@@ -22,7 +22,7 @@ Second-Act Builders is about 40+ professionals building AI products alongside fu
 
 ## Products
 
-Six products so far. Three live or in beta, three on the way.
+Six products so far. Four live or in beta, two on the way.
 
 ### BurnoutRadar
 - Status: Launched
@@ -31,10 +31,11 @@ Six products so far. Three live or in beta, three on the way.
 - URL: https://www.burnoutradar.com
 
 ### PairHabit
-- Status: Beta
+- Status: Launched
 - Category: Lifestyle (iOS)
 - Description: Couples habit tracker with shared micro-habits and reward stakes.
 - URL: https://www.pairhabit.app/
+- App Store: https://apps.apple.com/app/id6759855681
 
 ### BizarreChat
 - Status: Beta
@@ -49,14 +50,21 @@ Six products so far. Three live or in beta, three on the way.
 - URL: https://www.memopod.app/
 
 ### Kikko
-- Status: Waitlist
-- Category: Lifestyle (iOS, Android)
-- Description: AI parenting assistant for schedules and school communication.
+- Status: Live (Web)
+- Category: Lifestyle (Web; iOS in development)
+- Description: AI parenting assistant for schedules and school communication. Live on web, iOS app in the works.
 - URL: https://www.kikko.ai/
 
 ### Fatto
 - Status: Planning
 - Description: Next in the build-in-public cycle. No public URL yet.
+
+## Now
+
+- URL: https://lucacapone.io/now
+- A now page (nownownow.com convention): a living snapshot of what Luca is building, creating, and learning right now.
+- Currently: PairHabit launched on the App Store; Kikko live on web with the iOS app next; BizarreChat in iOS beta; Fatto in planning; Second-Act Builders ships weekly.
+- Last updated: 2026-08-14
 
 ## Newsletter
 
@@ -77,7 +85,7 @@ Six products so far. Three live or in beta, three on the way.
 
 ## Key facts for citation
 
-- "Luca Capone started coding in March 2025 at age 48 with no CS background."
+- "Luca Capone started coding in March 2025 at age 49 with no CS background."
 - "Luca is based in Luxembourg and Rome."
 - "Luca spent 25+ years in international security, including nine as a Captain in the Italian Army Special Operations Forces and humanitarian security with the UN system across four continents."
 - "Luca publishes the Second-Act Builders newsletter weekly on Substack."
