@@ -54,7 +54,7 @@ export default function HeroSection() {
           }`}
           style={{ transitionDelay: "0.4s" }}
         >
-          I&apos;m Luca, 50, based in Luxembourg and Rome. Started coding in March 2025 with zero CS background. Six products so far. Two launched, one in beta, three on the way. Weekly field report, every Sunday.
+          I&apos;m Luca, 50, based in Luxembourg and Rome. Started coding in March 2025 with zero CS background. Six products so far. Three launched, one in beta, two on the way. Field report, every other Thursday.
         </p>
 
         <div
@@ -67,7 +67,7 @@ export default function HeroSection() {
             onClick={() => scrollToSection("newsletter")}
             className="bg-accent text-on-accent font-semibold px-8 py-4 rounded-md text-base md:text-lg shadow-sm hover:bg-accent-hover hover:shadow-md motion-safe:hover:-translate-y-0.5 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 min-h-[44px]"
           >
-            Get the weekly field report
+            Get the field report
           </button>
           <button
             onClick={() => scrollToSection("products")}
@@ -83,7 +83,7 @@ export default function HeroSection() {
           }`}
           style={{ transitionDelay: "0.8s" }}
         >
-          Weekly field report. No spam. Unsubscribe in one click.
+          Field report every other Thursday. No spam. Unsubscribe in one click.
         </p>
       </div>
     </section>

@@ -128,7 +128,7 @@ export default function NowPage() {
                 now page
               </a>
               . If you want the full story behind it, it lands in your inbox
-              every Sunday.
+              every other Thursday.
             </p>
             <Link
               href="/#newsletter"

@@ -6,7 +6,7 @@ export default function NewsletterSection() {
     >
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="font-grotesk text-3xl md:text-5xl font-bold text-text mb-4 tracking-tight">
-          Second-Act Builders, weekly.
+          Second-Act Builders, every other Thursday.
         </h2>
         <p className="text-base md:text-lg text-text-secondary mb-10 max-w-xl mx-auto leading-relaxed">
           The messy middle of building AI products at 50. Real experiments, real numbers, no hustle-bro nonsense. Free forever.
@@ -28,7 +28,7 @@ export default function NewsletterSection() {
         </div>
 
         <p className="text-sm text-text-muted mt-6">
-          Weekly field report. No spam. Unsubscribe in one click.
+          Field report every other Thursday. No spam. Unsubscribe in one click.
         </p>
       </div>
     </section>

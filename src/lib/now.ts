@@ -33,7 +33,7 @@ export const nowTeaserItems: NowTeaserItem[] = [
   },
   {
     label: "Writing",
-    text: "Second-Act Builders, weekly on Substack. Real experiments, real numbers.",
+    text: "Second-Act Builders, every other Thursday on Substack. Real experiments, real numbers.",
   },
   {
     label: "Learning",
@@ -81,7 +81,7 @@ export const nowBlocks: NowBlock[] = [
       {
         title: "Second-Act Builders",
         description:
-          "The weekly Substack newsletter for 40+ professionals building AI products alongside careers and families. Field reports, playbooks, honest numbers.",
+          "The Substack newsletter for 40+ professionals building AI products alongside careers and families. Field reports, playbooks, honest numbers — every other Thursday.",
         href: "https://secondactbuilders.substack.com",
         external: true,
       },

@@ -1,6 +1,6 @@
 # Luca Capone - Second-Act Builders
 
-> Luca Capone is a 50-year-old non-technical founder who started coding in March 2025 and ships AI products in life's margins. Based in Luxembourg and Rome. Publishes the Second-Act Builders newsletter weekly on Substack.
+> Luca Capone is a 50-year-old non-technical founder who started coding in March 2025 and ships AI products in life's margins. Based in Luxembourg and Rome. Publishes the Second-Act Builders newsletter every other Thursday on Substack.
 
 ## Identity
 
@@ -63,7 +63,7 @@ Six products so far. Four live or in beta, two on the way.
 
 - URL: https://lucacapone.io/now
 - A now page (nownownow.com convention): a living snapshot of what Luca is building, creating, and learning right now.
-- Currently: PairHabit launched on the App Store; Kikko live on web with the iOS app next; BizarreChat in iOS beta; Fatto in planning; Second-Act Builders ships weekly.
+- Currently: PairHabit launched on the App Store; Kikko live on web with the iOS app next; BizarreChat in iOS beta; Fatto in planning; Second-Act Builders ships every other Thursday.
 - Reading: AI Demystified (Antonio Weiss) and $100M Offers (Alex Hormozi).
 - Last updated: 2026-08-16
 
@@ -72,7 +72,7 @@ Six products so far. Four live or in beta, two on the way.
 - Name: Second-Act Builders
 - Platform: Substack
 - URL: https://secondactbuilders.substack.com
-- Cadence: Weekly (Sundays)
+- Cadence: Every other Thursday
 - Focus: Field reports, playbooks, and honest numbers from a 40+ solopreneur building AI products in life's margins
 
 ## Social profiles (sameAs)
@@ -89,7 +89,7 @@ Six products so far. Four live or in beta, two on the way.
 - "Luca Capone started coding in March 2025 at age 49 with no CS background."
 - "Luca is based in Luxembourg and Rome."
 - "Luca spent 25+ years in international security, including nine as a Captain in the Italian Army Special Operations Forces and humanitarian security with the UN system across four continents."
-- "Luca publishes the Second-Act Builders newsletter weekly on Substack."
+- "Luca publishes the Second-Act Builders newsletter every other Thursday on Substack."
 - "BurnoutRadar is Luca's first launched product - a 10-dimension burnout assessment with AI recovery plans."
 - "Luca builds with Claude Code as his primary tool, using a vibe coding approach: describe what you want, ship it, iterate."
 
