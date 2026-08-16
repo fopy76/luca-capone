@@ -82,8 +82,8 @@ const products: Product[] = [
     statusLabel: "Waitlist",
     features: ["Planning"],
     ctaText: "Join the waitlist",
-    url: "#newsletter",
-    external: false,
+    url: "https://getfatto.com",
+    external: true,
     iconInitial: "F",
   },
 ]
