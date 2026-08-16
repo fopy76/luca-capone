@@ -56,14 +56,16 @@ Six products so far. Four live or in beta, two on the way.
 - URL: https://www.kikko.ai/
 
 ### Fatto
-- Status: Planning
-- Description: Next in the build-in-public cycle. No public URL yet.
+- Status: Waitlist
+- Category: Lifestyle (Web)
+- Description: Next in the build-in-public cycle. Landing page live, waitlist open.
+- URL: https://getfatto.com
 
 ## Now
 
 - URL: https://lucacapone.io/now
 - A now page (nownownow.com convention): a living snapshot of what Luca is building, creating, and learning right now.
-- Currently: PairHabit launched on the App Store; Kikko live on web with the iOS app next; BizarreChat in iOS beta; Fatto in planning; Second-Act Builders ships every other Thursday.
+- Currently: PairHabit launched on the App Store; Kikko live on web with the iOS app next; BizarreChat in iOS beta; Fatto waitlist open at getfatto.com; Second-Act Builders ships every other Thursday.
 - Reading: AI Demystified (Antonio Weiss) and $100M Offers (Alex Hormozi).
 - Last updated: 2026-08-16
 

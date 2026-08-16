@@ -73,7 +73,16 @@ const faqs: FAQ[] = [
         >
           MemoPod
         </a>{" "}
-        and Fatto.
+        and{" "}
+        <a
+          href="https://getfatto.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline decoration-accent decoration-2 underline-offset-2 hover:text-accent-hover"
+        >
+          Fatto
+        </a>
+        .
       </>
     ),
   },

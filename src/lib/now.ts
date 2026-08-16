@@ -70,7 +70,9 @@ export const nowBlocks: NowBlock[] = [
       {
         title: "Fatto",
         description:
-          "Next in the build-in-public cycle. Still in planning — scoping it in the open.",
+          "Next in the build-in-public cycle. The landing page is live and the waitlist is open — scoping it in the open.",
+        href: "https://getfatto.com",
+        external: true,
       },
     ],
   },

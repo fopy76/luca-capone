@@ -161,6 +161,25 @@ const productsSchema = [
       "url": SITE_URL,
     },
   },
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Fatto",
+    "applicationCategory": "LifestyleApplication",
+    "operatingSystem": "Web",
+    "description":
+      "Next in the build-in-public cycle. Landing page live, waitlist open.",
+    "url": "https://getfatto.com",
+    "offers": {
+      "@type": "Offer",
+      "category": "Waitlist",
+    },
+    "creator": {
+      "@type": "Person",
+      "name": "Luca Capone",
+      "url": SITE_URL,
+    },
+  },
 ]
 
 const faqSchema = {
