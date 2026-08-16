@@ -64,7 +64,8 @@ Six products so far. Four live or in beta, two on the way.
 - URL: https://lucacapone.io/now
 - A now page (nownownow.com convention): a living snapshot of what Luca is building, creating, and learning right now.
 - Currently: PairHabit launched on the App Store; Kikko live on web with the iOS app next; BizarreChat in iOS beta; Fatto in planning; Second-Act Builders ships weekly.
-- Last updated: 2026-08-14
+- Reading: AI Demystified (Antonio Weiss) and $100M Offers (Alex Hormozi).
+- Last updated: 2026-08-16
 
 ## Newsletter
 
