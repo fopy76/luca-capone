@@ -11,7 +11,7 @@ export type NowItem = {
 }
 
 export type NowBlock = {
-  id: "building" | "creating" | "learning" | "open-to"
+  id: "building" | "creating" | "learning" | "reading" | "open-to"
   heading: string
   items: NowItem[]
 }
@@ -22,8 +22,8 @@ export type NowTeaserItem = {
 }
 
 // ISO date: used by <time dateTime>, JSON-LD dateModified, and sitemap lastModified.
-export const nowLastUpdated = "2026-08-14"
-export const nowLastUpdatedDisplay = "August 14, 2026"
+export const nowLastUpdated = "2026-08-16"
+export const nowLastUpdatedDisplay = "August 16, 2026"
 
 // Curated one-liners for the landing-page teaser.
 export const nowTeaserItems: NowTeaserItem[] = [
@@ -112,6 +112,22 @@ export const nowBlocks: NowBlock[] = [
         title: "App Store launches",
         description:
           "ASO, review, and launch mechanics — learned live through the PairHabit release.",
+      },
+    ],
+  },
+  {
+    id: "reading",
+    heading: "Reading",
+    items: [
+      {
+        title: "AI Demystified — Antonio Weiss",
+        description:
+          "Sharpening the mental models behind the tools I use every day.",
+      },
+      {
+        title: "$100M Offers — Alex Hormozi",
+        description:
+          "How to make offers so good people feel stupid saying no. Applying it to how I package and price my products.",
       },
     ],
   },
