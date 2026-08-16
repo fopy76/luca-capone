@@ -72,7 +72,7 @@ export default function AboutSection() {
             onClick={scrollToNewsletter}
             className="inline-flex items-center gap-2 bg-accent text-on-accent font-semibold text-sm px-5 py-3 rounded-md hover:bg-accent-hover motion-safe:hover:-translate-y-0.5 transition-all duration-200 shadow-sm hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 min-h-[44px]"
           >
-            Get the weekly field report
+            Get the field report
           </button>
         </motion.div>
       </div>

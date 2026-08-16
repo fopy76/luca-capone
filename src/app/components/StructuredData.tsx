@@ -173,7 +173,7 @@ const faqSchema = {
       "acceptedAnswer": {
         "@type": "Answer",
         "text":
-          "Luca Capone is a 50-year-old non-technical founder based in Luxembourg and Rome. He spent 25+ years in international security, including nine years as a Captain in the Italian Army Special Operations Forces and humanitarian security roles with the UN system across four continents. He started coding in March 2025 and now ships AI products in the margins of a full-time job, writing the weekly Second-Act Builders newsletter on Substack.",
+          "Luca Capone is a 50-year-old non-technical founder based in Luxembourg and Rome. He spent 25+ years in international security, including nine years as a Captain in the Italian Army Special Operations Forces and humanitarian security roles with the UN system across four continents. He started coding in March 2025 and now ships AI products in the margins of a full-time job, writing the Second-Act Builders newsletter on Substack every other Thursday.",
       },
     },
     {
