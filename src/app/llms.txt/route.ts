@@ -1,4 +1,5 @@
 import { FAQS } from "@/lib/faqs"
+import { FIELD_NOTES } from "@/lib/field-notes"
 import { nowBlocks, nowLastUpdated, nowTeaserItems } from "@/lib/now"
 import {
   AGE,
@@ -50,6 +51,11 @@ function buildLlmsTxt(): string {
     (faq) => `Q: ${faq.question}\nA: ${faq.answerText}`,
   ).join("\n\n")
 
+  const fieldNoteLines = FIELD_NOTES.map(
+    (n) =>
+      `- ${n.title}\n  URL: ${SITE_URL}/field-notes/${n.slug}\n  ${n.description}`,
+  ).join("\n")
+
   return `# Luca Capone - Second-Act Builders
 
 > Luca Capone is a ${AGE}-year-old non-technical founder who started coding in March 2025 and ships AI products in life's margins. Based in Luxembourg and Rome. Publishes the Second-Act Builders newsletter every other Thursday on Substack.
@@ -84,6 +90,12 @@ ${productSections}
 - A now page (nownownow.com convention): a living snapshot of what Luca is building, creating, and learning right now.
 ${nowLines}
 - Last updated: ${nowLastUpdated}
+
+## Field notes (long-form answers)
+
+Evergreen pages answering the questions this site gets asked most. Index: ${SITE_URL}/field-notes
+
+${fieldNoteLines}
 
 ## Newsletter
 

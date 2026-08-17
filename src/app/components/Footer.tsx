@@ -122,12 +122,18 @@ export default function Footer() {
         </motion.div>
 
         <div className="mt-12 pt-8 border-t border-background/20">
-          <nav aria-label="Site" className="mb-4">
+          <nav aria-label="Site" className="mb-4 flex flex-wrap justify-center gap-x-2 gap-y-1">
             <Link
               href="/now"
               className="text-background/60 hover:text-accent text-sm font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-foreground rounded-sm px-2 py-1"
             >
               What I&apos;m doing now
+            </Link>
+            <Link
+              href="/field-notes"
+              className="text-background/60 hover:text-accent text-sm font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-foreground rounded-sm px-2 py-1"
+            >
+              Field notes
             </Link>
           </nav>
           <p className="text-background/60 text-sm">

@@ -14,6 +14,10 @@ export type Faq = {
   question: string
   answerText: string
   answerNode?: ReactNode
+  // Slug of the field note that expands this answer. Rendered by FAQSection
+  // as a "Full field note" link BELOW the answer — it is intentionally not
+  // part of answerText/answerNode, so schema parity is unaffected.
+  noteSlug?: string
 }
 
 // Card link for a product (App Store for PairHabit, website otherwise).
@@ -83,6 +87,7 @@ export const FAQS: Faq[] = [
   },
   {
     question: "Can a non-technical person really build an app with AI?",
+    noteSlug: "build-an-app-without-coding",
     answerText:
       "Yes — I'm the proof, six times over. I started in March 2025 with zero CS background and have shipped BurnoutRadar, PairHabit, and Kikko, with more on the way. AI tools like Claude Code handle the syntax; you bring the judgment, taste, and stubbornness.",
     answerNode: (
@@ -99,21 +104,25 @@ export const FAQS: Faq[] = [
   },
   {
     question: "What is vibe coding?",
+    noteSlug: "what-is-vibe-coding",
     answerText:
       "Vibe coding is building software by describing what you want in plain language and letting an AI coding tool like Claude Code write the actual code. You review, test, and steer instead of typing syntax. It's how I've shipped six products since March 2025 without a CS background.",
   },
   {
     question: `Is ${AGE} too old to learn to code or start building software?`,
+    noteSlug: "too-old-to-learn-to-code",
     answerText:
       "No. I started at 49 and shipped my first product within months. Age brings domain knowledge, judgment, and follow-through — the things AI can't supply. The syntax, which used to take years to learn, is now the easy part. Starting late is an edge, not a handicap.",
   },
   {
     question: "How long does it take to build an app with AI?",
+    noteSlug: "how-long-does-it-take-to-build-an-app-with-ai",
     answerText:
       "Weeks of evenings, not years — but not a weekend either. Working two hours on weeknights plus Saturday mornings, a real product takes me a few weeks to reach launch, and longer to polish. Anyone promising a serious app in a day is selling something.",
   },
   {
     question: "How do you find time to build with a full-time job and kids?",
+    noteSlug: "build-a-side-project-with-a-full-time-job",
     answerText:
       "Fixed windows, not stolen ones: 9 to 11 PM on weeknights, Saturday mornings when the house is quiet, and lunch breaks that aren't meetings. The margins are enough if you show up consistently — that's the whole premise of Second-Act Builders.",
   },
