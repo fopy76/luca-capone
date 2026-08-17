@@ -1,6 +1,7 @@
 // Single source of truth for the /field-notes section: slugs, titles,
 // descriptions, and dates. Consumed by the note pages, the /field-notes
-// index, sitemap.ts, the llms.txt route, and each note's Article JSON-LD.
+// index, the homepage FieldNotesSection teaser, sitemap.ts, the llms.txt
+// route, and each note's Article JSON-LD.
 // The prose itself lives in each page component; facts inside the prose
 // follow the same canon as src/lib/site.ts.
 //

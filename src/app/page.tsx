@@ -3,6 +3,7 @@ import CredibilityStrip from './components/CredibilityStrip'
 import AboutSection from './components/AboutSection'
 import PortfolioSection from './components/PortfolioSection'
 import NowSection from './components/NowSection'
+import FieldNotesSection from './components/FieldNotesSection'
 import FAQSection from './components/FAQSection'
 import NewsletterSection from './components/NewsletterSection'
 import Navigation from './components/Navigation'
@@ -20,6 +21,7 @@ export default function Home() {
         <PortfolioSection />
         <AboutSection />
         <NowSection />
+        <FieldNotesSection />
         <FAQSection />
         <NewsletterSection />
       </main>
