@@ -55,25 +55,9 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [isHome])
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      const navHeight = 64
-      const elementPosition = element.getBoundingClientRect().top
-      const offsetPosition = elementPosition + window.pageYOffset - navHeight
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      })
-
-      setIsMobileMenuOpen(false)
-    } else if (sectionId === "") {
-      window.scrollTo({ top: 0, behavior: "smooth" })
-      setIsMobileMenuOpen(false)
-    }
-  }
-
+  // Section links are plain <a href="#…"> anchors so crawlers see real,
+  // followable links; CSS `scroll-behavior: smooth` + per-section
+  // `scroll-mt-16` reproduce the old JS scrolling exactly.
   const closeMobileMenu = () => setIsMobileMenuOpen(false)
 
   const menuItemClass = (isActive: boolean, variant: "desktop" | "mobile") =>
@@ -103,14 +87,15 @@ export default function Navigation() {
     }
     if (isHome) {
       return (
-        <button
+        <a
           key={item.id}
-          onClick={() => scrollToSection(item.id)}
+          href={`#${item.id}`}
+          onClick={closeMobileMenu}
           className={menuItemClass(activeSection === item.id, variant)}
           style={variant === "mobile" ? { minHeight: "44px" } : undefined}
         >
           {item.label}
-        </button>
+        </a>
       )
     }
     return (
@@ -150,13 +135,14 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
             {isHome ? (
-              <button
-                onClick={() => scrollToSection("")}
+              <a
+                href="#hero"
+                onClick={closeMobileMenu}
                 className={logoClass}
                 aria-label="Back to top"
               >
                 {logoContent}
-              </button>
+              </a>
             ) : (
               <Link
                 href="/"
@@ -173,12 +159,12 @@ export default function Navigation() {
             <div className="flex items-center space-x-6">
               {menuItems.map((item) => renderMenuItem(item, "desktop"))}
               {isHome ? (
-                <button
-                  onClick={() => scrollToSection("newsletter")}
-                  className={desktopSubscribeClass}
+                <a
+                  href="#newsletter"
+                  className={`${desktopSubscribeClass} inline-flex items-center justify-center`}
                 >
                   Subscribe
-                </button>
+                </a>
               ) : (
                 <Link href="/#newsletter" className={desktopSubscribeClass}>
                   Subscribe
@@ -220,13 +206,14 @@ export default function Navigation() {
             <div className="px-4 py-6 space-y-2">
               {menuItems.map((item) => renderMenuItem(item, "mobile"))}
               {isHome ? (
-                <button
-                  onClick={() => scrollToSection("newsletter")}
-                  className={mobileSubscribeClass}
+                <a
+                  href="#newsletter"
+                  onClick={closeMobileMenu}
+                  className={`${mobileSubscribeClass} block text-center`}
                   style={{ minHeight: "44px" }}
                 >
                   Subscribe
-                </button>
+                </a>
               ) : (
                 <Link
                   href="/#newsletter"

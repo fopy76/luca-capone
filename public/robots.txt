@@ -48,3 +48,6 @@ Allow: /
 
 # Sitemap location
 Sitemap: https://lucacapone.io/sitemap.xml
+
+# AI-readable site summary (llmstxt.org convention)
+# llms.txt: https://lucacapone.io/llms.txt

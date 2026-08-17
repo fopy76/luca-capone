@@ -3,90 +3,7 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { ArrowRight } from "lucide-react"
-
-type ProductStatus = "launched" | "beta" | "waitlist"
-
-interface Product {
-  name: string
-  tagline: string
-  status: ProductStatus
-  statusLabel: string
-  features: string[]
-  ctaText: string
-  url: string
-  external: boolean
-  icon?: string
-  iconInitial?: string
-}
-
-const products: Product[] = [
-  {
-    name: "BurnoutRadar",
-    tagline: "10-dimension burnout assessment with AI recovery plans. $19 one-time Pro.",
-    status: "launched",
-    statusLabel: "Launched",
-    features: ["Free + Pro", "AI-powered", "Instant"],
-    ctaText: "Try it free",
-    url: "https://www.burnoutradar.com",
-    external: true,
-    icon: "/images/burnoutradar_icon.png",
-  },
-  {
-    name: "PairHabit",
-    tagline: "Couples habit tracker with shared micro-habits and reward stakes.",
-    status: "launched",
-    statusLabel: "Launched",
-    features: ["iOS", "For couples"],
-    ctaText: "Get it on the App Store",
-    url: "https://apps.apple.com/app/id6759855681",
-    external: true,
-    iconInitial: "P",
-  },
-  {
-    name: "BizarreChat",
-    tagline: "AI chat with celebrities and historical figures. Genuinely weird on purpose.",
-    status: "beta",
-    statusLabel: "Beta",
-    features: ["iOS", "AI"],
-    ctaText: "Try the beta",
-    url: "https://www.bizarrechat.app",
-    external: true,
-    icon: "/images/bizarrechat_icon.png",
-  },
-  {
-    name: "MemoPod",
-    tagline: "Family memory preservation: voice, photo, video, text.",
-    status: "waitlist",
-    statusLabel: "Waitlist",
-    features: ["Family"],
-    ctaText: "See what's coming",
-    url: "https://www.memopod.app/",
-    external: true,
-    iconInitial: "M",
-  },
-  {
-    name: "Kikko",
-    tagline: "AI parenting assistant for schedules and school communication. iOS app in the works.",
-    status: "launched",
-    statusLabel: "Live on Web",
-    features: ["Web", "Family"],
-    ctaText: "Try Kikko",
-    url: "https://www.kikko.ai/",
-    external: true,
-    icon: "/images/kikko_icon.png",
-  },
-  {
-    name: "Fatto",
-    tagline: "Coming soon. Next in line for the build-in-public cycle.",
-    status: "waitlist",
-    statusLabel: "Waitlist",
-    features: ["Planning"],
-    ctaText: "Join the waitlist",
-    url: "https://getfatto.com",
-    external: true,
-    iconInitial: "F",
-  },
-]
+import { PRODUCTS, type Product, type ProductStatus } from "@/lib/site"
 
 const statusBadgeClass: Record<ProductStatus, string> = {
   launched: "bg-[#DCFCE7] text-[#166534]",
@@ -162,41 +79,28 @@ export default function PortfolioSection() {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {products.map((product, index) => {
-            const linkClass =
-              "group block h-full flex flex-col bg-card border border-border rounded-lg p-6 shadow-sm transition-all duration-200 motion-safe:hover:-translate-y-1 hover:shadow-md hover:border-border-strong focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
-
-            return (
-              <motion.div
-                key={product.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.08 }}
-                className="h-full"
+          {PRODUCTS.map((product, index) => (
+            <motion.div
+              key={product.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.08 }}
+              className="h-full"
+            >
+              <a
+                href={product.cardUrl ?? product.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block h-full flex flex-col bg-card border border-border rounded-lg p-6 shadow-sm transition-all duration-200 motion-safe:hover:-translate-y-1 hover:shadow-md hover:border-border-strong focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+                aria-label={`${product.name}: ${product.ctaText}`}
               >
-                {product.external ? (
-                  <a
-                    href={product.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={linkClass}
-                    aria-label={`${product.name}: ${product.ctaText}`}
-                  >
-                    <ProductCardInner product={product} />
-                  </a>
-                ) : (
-                  <a
-                    href={product.url}
-                    className={linkClass}
-                    aria-label={`${product.name}: ${product.ctaText}`}
-                  >
-                    <ProductCardInner product={product} />
-                  </a>
-                )}
-              </motion.div>
-            )
-          })}
+                <article className="contents">
+                  <ProductCardInner product={product} />
+                </article>
+              </a>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

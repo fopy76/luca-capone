@@ -1,21 +1,17 @@
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
+import { defineConfig } from "eslint/config";
+import nextCoreWebVitals from "eslint-config-next/core-web-vitals";
+import nextTypescript from "eslint-config-next/typescript";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
-
-const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
+// eslint-config-next v16 ships native flat configs; the previous FlatCompat
+// bridge crashed under ESLint 9 (and `next lint` was removed in Next 16).
+const eslintConfig = defineConfig([
+  ...nextCoreWebVitals,
+  ...nextTypescript,
   {
     rules: {
-      "react/no-unescaped-entities": "off"
-    }
-  }
-];
+      "react/no-unescaped-entities": "off",
+    },
+  },
+]);
 
 export default eslintConfig;

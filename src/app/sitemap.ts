@@ -1,8 +1,9 @@
 import { MetadataRoute } from 'next'
 import { nowLastUpdated } from '@/lib/now'
+import { SITE_URL } from '@/lib/site'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://lucacapone.io'
+  const baseUrl = SITE_URL
 
   return [
     {

@@ -7,7 +7,11 @@ import { nowTeaserItems, nowLastUpdated, nowLastUpdatedDisplay } from "@/lib/now
 
 export default function NowSection() {
   return (
-    <section className="py-20 bg-bg-subtle border-t border-border">
+    <section
+      id="now"
+      aria-labelledby="now-heading"
+      className="py-20 bg-bg-subtle border-t border-border scroll-mt-16"
+    >
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -15,7 +19,10 @@ export default function NowSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="font-grotesk text-3xl md:text-5xl font-bold text-center mb-4 text-text tracking-tight">
+          <h2
+            id="now-heading"
+            className="font-grotesk text-3xl md:text-5xl font-bold text-center mb-4 text-text tracking-tight"
+          >
             What I&apos;m doing now
           </h2>
           <p className="text-base md:text-lg text-text-secondary text-center mb-12 max-w-xl mx-auto">
