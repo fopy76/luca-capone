@@ -14,6 +14,7 @@ const menuItems: MenuItem[] = [
   { kind: "section", label: "Products", id: "products" },
   { kind: "section", label: "My Story", id: "my-story" },
   { kind: "route", label: "Now", href: "/now" },
+  { kind: "route", label: "Field Notes", href: "/field-notes" },
   { kind: "section", label: "FAQ", id: "faq" },
   { kind: "section", label: "Newsletter", id: "newsletter" },
 ]
@@ -78,7 +79,10 @@ export default function Navigation() {
           key={item.href}
           href={item.href}
           onClick={closeMobileMenu}
-          className={menuItemClass(pathname === item.href, variant)}
+          className={menuItemClass(
+            pathname === item.href || pathname.startsWith(`${item.href}/`),
+            variant,
+          )}
           style={variant === "mobile" ? { minHeight: "44px" } : undefined}
         >
           {item.label}

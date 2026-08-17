@@ -19,8 +19,9 @@ branding, copy, or specs from it. The live site is the truth.
 - Next.js 16 (App Router, Turbopack) · React 19 · TypeScript · Tailwind CSS 4
 - framer-motion (below-fold reveals), lucide-react, @vercel/analytics
 - Design: Space Grotesk headings, system-ui body, accent yellow `#FACF39`, ink `#1A1A1A`
-- Deployed on Vercel. Routes: `/` and `/now` only (plus generated
-  `/sitemap.xml`, `/robots.txt`, `/llms.txt`, `/manifest.webmanifest`, OG images).
+- Deployed on Vercel. Routes: `/`, `/now`, `/field-notes` + 5 evergreen note
+  pages (plus generated `/sitemap.xml`, `/robots.txt`, `/llms.txt`,
+  `/manifest.webmanifest`, OG images).
 
 ## Source-of-truth rule (important)
 
@@ -33,6 +34,10 @@ branding, copy, or specs from it. The live site is the truth.
   JSON-LD and `/llms.txt`; `answerNode` (JSX with links) feeds the visible accordion.
   **They must read identically.**
 - `src/lib/now.ts` — the /now snapshot (bump `nowLastUpdated` on every edit).
+- `src/lib/field-notes.ts` — /field-notes registry (slugs, titles, descriptions,
+  dates; bump `dateModified` when a note's prose changes). Note prose lives in
+  `src/app/field-notes/<slug>/page.tsx`; facts in prose follow site.ts canon.
+  Voice: first person, concrete, anti-guru — never generic AI-sounding filler.
 
 Consumers: page components, `GlobalSchema.tsx` (Person + WebSite, site-wide),
 `HomeSchema.tsx` (ProfilePage + FAQPage + products + newsletter, homepage only),

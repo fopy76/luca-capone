@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import Link from "next/link"
 import { FAQS } from "@/lib/faqs"
 
 // FAQ content lives in src/lib/faqs.tsx (single source of truth shared with
@@ -39,7 +40,17 @@ export default function FAQSection() {
                     </span>
                   </summary>
                   <div className="px-5 pb-5 -mt-1 text-[17px] text-text-secondary leading-[1.7]">
-                    {faq.answerNode ?? faq.answerText}
+                    <div>{faq.answerNode ?? faq.answerText}</div>
+                    {faq.noteSlug && (
+                      <p className="mt-3 text-sm font-medium">
+                        <Link
+                          href={`/field-notes/${faq.noteSlug}`}
+                          className="text-text underline decoration-accent decoration-2 underline-offset-2 hover:text-accent-hover"
+                        >
+                          Full field note →
+                        </Link>
+                      </p>
+                    )}
                   </div>
                 </details>
               </li>
