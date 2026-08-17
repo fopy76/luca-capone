@@ -7,8 +7,7 @@ import {
   nowLastUpdated,
   nowLastUpdatedDisplay,
 } from "@/lib/now"
-
-const SITE_URL = "https://lucacapone.io"
+import { PERSON_ID, SITE_URL, TWITTER_HANDLE, WEBSITE_ID } from "@/lib/site"
 
 export const metadata: Metadata = {
   title: "Now",
@@ -25,14 +24,26 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: `${SITE_URL}/now`,
-    title: "Now | Luca Capone",
+    title: "What Luca Capone is doing now",
     description:
       "What Luca Capone is building, creating, and learning right now.",
+  },
+  // Explicit twitter block so /now gets its own card (title + per-route
+  // twitter-image) instead of inheriting the homepage's wholesale.
+  twitter: {
+    card: "summary_large_image",
+    title: "What Luca Capone is doing now",
+    description:
+      "What Luca Capone is building, creating, and learning right now.",
+    site: TWITTER_HANDLE,
+    creator: TWITTER_HANDLE,
   },
 }
 
 // ProfilePage schema for /now: gives search engines and AI crawlers an
 // explicit freshness signal (dateModified) tied to the content file.
+// mainEntity/isPartOf reference the canonical Person and WebSite nodes
+// emitted site-wide by GlobalSchema.
 const nowPageSchema = {
   "@context": "https://schema.org",
   "@type": "ProfilePage",
@@ -41,16 +52,8 @@ const nowPageSchema = {
   "dateModified": nowLastUpdated,
   "description":
     "A living snapshot of what Luca Capone is building, creating, and learning right now.",
-  "mainEntity": {
-    "@type": "Person",
-    "name": "Luca Capone",
-    "url": SITE_URL,
-  },
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Luca Capone",
-    "url": SITE_URL,
-  },
+  "mainEntity": { "@id": PERSON_ID },
+  "isPartOf": { "@id": WEBSITE_ID },
 }
 
 export default function NowPage() {
@@ -65,7 +68,7 @@ export default function NowPage() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
           <header className="mb-14">
             <h1 className="font-grotesk text-4xl md:text-5xl font-bold text-text tracking-tight mb-4">
-              Now
+              What I&apos;m doing now
             </h1>
             <p className="text-sm font-medium text-text-muted mb-6">
               Updated <time dateTime={nowLastUpdated}>{nowLastUpdatedDisplay}</time>{" "}

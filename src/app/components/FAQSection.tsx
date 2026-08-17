@@ -1,113 +1,10 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { FAQS } from "@/lib/faqs"
 
-type FAQ = {
-  question: string
-  answer: React.ReactNode
-}
-
-const faqs: FAQ[] = [
-  {
-    question: "Who is Luca Capone?",
-    answer: (
-      <>
-        I&apos;m a 50-year-old non-technical founder based in Luxembourg and Rome. 25+ years in international security, nine of them as a Captain in the Italian Army Special Operations Forces (Bosnia, Iraq, Afghanistan), then humanitarian security with the UN system across another ten countries. These days I run security programs for a European institution and ship AI products in life&apos;s margins. I write the Second-Act Builders newsletter on Substack, every other Thursday.
-      </>
-    ),
-  },
-  {
-    question: "What does Second-Act Builders mean?",
-    answer: (
-      <>
-        It&apos;s about 40+ professionals building AI products alongside full-time careers and families. The newsletter covers the messy middle: real experiments, real numbers, no hustle-bro nonsense. Free forever.
-      </>
-    ),
-  },
-  {
-    question: "What products have you shipped?",
-    answer: (
-      <>
-        Six products so far. Launched:{" "}
-        <a
-          href="https://www.burnoutradar.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline decoration-accent decoration-2 underline-offset-2 hover:text-accent-hover"
-        >
-          BurnoutRadar
-        </a>{" "}
-        (10-dimension burnout assessment with AI recovery plans) and{" "}
-        <a
-          href="https://apps.apple.com/app/id6759855681"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline decoration-accent decoration-2 underline-offset-2 hover:text-accent-hover"
-        >
-          PairHabit
-        </a>{" "}
-        (couples habit tracker). Live on web:{" "}
-        <a
-          href="https://www.kikko.ai/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline decoration-accent decoration-2 underline-offset-2 hover:text-accent-hover"
-        >
-          Kikko
-        </a>{" "}
-        (AI parenting assistant, iOS app in the works). In beta:{" "}
-        <a
-          href="https://www.bizarrechat.app"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline decoration-accent decoration-2 underline-offset-2 hover:text-accent-hover"
-        >
-          BizarreChat
-        </a>{" "}
-        (AI chat with celebrities and historical figures). On the waitlist:{" "}
-        <a
-          href="https://www.memopod.app/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline decoration-accent decoration-2 underline-offset-2 hover:text-accent-hover"
-        >
-          MemoPod
-        </a>{" "}
-        and{" "}
-        <a
-          href="https://getfatto.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline decoration-accent decoration-2 underline-offset-2 hover:text-accent-hover"
-        >
-          Fatto
-        </a>
-        .
-      </>
-    ),
-  },
-  {
-    question: "When did you start coding?",
-    answer: (
-      <>
-        March 2025, at 49, with zero CS background. I opened Cursor for the first time because AI had finally made it possible for a non-technical person to ship real software.
-      </>
-    ),
-  },
-  {
-    question: "What tools do you use to build?",
-    answer: (
-      <>
-        Claude Code is my primary tool; Cursor shows up occasionally. For web: Next.js, Supabase, Vercel. For mobile: React Native for current apps, Swift/SwiftUI for new iOS-native builds. Stripe for payments. The approach is vibe coding: describe what you want, ship it, iterate.
-      </>
-    ),
-  },
-  {
-    question: "Where are you based?",
-    answer: <>Luxembourg and Rome.</>,
-  },
-]
-
+// FAQ content lives in src/lib/faqs.tsx (single source of truth shared with
+// the FAQPage JSON-LD in HomeSchema and the /llms.txt route).
 export default function FAQSection() {
   return (
     <section
@@ -129,8 +26,8 @@ export default function FAQSection() {
           </p>
 
           <ul className="space-y-3">
-            {faqs.map((faq, index) => (
-              <li key={index}>
+            {FAQS.map((faq) => (
+              <li key={faq.question}>
                 <details className="group bg-card border border-border rounded-lg overflow-hidden transition-colors hover:border-border-strong">
                   <summary className="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer list-none font-grotesk font-bold text-base md:text-lg text-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-inset">
                     <span>{faq.question}</span>
@@ -142,7 +39,7 @@ export default function FAQSection() {
                     </span>
                   </summary>
                   <div className="px-5 pb-5 -mt-1 text-[17px] text-text-secondary leading-[1.7]">
-                    {faq.answer}
+                    {faq.answerNode ?? faq.answerText}
                   </div>
                 </details>
               </li>

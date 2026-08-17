@@ -1,3 +1,5 @@
+import { AGE, NEWSLETTER } from "@/lib/site"
+
 export default function NewsletterSection() {
   return (
     <section
@@ -9,7 +11,8 @@ export default function NewsletterSection() {
           Second-Act Builders, every other Thursday.
         </h2>
         <p className="text-base md:text-lg text-text-secondary mb-10 max-w-xl mx-auto leading-relaxed">
-          The messy middle of building AI products at 50. Real experiments, real numbers, no hustle-bro nonsense. Free forever.
+          The messy middle of building AI products at {AGE}. Real experiments,
+          real numbers, no hustle-bro nonsense. Free forever.
         </p>
 
         <div className="max-w-md mx-auto bg-background border border-border-strong rounded-lg shadow-sm p-4">
@@ -26,6 +29,20 @@ export default function NewsletterSection() {
             title="Subscribe to Second-Act Builders"
           />
         </div>
+
+        {/* Crawlable fallback: the iframe is invisible to non-JS crawlers. */}
+        <p className="text-sm text-text-secondary mt-4">
+          Or subscribe directly on{" "}
+          <a
+            href={NEWSLETTER.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline decoration-accent decoration-2 underline-offset-2 hover:text-accent-hover"
+          >
+            Substack
+          </a>
+          .
+        </p>
 
         <p className="text-sm text-text-muted mt-6">
           Field report every other Thursday. No spam. Unsubscribe in one click.

@@ -1,10 +1,6 @@
-export default function CredibilityStrip() {
-  const items = [
-    "Building since March 2025",
-    "2 launched, 1 in beta",
-    "Shared openly on X, LinkedIn, Substack",
-  ]
+import { CREDIBILITY_ITEMS } from "@/lib/site"
 
+export default function CredibilityStrip() {
   return (
     <section
       aria-label="Credibility"
@@ -12,10 +8,10 @@ export default function CredibilityStrip() {
     >
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <ul className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-8 text-sm text-center">
-          {items.map((item, i) => (
+          {CREDIBILITY_ITEMS.map((item, i) => (
             <li key={item} className="flex items-center gap-2 sm:gap-8">
               <span>{item}</span>
-              {i < items.length - 1 && (
+              {i < CREDIBILITY_ITEMS.length - 1 && (
                 <span aria-hidden="true" className="hidden sm:inline text-border-strong">
                   ·
                 </span>

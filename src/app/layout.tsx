@@ -1,7 +1,16 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Space_Grotesk } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
-import StructuredData from "./components/StructuredData";
+import GlobalSchema from "./components/GlobalSchema";
+import {
+  KEYWORDS,
+  PERSON,
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_TITLE,
+  SITE_URL,
+  TWITTER_HANDLE,
+} from "@/lib/site";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -11,38 +20,17 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap",
 });
 
-const siteDescription =
-  "I'm Luca, 50. Building AI products in life's margins with no CS background. Field reports, playbooks, and honest numbers for 40+ professionals.";
-
 export const metadata: Metadata = {
-  metadataBase: new URL('https://lucacapone.io'),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "Luca Capone - Second-Act Builders",
+    default: SITE_TITLE,
     template: "%s | Luca Capone"
   },
-  description: siteDescription,
-  keywords: [
-    "Second-Act Builders",
-    "Second-Act Builders newsletter",
-    "AI builder",
-    "non-technical founder",
-    "AI products",
-    "vibe coding",
-    "second-act career",
-    "building with AI",
-    "Claude Code",
-    "Gen X founder",
-    "solopreneur AI",
-    "BurnoutRadar",
-    "PairHabit",
-    "BizarreChat",
-    "MemoPod",
-    "Kikko",
-    "Fatto",
-  ],
-  authors: [{ name: "Luca Capone", url: "https://lucacapone.io" }],
-  creator: "Luca Capone",
-  publisher: "Luca Capone",
+  description: SITE_DESCRIPTION,
+  keywords: KEYWORDS,
+  authors: [{ name: PERSON.name, url: SITE_URL }],
+  creator: PERSON.name,
+  publisher: PERSON.name,
   robots: {
     index: true,
     follow: true,
@@ -68,39 +56,36 @@ export const metadata: Metadata = {
       { url: '/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' },
     ],
   },
-  manifest: '/site.webmanifest',
+  // OG/Twitter images intentionally omitted: the file-convention
+  // opengraph-image.tsx files supply per-route, cache-busted image URLs.
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://lucacapone.io",
-    siteName: "Luca Capone - Second-Act Builders",
-    title: "Luca Capone - Second-Act Builders",
-    description: siteDescription,
-    images: [
-      {
-        url: "/opengraph-image",
-        width: 1200,
-        height: 630,
-        alt: "Luca Capone - Second-Act Builders",
-      },
-    ],
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Luca Capone - Second-Act Builders",
-    description: siteDescription,
-    creator: "@LucaCaponeX",
-    images: ["/opengraph-image"],
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    site: TWITTER_HANDLE,
+    creator: TWITTER_HANDLE,
   },
   alternates: {
-    canonical: "https://lucacapone.io",
+    canonical: SITE_URL,
   },
   category: "technology",
+  other: {
+    "msapplication-TileColor": "#FACF39",
+  },
 };
 
-export const viewport = {
+export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  themeColor: "#FACF39",
 };
 
 export default function RootLayout({
@@ -111,11 +96,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="light">
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <meta name="msapplication-TileColor" content="#FACF39" />
-        <meta name="theme-color" content="#FACF39" />
-        <StructuredData />
+        <GlobalSchema />
       </head>
       <body className={`${spaceGrotesk.variable} font-sans antialiased`}>
         {children}
