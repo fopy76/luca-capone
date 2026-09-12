@@ -1,4 +1,4 @@
-// Homepage-only JSON-LD: ProfilePage, FAQPage, the six products, and the
+// Homepage-only JSON-LD: ProfilePage, FAQPage, the products, and the
 // newsletter. Rendered from src/app/page.tsx so this markup appears ONLY where
 // the matching content is visible (Google requires FAQ markup to match
 // on-page content; /now must not carry it).

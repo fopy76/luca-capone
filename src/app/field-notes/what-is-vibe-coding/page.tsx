@@ -36,7 +36,7 @@ export default function Page() {
         language and letting an AI coding tool, Claude Code in my case, write
         the actual code. You review, test, and steer instead of typing syntax.
         Andrej Karpathy gave the practice its name in early 2025, half as a
-        joke. The joke part didn't last: it's how I've shipped six products
+        joke. The joke part didn't last: it's how I've shipped seven products
         since March 2025 without a CS background.
       </Lede>
 

@@ -13,7 +13,7 @@ export const AGE = 50
 
 export const SITE_NAME = "Luca Capone - Second-Act Builders"
 export const SITE_TITLE = `Luca Capone — Non-Technical Founder Building AI Products at ${AGE}`
-export const SITE_DESCRIPTION = `I'm Luca, ${AGE}. Non-technical founder vibe coding AI products in life's margins. Six products, honest numbers, built in public. Field report every other Thursday.`
+export const SITE_DESCRIPTION = `I'm Luca, ${AGE}. Non-technical founder vibe coding AI products in life's margins. Seven products, honest numbers, built in public. Field report every other Thursday.`
 
 export const TWITTER_HANDLE = "@LucaCaponeX"
 export const EMAIL = "hello@lucacapone.io"
@@ -44,6 +44,7 @@ export const KEYWORDS = [
   `started coding at ${AGE}`,
   "build an app without coding",
   "AI side projects",
+  "Starvling",
   "BurnoutRadar",
   "PairHabit",
   "BizarreChat",
@@ -61,7 +62,7 @@ export const PERSON = {
   imagePath: "/images/luca-profile.jpg",
   nationality: "Italy",
   knowsLanguage: ["it", "en"],
-  description: `Luca Capone is a ${AGE}-year-old non-technical founder who started coding in March 2025 and ships AI products in life's margins. Creator of BurnoutRadar, PairHabit, Kikko, and BizarreChat, with MemoPod and Fatto in the pipeline. Based in Luxembourg and Rome.`,
+  description: `Luca Capone is a ${AGE}-year-old non-technical founder who started coding in March 2025 and ships AI products in life's margins. Creator of Starvling, BurnoutRadar, PairHabit, Kikko, and BizarreChat, with MemoPod and Fatto in the pipeline. Based in Luxembourg and Rome.`,
   // Distinguishes this Luca Capone from unrelated academics with the same name.
   disambiguatingDescription:
     "Italian non-technical founder and second-act builder — former Italian Army Special Operations captain and UN humanitarian security professional who started coding in March 2025 at 49 and builds AI products with Claude Code.",
@@ -120,6 +121,21 @@ export type Product = {
 }
 
 export const PRODUCTS: Product[] = [
+  {
+    name: "Starvling",
+    tagline:
+      "A launch directory where every product is a pixel creature kept alive by real people's daily feeds — or it starves into a public graveyard. Rank can't be bought.",
+    status: "launched",
+    statusLabel: "Launched",
+    features: ["Web", "For makers"],
+    ctaText: "See who's still alive",
+    url: "https://starvling.com",
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web",
+    offerCategory: "Free",
+    llmsCategory: "Launch directory (Web)",
+    iconInitial: "S",
+  },
   {
     name: "BurnoutRadar",
     tagline:
@@ -185,7 +201,7 @@ export const PRODUCTS: Product[] = [
   {
     name: "Kikko",
     tagline:
-      "AI parenting assistant for schedules and school communication. iOS app in the works.",
+      "AI family assistant for schedules and school communication. iOS app approved — App Store release coming soon.",
     status: "launched",
     statusLabel: "Live on Web",
     features: ["Web", "Family"],
@@ -194,7 +210,7 @@ export const PRODUCTS: Product[] = [
     applicationCategory: "LifestyleApplication",
     operatingSystem: "Web",
     offerCategory: "Web App",
-    llmsCategory: "Lifestyle (Web; iOS in development)",
+    llmsCategory: "Lifestyle (Web; iOS approved, release pending)",
     icon: "/images/kikko_icon.png",
   },
   {
@@ -218,10 +234,15 @@ const launchedCount = PRODUCTS.filter((p) => p.status === "launched").length
 const betaCount = PRODUCTS.filter((p) => p.status === "beta").length
 const waitlistCount = PRODUCTS.filter((p) => p.status === "waitlist").length
 
-// "Six products: three launched, one in beta, two on the way." — derived so
-// the counts can never disagree with the PRODUCTS list above.
-const countWords = ["zero", "one", "two", "three", "four", "five", "six"]
-export const PRODUCT_SUMMARY = `Six products: ${countWords[launchedCount]} launched, ${countWords[betaCount]} in beta, ${countWords[waitlistCount]} on the way.`
+// "Seven products: four launched, one in beta, two on the way." — the total
+// and the per-status counts are all derived so they can never disagree with
+// the PRODUCTS list above.
+const countWords = [
+  "zero", "one", "two", "three", "four", "five", "six", "seven", "eight",
+  "nine", "ten",
+]
+const totalWord = countWords[PRODUCTS.length] ?? String(PRODUCTS.length)
+export const PRODUCT_SUMMARY = `${totalWord.charAt(0).toUpperCase()}${totalWord.slice(1)} products: ${countWords[launchedCount]} launched, ${countWords[betaCount]} in beta, ${countWords[waitlistCount]} on the way.`
 
 export const CREDIBILITY_ITEMS = [
   "Building since March 2025",

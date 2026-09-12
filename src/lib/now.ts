@@ -22,14 +22,14 @@ export type NowTeaserItem = {
 }
 
 // ISO date: used by <time dateTime>, JSON-LD dateModified, and sitemap lastModified.
-export const nowLastUpdated = "2026-08-16"
-export const nowLastUpdatedDisplay = "August 16, 2026"
+export const nowLastUpdated = "2026-09-12"
+export const nowLastUpdatedDisplay = "September 12, 2026"
 
 // Curated one-liners for the landing-page teaser.
 export const nowTeaserItems: NowTeaserItem[] = [
   {
     label: "Shipping",
-    text: "PairHabit just launched on the App Store — Kikko is live on web, iOS up next.",
+    text: "Starvling just launched — and Kikko's iOS app cleared App Store review.",
   },
   {
     label: "Writing",
@@ -47,24 +47,24 @@ export const nowBlocks: NowBlock[] = [
     heading: "Building",
     items: [
       {
+        title: "Starvling",
+        description:
+          "Just launched (September 8). A launch directory where every listed product is a pixel creature that loses HP around the clock — only free daily feeds from real people keep it alive, and the ones that starve end up in a public graveyard. Rank can't be bought. Watching the first launches live and die in real time.",
+        href: "https://starvling.com",
+        external: true,
+      },
+      {
         title: "PairHabit",
         description:
-          "Just launched on the App Store. A couples habit tracker with shared micro-habits and reward stakes. Now iterating on onboarding and first-week retention with the first couples.",
+          "On the App Store. A couples habit tracker with shared micro-habits and reward stakes. Iterating with the first couples and shipping a weekly blog on the science of habits for two.",
         href: "https://apps.apple.com/app/id6759855681",
         external: true,
       },
       {
         title: "Kikko",
         description:
-          "AI parenting assistant for schedules and school communication. Live on web — the iOS app is next on the build list.",
+          "AI family assistant for schedules and school communication. Live on web — and the iOS app just cleared App Store review. Releasing soon.",
         href: "https://www.kikko.ai/",
-        external: true,
-      },
-      {
-        title: "BizarreChat",
-        description:
-          "AI chat with celebrities and historical figures, genuinely weird on purpose. In iOS beta, pushing toward public launch.",
-        href: "https://www.bizarrechat.app",
         external: true,
       },
       {
@@ -94,6 +94,12 @@ export const nowBlocks: NowBlock[] = [
         href: "https://x.com/LucaCaponeX",
         external: true,
       },
+      {
+        title: "Field Notes",
+        description:
+          "Evergreen notes on this site answering the questions second-act builders actually search for.",
+        href: "/field-notes",
+      },
     ],
   },
   {
@@ -108,12 +114,12 @@ export const nowBlocks: NowBlock[] = [
       {
         title: "Swift and SwiftUI",
         description:
-          "Moving new iOS builds native after shipping the first apps with React Native. The Kikko iOS app is the proving ground.",
+          "Moving new iOS builds native after shipping the first apps with React Native. The Kikko iOS app — just through App Store review — was the proving ground.",
       },
       {
-        title: "App Store launches",
+        title: "Launch mechanics",
         description:
-          "ASO, review, and launch mechanics — learned live through the PairHabit release.",
+          "ASO, review, and launch-day dynamics — learned live through the PairHabit App Store release and the Starvling launch.",
       },
     ],
   },
@@ -149,9 +155,9 @@ export const nowBlocks: NowBlock[] = [
           "Happy to talk about non-technical founders shipping real software with AI.",
       },
       {
-        title: "PairHabit and Kikko feedback",
+        title: "Product feedback",
         description:
-          "Using them? Tell me what's broken and what's working.",
+          "Using PairHabit, Kikko, or Starvling? Tell me what's broken and what's working.",
       },
     ],
   },

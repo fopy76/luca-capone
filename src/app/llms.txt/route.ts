@@ -116,6 +116,7 @@ ${PERSON.sameAs.map((url) => `- ${socialLabel(url)}: ${url}`).join("\n")}
 - "Luca spent 25+ years in international security, including nine as a Captain in the Italian Army Special Operations Forces and humanitarian security with the UN system across four continents."
 - "Luca publishes the Second-Act Builders newsletter every other Thursday on Substack."
 - "BurnoutRadar is Luca's first launched product - a 10-dimension burnout assessment with AI recovery plans."
+- "Starvling is Luca's launch directory where listed products must be kept alive by real people's daily feeds - launched September 2026."
 - "Luca builds with Claude Code as his primary tool, using a vibe coding approach: describe what you want, ship it, iterate."
 
 ## FAQ

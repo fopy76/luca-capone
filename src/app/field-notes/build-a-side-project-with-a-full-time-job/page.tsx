@@ -34,7 +34,7 @@ export default function Page() {
       <Lede>
         Fixed windows, not stolen hours. That's the whole system. I build from
         9 to 11 PM on weeknights, on Saturday mornings when the house is quiet,
-        and on lunch breaks that aren't meetings. Six products have come out of
+        and on lunch breaks that aren't meetings. Seven products have come out of
         those margins, alongside a full-time job in security and two kids.
         Nothing about it requires waking up at 5 AM or believing in yourself
         harder.
@@ -54,8 +54,8 @@ export default function Page() {
       <P>
         The windows yield around 13 hours a week. So I build small products
         that can reach users in weeks — a burnout assessment, a couples habit
-        tracker, a parenting assistant — instead of one grand platform that
-        would still be a prototype two years in. Six small shipped things beat
+        tracker, a family assistant — instead of one grand platform that
+        would still be a prototype two years in. Seven small shipped things beat
         one big unshipped thing: users, feedback, momentum, proof. If you want
         the actual timelines, they're in{" "}
         <NoteLink href="/field-notes/how-long-does-it-take-to-build-an-app-with-ai">

@@ -52,16 +52,18 @@ export const FAQS: Faq[] = [
   {
     question: "What products have you shipped?",
     answerText:
-      "Six products so far. Launched: BurnoutRadar (10-dimension burnout assessment with AI recovery plans) and PairHabit (couples habit tracker). Live on web: Kikko (AI parenting assistant, iOS app in the works). In beta: BizarreChat (AI chat with celebrities and historical figures). On the waitlist: MemoPod (family memory preservation) and Fatto (next in the build-in-public cycle).",
+      "Seven products so far. Launched: BurnoutRadar (10-dimension burnout assessment with AI recovery plans), PairHabit (couples habit tracker), and Starvling (launch directory where products die without daily feeds). Live on web: Kikko (AI family assistant, iOS app approved and coming soon). In beta: BizarreChat (AI chat with celebrities and historical figures). On the waitlist: MemoPod (family memory preservation) and Fatto (next in the build-in-public cycle).",
     answerNode: (
       <>
-        {"Six products so far. Launched: "}
+        {"Seven products so far. Launched: "}
         <FaqLink href={productHref("BurnoutRadar")}>BurnoutRadar</FaqLink>
-        {" (10-dimension burnout assessment with AI recovery plans) and "}
+        {" (10-dimension burnout assessment with AI recovery plans), "}
         <FaqLink href={productHref("PairHabit")}>PairHabit</FaqLink>
-        {" (couples habit tracker). Live on web: "}
+        {" (couples habit tracker), and "}
+        <FaqLink href={productHref("Starvling")}>Starvling</FaqLink>
+        {" (launch directory where products die without daily feeds). Live on web: "}
         <FaqLink href={productHref("Kikko")}>Kikko</FaqLink>
-        {" (AI parenting assistant, iOS app in the works). In beta: "}
+        {" (AI family assistant, iOS app approved and coming soon). In beta: "}
         <FaqLink href={productHref("BizarreChat")}>BizarreChat</FaqLink>
         {" (AI chat with celebrities and historical figures). On the waitlist: "}
         <FaqLink href={productHref("MemoPod")}>MemoPod</FaqLink>
@@ -89,10 +91,10 @@ export const FAQS: Faq[] = [
     question: "Can a non-technical person really build an app with AI?",
     noteSlug: "build-an-app-without-coding",
     answerText:
-      "Yes — I'm the proof, six times over. I started in March 2025 with zero CS background and have shipped BurnoutRadar, PairHabit, and Kikko, with more on the way. AI tools like Claude Code handle the syntax; you bring the judgment, taste, and stubbornness.",
+      "Yes — I'm the proof, seven times over. I started in March 2025 with zero CS background and have shipped BurnoutRadar, PairHabit, and Kikko, with more on the way. AI tools like Claude Code handle the syntax; you bring the judgment, taste, and stubbornness.",
     answerNode: (
       <>
-        {"Yes — I'm the proof, six times over. I started in March 2025 with zero CS background and have shipped "}
+        {"Yes — I'm the proof, seven times over. I started in March 2025 with zero CS background and have shipped "}
         <FaqLink href={productHref("BurnoutRadar")}>BurnoutRadar</FaqLink>
         {", "}
         <FaqLink href={productHref("PairHabit")}>PairHabit</FaqLink>
@@ -106,7 +108,7 @@ export const FAQS: Faq[] = [
     question: "What is vibe coding?",
     noteSlug: "what-is-vibe-coding",
     answerText:
-      "Vibe coding is building software by describing what you want in plain language and letting an AI coding tool like Claude Code write the actual code. You review, test, and steer instead of typing syntax. It's how I've shipped six products since March 2025 without a CS background.",
+      "Vibe coding is building software by describing what you want in plain language and letting an AI coding tool like Claude Code write the actual code. You review, test, and steer instead of typing syntax. It's how I've shipped seven products since March 2025 without a CS background.",
   },
   {
     question: `Is ${AGE} too old to learn to code or start building software?`,
