@@ -90,7 +90,7 @@ export default function Page() {
         <NoteLink href="/field-notes/build-a-side-project-with-a-full-time-job">
           how to build a side project with a full-time job
         </NoteLink>
-        . Six products came out of those two-hour windows. The margins are
+        . Seven products came out of those two-hour windows. The margins are
         enough.
       </P>
     </NoteLayout>

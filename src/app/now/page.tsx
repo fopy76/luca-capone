@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     "what Luca Capone is doing now",
     "building AI products",
     "second-act builder",
+    "Starvling",
     "PairHabit",
     "Kikko",
   ],

@@ -26,10 +26,10 @@ export const FIELD_NOTES: FieldNote[] = [
     slug: "build-an-app-without-coding",
     title: "Can a non-technical person really build an app with AI?",
     description:
-      "A straight answer from someone doing it: six products shipped since March 2025 with zero CS background. What AI actually handles, what stays on your plate, and how to start.",
+      "A straight answer from someone doing it: seven products shipped since March 2025 with zero CS background. What AI actually handles, what stays on your plate, and how to start.",
     datePublished: "2026-08-17",
-    dateModified: "2026-08-17",
-    dateModifiedDisplay: "August 17, 2026",
+    dateModified: "2026-09-12",
+    dateModifiedDisplay: "September 12, 2026",
   },
   {
     slug: "what-is-vibe-coding",
@@ -37,8 +37,8 @@ export const FIELD_NOTES: FieldNote[] = [
     description:
       "Vibe coding explained by someone who ships with it every night: the loop, the tools, what it is not, and where it breaks.",
     datePublished: "2026-08-17",
-    dateModified: "2026-08-17",
-    dateModifiedDisplay: "August 17, 2026",
+    dateModified: "2026-09-12",
+    dateModifiedDisplay: "September 12, 2026",
   },
   {
     slug: "too-old-to-learn-to-code",
@@ -46,8 +46,8 @@ export const FIELD_NOTES: FieldNote[] = [
     description:
       "I started at 49 with no CS background and shipped my first product within months. What age costs, what it buys you, and why the real barrier isn't ability.",
     datePublished: "2026-08-17",
-    dateModified: "2026-08-17",
-    dateModifiedDisplay: "August 17, 2026",
+    dateModified: "2026-09-12",
+    dateModifiedDisplay: "September 12, 2026",
   },
   {
     slug: "how-long-does-it-take-to-build-an-app-with-ai",
@@ -62,10 +62,10 @@ export const FIELD_NOTES: FieldNote[] = [
     slug: "build-a-side-project-with-a-full-time-job",
     title: "How to build a side project with a full-time job (and kids)",
     description:
-      "The system behind six shipped products: fixed windows instead of stolen hours, ruthless scope, and consistency math that beats motivation.",
+      "The system behind seven shipped products: fixed windows instead of stolen hours, ruthless scope, and consistency math that beats motivation.",
     datePublished: "2026-08-17",
-    dateModified: "2026-08-17",
-    dateModifiedDisplay: "August 17, 2026",
+    dateModified: "2026-09-12",
+    dateModifiedDisplay: "September 12, 2026",
   },
 ]
 

@@ -32,7 +32,7 @@ export default function Page() {
   return (
     <NoteLayout note={note}>
       <Lede>
-        Yes. I'm the proof, six times over. I opened Cursor for the first time
+        Yes. I'm the proof, seven times over. I opened Cursor for the first time
         in March 2025, at 49, with a career in security and zero computer
         science behind me. Since then I've shipped{" "}
         <NoteLink href="https://www.burnoutradar.com" external>

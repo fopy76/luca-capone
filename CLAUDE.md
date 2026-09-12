@@ -47,10 +47,12 @@ Consumers: page components, `GlobalSchema.tsx` (Person + WebSite, site-wide),
 it.** Schema and llms.txt must always match visible copy; search engines and AI
 crawlers cross-check. Bump `AGE` in site.ts on Luca's birthday — everything derives.
 
-## Canonical facts (as of 2026-08)
+## Canonical facts (as of 2026-09)
 
-Six products: BurnoutRadar (launched), PairHabit (launched, App Store), Kikko
-(launched, live on web), BizarreChat (beta), MemoPod (waitlist), Fatto (waitlist).
+Seven products: Starvling (launched, starvling.com), BurnoutRadar (launched),
+PairHabit (launched, App Store), Kikko (launched, live on web; iOS app approved,
+release pending — "AI family assistant"), BizarreChat (beta), MemoPod (waitlist),
+Fatto (waitlist).
 Started coding March 2025 at 49, with zero CS background. Based in Luxembourg and Rome.
 Builds with Claude Code (primary) + Cursor; "vibe coding".
 
