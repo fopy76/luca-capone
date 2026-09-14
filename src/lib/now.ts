@@ -22,14 +22,14 @@ export type NowTeaserItem = {
 }
 
 // ISO date: used by <time dateTime>, JSON-LD dateModified, and sitemap lastModified.
-export const nowLastUpdated = "2026-09-12"
-export const nowLastUpdatedDisplay = "September 12, 2026"
+export const nowLastUpdated = "2026-09-14"
+export const nowLastUpdatedDisplay = "September 14, 2026"
 
 // Curated one-liners for the landing-page teaser.
 export const nowTeaserItems: NowTeaserItem[] = [
   {
     label: "Shipping",
-    text: "Starvling just launched — and Kikko's iOS app cleared App Store review.",
+    text: "Starvling's first week in the open — launched on X, then Product Hunt the day after.",
   },
   {
     label: "Writing",
@@ -37,7 +37,7 @@ export const nowTeaserItems: NowTeaserItem[] = [
   },
   {
     label: "Learning",
-    text: "Going deeper on Claude Code agent workflows and native SwiftUI.",
+    text: "Going deeper on Claude Code agent workflows, and on reading launch numbers honestly.",
   },
 ]
 
@@ -49,21 +49,21 @@ export const nowBlocks: NowBlock[] = [
       {
         title: "Starvling",
         description:
-          "Just launched (September 8). A launch directory where every listed product is a pixel creature that loses HP around the clock — only free daily feeds from real people keep it alive, and the ones that starve end up in a public graveyard. Rank can't be bought. Watching the first launches live and die in real time.",
+          "Launched September 8, and on Product Hunt the day after. A launch directory where every listed product is a pixel creature that loses HP around the clock — only free daily feeds from real people keep it alive, and the ones that starve end up in a public graveyard. Rank can't be bought. Fifteen products listed so far, and week one already had me asking out loud whether to keep going.",
         href: "https://starvling.com",
         external: true,
       },
       {
         title: "PairHabit",
         description:
-          "On the App Store. A couples habit tracker with shared micro-habits and reward stakes. Iterating with the first couples and shipping a weekly blog on the science of habits for two.",
+          "On the App Store. A couples habit tracker with shared micro-habits and reward stakes. This stretch is distribution, not features — talking to the first couples instead of shipping at them.",
         href: "https://apps.apple.com/app/id6759855681",
         external: true,
       },
       {
         title: "Kikko",
         description:
-          "AI family assistant for schedules and school communication. Live on web — and the iOS app just cleared App Store review. Releasing soon.",
+          "AI family assistant for schedules and school communication. Live on the web at kikko.ai, which is where every family using it today starts. The iOS app isn't out yet — web first until it lands.",
         href: "https://www.kikko.ai/",
         external: true,
       },
@@ -114,12 +114,12 @@ export const nowBlocks: NowBlock[] = [
       {
         title: "Swift and SwiftUI",
         description:
-          "Moving new iOS builds native after shipping the first apps with React Native. The Kikko iOS app — just through App Store review — was the proving ground.",
+          "Moving new iOS builds native after shipping the first apps with React Native. Slower going than I'd like, and every trip through App Store review shows me something I didn't know.",
       },
       {
         title: "Launch mechanics",
         description:
-          "ASO, review, and launch-day dynamics — learned live through the PairHabit App Store release and the Starvling launch.",
+          "ASO, review, and launch-day dynamics — learned live through the PairHabit App Store release and now Starvling's first week. Most of it turns out to be about reading your own numbers honestly rather than gaming them.",
       },
     ],
   },
