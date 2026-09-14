@@ -29,7 +29,7 @@ export const nowLastUpdatedDisplay = "September 14, 2026"
 export const nowTeaserItems: NowTeaserItem[] = [
   {
     label: "Shipping",
-    text: "Starvling's first week in the open — launched on X, then Product Hunt the day after.",
+    text: "Kikko's iOS app hits the App Store today, and Starvling just finished week one in the open.",
   },
   {
     label: "Writing",
@@ -63,7 +63,7 @@ export const nowBlocks: NowBlock[] = [
       {
         title: "Kikko",
         description:
-          "AI family assistant for schedules and school communication. Live on the web at kikko.ai, which is where every family using it today starts. The iOS app isn't out yet — web first until it lands.",
+          "AI family assistant for schedules and school communication. Live on the web at kikko.ai, and the iOS app cleared App Store review — releasing today.",
         href: "https://www.kikko.ai/",
         external: true,
       },
@@ -114,7 +114,7 @@ export const nowBlocks: NowBlock[] = [
       {
         title: "Swift and SwiftUI",
         description:
-          "Moving new iOS builds native after shipping the first apps with React Native. Slower going than I'd like, and every trip through App Store review shows me something I didn't know.",
+          "Moving new iOS builds native after shipping the first apps with React Native. The Kikko iOS app — through review and shipping today — was the proving ground.",
       },
       {
         title: "Launch mechanics",
