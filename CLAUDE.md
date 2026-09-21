@@ -50,8 +50,8 @@ crawlers cross-check. Bump `AGE` in site.ts on Luca's birthday — everything de
 ## Canonical facts (as of 2026-09)
 
 Seven products: Starvling (launched, starvling.com), BurnoutRadar (launched),
-PairHabit (launched, App Store), Kikko (launched, live on web; iOS app approved,
-release pending — "AI family assistant"), BizarreChat (beta), MemoPod (waitlist),
+PairHabit (launched, App Store), Kikko (launched, on the App Store since
+2026-09 and live on web — "AI family assistant"), BizarreChat (beta), MemoPod (waitlist),
 Fatto (waitlist).
 Started coding March 2025 at 49, with zero CS background. Based in Luxembourg and Rome.
 Builds with Claude Code (primary) + Cursor; "vibe coding".

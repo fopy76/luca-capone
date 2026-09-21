@@ -65,7 +65,7 @@ export default async function Image() {
               lineHeight: 1.4,
             }}
           >
-            Starvling just launched · Kikko iOS approved · Updated September 2026
+            Starvling two weeks in · Kikko now on iOS · Updated September 2026
           </div>
         </div>
       </div>

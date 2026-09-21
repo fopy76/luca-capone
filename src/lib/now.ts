@@ -29,7 +29,7 @@ export const nowLastUpdatedDisplay = "September 21, 2026"
 export const nowTeaserItems: NowTeaserItem[] = [
   {
     label: "Shipping",
-    text: "Starvling is two weeks old and still in the open. Kikko's iOS app is through review, waiting on a release date.",
+    text: "Kikko's iOS app landed on the App Store last week. Starvling is two weeks old and still in the open.",
   },
   {
     label: "Writing",
@@ -37,7 +37,7 @@ export const nowTeaserItems: NowTeaserItem[] = [
   },
   {
     label: "Learning",
-    text: "Going deeper on Claude Code agent workflows, and on reading launch numbers honestly.",
+    text: "Claude Code agent workflows, and marketing — books, good YouTube channels, and the agency I built out of them.",
   },
 ]
 
@@ -63,7 +63,7 @@ export const nowBlocks: NowBlock[] = [
       {
         title: "Kikko",
         description:
-          "AI family assistant for schedules and school communication. Live on the web at kikko.ai. The iOS app cleared App Store review and is waiting on its release — web first until it lands.",
+          "AI family assistant for schedules and school communication. The iOS app went live on the App Store last week, and it still runs on the web at kikko.ai — same family calendar, two ways in.",
         href: "https://www.kikko.ai/",
         external: true,
       },
@@ -114,12 +114,17 @@ export const nowBlocks: NowBlock[] = [
       {
         title: "Swift and SwiftUI",
         description:
-          "Moving new iOS builds native after shipping the first apps with React Native. Getting Kikko's iOS app through App Store review was the proving ground; the release itself is the part I don't control.",
+          "Moving new iOS builds native after shipping the first apps with React Native. Getting Kikko's iOS app through review and onto the App Store was the proving ground.",
       },
       {
         title: "Launch mechanics",
         description:
           "ASO, review, and launch-day dynamics — learned live through the PairHabit App Store release and now Starvling's first two weeks. Most of it turns out to be about reading your own numbers honestly rather than gaming them.",
+      },
+      {
+        title: "Marketing",
+        description:
+          "Building the thing stopped being the hard part; getting anyone to see it didn't. So I'm working through the books and the YouTube channels that actually hold up, and I built my own marketing agency out of what I learned — the playbooks turned into something I can run against my own products instead of notes I never reopen.",
       },
     ],
   },

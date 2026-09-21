@@ -52,18 +52,18 @@ export const FAQS: Faq[] = [
   {
     question: "What products have you shipped?",
     answerText:
-      "Seven products so far. Launched: BurnoutRadar (10-dimension burnout assessment with AI recovery plans), PairHabit (couples habit tracker), and Starvling (launch directory where products die without daily feeds). Live on web: Kikko (AI family assistant, iOS app approved and coming soon). In beta: BizarreChat (AI chat with celebrities and historical figures). On the waitlist: MemoPod (family memory preservation) and Fatto (next in the build-in-public cycle).",
+      "Seven products so far. Launched: BurnoutRadar (10-dimension burnout assessment with AI recovery plans), PairHabit (couples habit tracker),, Starvling (launch directory where products die without daily feeds), and Kikko (AI family assistant, on the App Store and the web). In beta: BizarreChat (AI chat with celebrities and historical figures). On the waitlist: MemoPod (family memory preservation) and Fatto (next in the build-in-public cycle).",
     answerNode: (
       <>
         {"Seven products so far. Launched: "}
         <FaqLink href={productHref("BurnoutRadar")}>BurnoutRadar</FaqLink>
         {" (10-dimension burnout assessment with AI recovery plans), "}
         <FaqLink href={productHref("PairHabit")}>PairHabit</FaqLink>
-        {" (couples habit tracker), and "}
+        {" (couples habit tracker), "}
         <FaqLink href={productHref("Starvling")}>Starvling</FaqLink>
-        {" (launch directory where products die without daily feeds). Live on web: "}
+        {" (launch directory where products die without daily feeds), and "}
         <FaqLink href={productHref("Kikko")}>Kikko</FaqLink>
-        {" (AI family assistant, iOS app approved and coming soon). In beta: "}
+        {" (AI family assistant, on the App Store and the web). In beta: "}
         <FaqLink href={productHref("BizarreChat")}>BizarreChat</FaqLink>
         {" (AI chat with celebrities and historical figures). On the waitlist: "}
         <FaqLink href={productHref("MemoPod")}>MemoPod</FaqLink>
