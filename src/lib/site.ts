@@ -201,16 +201,16 @@ export const PRODUCTS: Product[] = [
   {
     name: "Kikko",
     tagline:
-      "AI family assistant for schedules and school communication. iOS app approved — App Store release coming soon.",
+      "AI family assistant for schedules and school communication. On the App Store and live on the web.",
     status: "launched",
-    statusLabel: "Live on Web",
-    features: ["Web", "Family"],
+    statusLabel: "Web + iOS",
+    features: ["iOS", "Web", "Family"],
     ctaText: "Try Kikko",
     url: "https://www.kikko.ai/",
     applicationCategory: "LifestyleApplication",
-    operatingSystem: "Web",
-    offerCategory: "Web App",
-    llmsCategory: "Lifestyle (Web; iOS approved, release pending)",
+    operatingSystem: "Web, iOS",
+    offerCategory: "Web & Mobile App",
+    llmsCategory: "Lifestyle (Web, iOS)",
     icon: "/images/kikko_icon.png",
   },
   {
