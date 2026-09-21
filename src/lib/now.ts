@@ -22,14 +22,14 @@ export type NowTeaserItem = {
 }
 
 // ISO date: used by <time dateTime>, JSON-LD dateModified, and sitemap lastModified.
-export const nowLastUpdated = "2026-09-14"
-export const nowLastUpdatedDisplay = "September 14, 2026"
+export const nowLastUpdated = "2026-09-21"
+export const nowLastUpdatedDisplay = "September 21, 2026"
 
 // Curated one-liners for the landing-page teaser.
 export const nowTeaserItems: NowTeaserItem[] = [
   {
     label: "Shipping",
-    text: "Kikko's iOS app hits the App Store today, and Starvling just finished week one in the open.",
+    text: "Starvling is two weeks old and still in the open. Kikko's iOS app is through review, waiting on a release date.",
   },
   {
     label: "Writing",
@@ -49,7 +49,7 @@ export const nowBlocks: NowBlock[] = [
       {
         title: "Starvling",
         description:
-          "Launched September 8, and on Product Hunt the day after. A launch directory where every listed product is a pixel creature that loses HP around the clock — only free daily feeds from real people keep it alive, and the ones that starve end up in a public graveyard. Rank can't be bought. Fifteen products listed so far, and week one already had me asking out loud whether to keep going.",
+          "Launched September 8, and on Product Hunt the day after. A launch directory where every listed product is a pixel creature that loses HP around the clock — only free daily feeds from real people keep it alive, and the ones that starve get a tombstone in the public graveyard. Rank can't be bought. Two weeks in, the question isn't launch day, it's whether anyone comes back the next morning to feed.",
         href: "https://starvling.com",
         external: true,
       },
@@ -63,7 +63,7 @@ export const nowBlocks: NowBlock[] = [
       {
         title: "Kikko",
         description:
-          "AI family assistant for schedules and school communication. Live on the web at kikko.ai, and the iOS app cleared App Store review — releasing today.",
+          "AI family assistant for schedules and school communication. Live on the web at kikko.ai. The iOS app cleared App Store review and is waiting on its release — web first until it lands.",
         href: "https://www.kikko.ai/",
         external: true,
       },
@@ -114,12 +114,12 @@ export const nowBlocks: NowBlock[] = [
       {
         title: "Swift and SwiftUI",
         description:
-          "Moving new iOS builds native after shipping the first apps with React Native. The Kikko iOS app — through review and shipping today — was the proving ground.",
+          "Moving new iOS builds native after shipping the first apps with React Native. Getting Kikko's iOS app through App Store review was the proving ground; the release itself is the part I don't control.",
       },
       {
         title: "Launch mechanics",
         description:
-          "ASO, review, and launch-day dynamics — learned live through the PairHabit App Store release and now Starvling's first week. Most of it turns out to be about reading your own numbers honestly rather than gaming them.",
+          "ASO, review, and launch-day dynamics — learned live through the PairHabit App Store release and now Starvling's first two weeks. Most of it turns out to be about reading your own numbers honestly rather than gaming them.",
       },
     ],
   },
