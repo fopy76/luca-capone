@@ -207,6 +207,8 @@ export const PRODUCTS: Product[] = [
     features: ["iOS", "Web", "Family"],
     ctaText: "Try Kikko",
     url: "https://www.kikko.ai/",
+    appStoreUrl:
+      "https://apps.apple.com/us/app/kikko-ai-family-assistant/id6789952071",
     applicationCategory: "LifestyleApplication",
     operatingSystem: "Web, iOS",
     offerCategory: "Web & Mobile App",
