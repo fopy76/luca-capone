@@ -22,14 +22,14 @@ export type NowTeaserItem = {
 }
 
 // ISO date: used by <time dateTime>, JSON-LD dateModified, and sitemap lastModified.
-export const nowLastUpdated = "2026-09-21"
-export const nowLastUpdatedDisplay = "September 21, 2026"
+export const nowLastUpdated = "2026-09-28"
+export const nowLastUpdatedDisplay = "September 28, 2026"
 
 // Curated one-liners for the landing-page teaser.
 export const nowTeaserItems: NowTeaserItem[] = [
   {
     label: "Shipping",
-    text: "Kikko's iOS app landed on the App Store last week. Starvling is two weeks old and still in the open.",
+    text: "Starvling hit the kill rule I wrote before launch, so I shut it down in the open. Kikko is back on the front burner.",
   },
   {
     label: "Writing",
@@ -37,7 +37,7 @@ export const nowTeaserItems: NowTeaserItem[] = [
   },
   {
     label: "Learning",
-    text: "Claude Code agent workflows, and marketing — books, good YouTube channels, and the agency I built out of them.",
+    text: "Kill rules and when to stop, Claude Code agent workflows, and marketing — books, good YouTube channels, and the agency I built out of them.",
   },
 ]
 
@@ -47,10 +47,10 @@ export const nowBlocks: NowBlock[] = [
     heading: "Building",
     items: [
       {
-        title: "Starvling",
+        title: "Kikko",
         description:
-          "Launched September 8, and on Product Hunt the day after. A launch directory where every listed product is a pixel creature that loses HP around the clock — only free daily feeds from real people keep it alive, and the ones that starve get a tombstone in the public graveyard. Rank can't be bought. Two weeks in, the question isn't launch day, it's whether anyone comes back the next morning to feed.",
-        href: "https://starvling.com",
+          "Back to being the main thing now that Starvling is closed. AI family assistant for schedules and school communication, on the App Store and running on the web at kikko.ai. Last week's ship was the unglamorous kind: when Gmail sends the forwarding confirmation, Kikko now spots it and puts a one-tap Confirm button on the card instead of leaving a wall of link text nobody knows what to do with. Two families got stuck on that step before I understood it was a step. This stretch is about finding more parents, not adding more features.",
+        href: "https://www.kikko.ai/",
         external: true,
       },
       {
@@ -61,16 +61,16 @@ export const nowBlocks: NowBlock[] = [
         external: true,
       },
       {
-        title: "Kikko",
+        title: "Starvling",
         description:
-          "AI family assistant for schedules and school communication. The iOS app went live on the App Store last week, and it still runs on the web at kikko.ai — same family calendar, two ways in.",
-        href: "https://www.kikko.ai/",
+          "Closed on September 22. Launched September 8 as a launch directory where every listed product was a pixel creature losing HP around the clock, kept alive only by free daily feeds from real people. Before launch I wrote a kill rule: a decision date, a floor of 500 feeds, and the action to take if it came in under. It came in at 297, and all fifteen listed creatures had starved by the 16th. So the rule fired and I stopped. The site stays online — directory, graveyard, every tombstone — and I spent the week publishing the post-mortem in public instead of quietly deleting the thing.",
+        href: "https://starvling.com",
         external: true,
       },
       {
         title: "Fatto",
         description:
-          "Next in the build-in-public cycle. The landing page is live and the waitlist is open — scoping it in the open.",
+          "The landing page is live and the waitlist is open. Waiting its turn — Kikko gets this stretch.",
         href: "https://getfatto.com",
         external: true,
       },
@@ -90,7 +90,7 @@ export const nowBlocks: NowBlock[] = [
       {
         title: "Building in public",
         description:
-          "Daily progress on X (@LucaCaponeX), plus LinkedIn, YouTube, Instagram, and Reddit.",
+          "Daily progress on X (@LucaCaponeX), plus LinkedIn, YouTube, Instagram, and Reddit. The Starvling post-mortem ran there all week, numbers included — the failure gets the same airtime the launch got.",
         href: "https://x.com/LucaCaponeX",
         external: true,
       },
@@ -107,19 +107,19 @@ export const nowBlocks: NowBlock[] = [
     heading: "Learning",
     items: [
       {
+        title: "Kill rules, and when to stop",
+        description:
+          "Starvling is the first thing I shipped with its stopping condition written down in advance. Writing it took ten minutes in August; on decision day it turned what could have been an argument with myself into arithmetic. What surprised me is that the hard part of launching isn't the launch — it's deciding beforehand what result would make you walk away, while you still like the idea.",
+      },
+      {
         title: "Deeper agentic workflows with Claude Code",
         description:
-          "Skills, subagents, and automation to ship faster in two-hour evening windows.",
+          "Skills, subagents, and scheduled automation to ship faster in two-hour evening windows.",
       },
       {
         title: "Swift and SwiftUI",
         description:
           "Moving new iOS builds native after shipping the first apps with React Native. Getting Kikko's iOS app through review and onto the App Store was the proving ground.",
-      },
-      {
-        title: "Launch mechanics",
-        description:
-          "ASO, review, and launch-day dynamics — learned live through the PairHabit App Store release and now Starvling's first two weeks. Most of it turns out to be about reading your own numbers honestly rather than gaming them.",
       },
       {
         title: "Marketing",
@@ -162,7 +162,7 @@ export const nowBlocks: NowBlock[] = [
       {
         title: "Product feedback",
         description:
-          "Using PairHabit, Kikko, or Starvling? Tell me what's broken and what's working.",
+          "Using PairHabit or Kikko? Tell me what's broken and what's working.",
       },
     ],
   },
