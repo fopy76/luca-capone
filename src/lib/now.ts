@@ -22,14 +22,14 @@ export type NowTeaserItem = {
 }
 
 // ISO date: used by <time dateTime>, JSON-LD dateModified, and sitemap lastModified.
-export const nowLastUpdated = "2026-09-21"
-export const nowLastUpdatedDisplay = "September 21, 2026"
+export const nowLastUpdated = "2026-10-12"
+export const nowLastUpdatedDisplay = "October 12, 2026"
 
 // Curated one-liners for the landing-page teaser.
 export const nowTeaserItems: NowTeaserItem[] = [
   {
     label: "Shipping",
-    text: "Kikko's iOS app landed on the App Store last week. Starvling is two weeks old and still in the open.",
+    text: "Kikko is the whole focus: web and iOS are live, so this stretch is about getting it found. Starvling hit its kill rule and I closed it.",
   },
   {
     label: "Writing",
@@ -37,7 +37,7 @@ export const nowTeaserItems: NowTeaserItem[] = [
   },
   {
     label: "Learning",
-    text: "Claude Code agent workflows, and marketing — books, good YouTube channels, and the agency I built out of them.",
+    text: "Distribution, which is the skill I never built. Plus kill rules, and Claude Code agent workflows.",
   },
 ]
 
@@ -47,30 +47,30 @@ export const nowBlocks: NowBlock[] = [
     heading: "Building",
     items: [
       {
-        title: "Starvling",
+        title: "Kikko",
         description:
-          "Launched September 8, and on Product Hunt the day after. A launch directory where every listed product is a pixel creature that loses HP around the clock — only free daily feeds from real people keep it alive, and the ones that starve get a tombstone in the public graveyard. Rank can't be bought. Two weeks in, the question isn't launch day, it's whether anyone comes back the next morning to feed.",
-        href: "https://starvling.com",
+          "The whole focus right now. AI family assistant for schedules and school communication — on the web since July, on the App Store since September 14. Both halves are live, which means building is no longer the bottleneck: getting it in front of parents is. So this stretch is a distribution week, not a feature week. Store-page wording, the search phrases a parent actually types, and conversations with the families already using it.",
+        href: "https://www.kikko.ai/",
         external: true,
       },
       {
         title: "PairHabit",
         description:
-          "On the App Store. A couples habit tracker with shared micro-habits and reward stakes. This stretch is distribution, not features — talking to the first couples instead of shipping at them.",
+          "On the App Store. A couples habit tracker with shared micro-habits and reward stakes. Still the product I have launched the most, and deliberately not the one getting this stretch. A parent will type \"school email calendar\" into a search box; a couple does not type the reason they would install a habit app. Easier words first, then the same lesson comes back here.",
         href: "https://apps.apple.com/app/id6759855681",
         external: true,
       },
       {
-        title: "Kikko",
+        title: "Starvling",
         description:
-          "AI family assistant for schedules and school communication. The iOS app went live on the App Store last week, and it still runs on the web at kikko.ai — same family calendar, two ways in.",
-        href: "https://www.kikko.ai/",
+          "Closed on September 22. Launched September 8 as a launch directory where every listed product was a pixel creature losing HP around the clock, kept alive only by free daily feeds from real people. I wrote the kill rule before launch: a decision date and the numbers that would make me stop. It came in at 297 feeds, all fifteen listings had starved by September 16, and not one person paid. So the rule fired and I stopped. The site stays up — directory, graveyard, every tombstone — and I spent the next two weeks publishing the teardown instead of quietly deleting it.",
+        href: "https://starvling.com",
         external: true,
       },
       {
         title: "Fatto",
         description:
-          "Next in the build-in-public cycle. The landing page is live and the waitlist is open — scoping it in the open.",
+          "The landing page is live and the waitlist is open. Waiting its turn — Kikko gets this stretch.",
         href: "https://getfatto.com",
         external: true,
       },
@@ -90,7 +90,7 @@ export const nowBlocks: NowBlock[] = [
       {
         title: "Building in public",
         description:
-          "Daily progress on X (@LucaCaponeX), plus LinkedIn, YouTube, Instagram, and Reddit.",
+          "Daily progress on X (@LucaCaponeX), plus LinkedIn, YouTube, Instagram, and Reddit. The Starvling teardown ran there for two weeks with the numbers attached — the failure got the same airtime the launch did.",
         href: "https://x.com/LucaCaponeX",
         external: true,
       },
@@ -107,24 +107,24 @@ export const nowBlocks: NowBlock[] = [
     heading: "Learning",
     items: [
       {
+        title: "Distribution — the skill I never built",
+        description:
+          "I can ship a product in a weekend. I had no idea how to get one found, and after nineteen months of building I stopped pretending that was a scheduling problem. It's a different skill and I never practised it. Kikko is where I'm practising: SEO, store-page vocabulary, and a weekly routine instead of a launch-day push. I'd already worked through the marketing books and the YouTube channels that hold up, and built my own marketing agency out of them — this is the part where I finally run those playbooks against my own products.",
+      },
+      {
+        title: "Kill rules, and when to stop",
+        description:
+          "Starvling was the first thing I shipped with its stopping condition written down in advance. Writing it took ten minutes in August; on decision day it turned what could have been an argument with myself into arithmetic. The surprise is that the hard part isn't the launch — it's deciding beforehand what result would make you walk away, while you still like the idea.",
+      },
+      {
         title: "Deeper agentic workflows with Claude Code",
         description:
-          "Skills, subagents, and automation to ship faster in two-hour evening windows.",
+          "Skills, subagents, and scheduled automation to ship faster in two-hour evening windows.",
       },
       {
         title: "Swift and SwiftUI",
         description:
           "Moving new iOS builds native after shipping the first apps with React Native. Getting Kikko's iOS app through review and onto the App Store was the proving ground.",
-      },
-      {
-        title: "Launch mechanics",
-        description:
-          "ASO, review, and launch-day dynamics — learned live through the PairHabit App Store release and now Starvling's first two weeks. Most of it turns out to be about reading your own numbers honestly rather than gaming them.",
-      },
-      {
-        title: "Marketing",
-        description:
-          "Building the thing stopped being the hard part; getting anyone to see it didn't. So I'm working through the books and the YouTube channels that actually hold up, and I built my own marketing agency out of what I learned — the playbooks turned into something I can run against my own products instead of notes I never reopen.",
       },
     ],
   },
@@ -162,7 +162,7 @@ export const nowBlocks: NowBlock[] = [
       {
         title: "Product feedback",
         description:
-          "Using PairHabit, Kikko, or Starvling? Tell me what's broken and what's working.",
+          "Using PairHabit or Kikko? Tell me what's broken and what's working.",
       },
     ],
   },
