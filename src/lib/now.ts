@@ -22,14 +22,14 @@ export type NowTeaserItem = {
 }
 
 // ISO date: used by <time dateTime>, JSON-LD dateModified, and sitemap lastModified.
-export const nowLastUpdated = "2026-10-12"
-export const nowLastUpdatedDisplay = "October 12, 2026"
+export const nowLastUpdated = "2026-10-19"
+export const nowLastUpdatedDisplay = "October 19, 2026"
 
 // Curated one-liners for the landing-page teaser.
 export const nowTeaserItems: NowTeaserItem[] = [
   {
     label: "Shipping",
-    text: "Kikko is the whole focus: web and iOS are live, so this stretch is about getting it found. Starvling hit its kill rule and I closed it.",
+    text: "Kikko is still the whole focus. A month on the App Store and the product does its job — what it does not do yet is get found. That part is on me.",
   },
   {
     label: "Writing",
@@ -37,7 +37,7 @@ export const nowTeaserItems: NowTeaserItem[] = [
   },
   {
     label: "Learning",
-    text: "Distribution, which is the skill I never built. Plus kill rules, and Claude Code agent workflows.",
+    text: "Distribution, which is the skill I never built — and the unglamorous version of it: showing up daily instead of launching once.",
   },
 ]
 
@@ -49,7 +49,7 @@ export const nowBlocks: NowBlock[] = [
       {
         title: "Kikko",
         description:
-          "The whole focus right now. AI family assistant for schedules and school communication — on the web since July, on the App Store since September 14. Both halves are live, which means building is no longer the bottleneck: getting it in front of parents is. So this stretch is a distribution week, not a feature week. Store-page wording, the search phrases a parent actually types, and conversations with the families already using it.",
+          "The whole focus, and a month on the App Store has made the honest version easy to say: the product works and almost nobody knows it exists. AI family assistant for schedules and school communication — on the web since July, on the App Store since September 14. A parent can forward a school email to a Kikko address and get back a calendar event with a reminder. That part is done. Being found is not, and search is still the open hole here. So this is still distribution work, not feature work: store-page vocabulary, the phrases a parent actually types, and conversations with the families already using it.",
         href: "https://www.kikko.ai/",
         external: true,
       },
@@ -109,7 +109,7 @@ export const nowBlocks: NowBlock[] = [
       {
         title: "Distribution — the skill I never built",
         description:
-          "I can ship a product in a weekend. I had no idea how to get one found, and after nineteen months of building I stopped pretending that was a scheduling problem. It's a different skill and I never practised it. Kikko is where I'm practising: SEO, store-page vocabulary, and a weekly routine instead of a launch-day push. I'd already worked through the marketing books and the YouTube channels that hold up, and built my own marketing agency out of them — this is the part where I finally run those playbooks against my own products.",
+          "I can ship a product in a weekend. I had no idea how to get one found, and after nineteen months of building I stopped pretending that was a scheduling problem. Building got cheap; distribution didn't. It's a different skill and I never practised it. Kikko is where I'm practising, and this month that has meant showing up every day instead of launching once: posts written ahead on a daily schedule, every claim carrying the date it was true, plus replies to people building the same way. The uncomfortable part is that the audience side is running well ahead of the search side. That's the wrong order, and the next thing to fix.",
       },
       {
         title: "Kill rules, and when to stop",
