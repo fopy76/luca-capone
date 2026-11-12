@@ -31,7 +31,7 @@ export default function AboutSection() {
           </div>
 
           <p className="text-lg md:text-xl font-medium text-text leading-snug mb-6">
-            Italian Army Special Ops. UN security across four continents. Two kids. One full-time job. Started coding at 49.
+            Former Italian Army Special Ops. UN security across four continents. Two kids. One full-time job. Started coding at 49.
           </p>
 
           <p className="text-[17px] text-text-secondary leading-[1.7] mb-5">
