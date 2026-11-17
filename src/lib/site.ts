@@ -13,8 +13,14 @@ export const SITE_URL = "https://lucacapone.io"
 export const AGE = 50
 
 export const SITE_NAME = "Luca Capone - Second-Act Builders"
-export const SITE_TITLE = `Luca Capone — Non-Technical Founder Building AI Products at ${AGE}`
+export const SITE_TITLE = `Luca Capone: Non-Technical Founder Building AI Products at ${AGE}`
 export const SITE_DESCRIPTION = `I'm Luca, ${AGE}. Non-technical founder vibe coding AI products in life's margins. Seven products, honest numbers, built in public. Field report every other Thursday.`
+
+// The day the home page's own copy last changed in a way a reader would
+// notice (not every deploy). Bump it by hand with such a change. The sitemap
+// and the ProfilePage schema use the latest of this, the /now snapshot and
+// the field notes (see src/lib/freshness.ts).
+export const HOME_LAST_MODIFIED = "2026-11-17"
 
 export const TWITTER_HANDLE = "@LucaCaponeX"
 export const EMAIL = "hello@lucacapone.io"
@@ -66,7 +72,7 @@ export const PERSON = {
   description: `Luca Capone is a ${AGE}-year-old non-technical founder who started coding in March 2025 and ships AI products in life's margins. Creator of Starvling, BurnoutRadar, PairHabit, Kikko, and BizarreChat, with MemoPod and Fatto in the pipeline. Based in Luxembourg and Rome.`,
   // Distinguishes this Luca Capone from unrelated academics with the same name.
   disambiguatingDescription:
-    "Italian non-technical founder and second-act builder — former Italian Army Special Operations captain and UN humanitarian security professional who started coding in March 2025 at 49 and builds AI products with Claude Code.",
+    "Italian non-technical founder and second-act builder, a former Italian Army Special Operations captain and UN humanitarian security professional who started coding in March 2025 at 49 and builds AI products with Claude Code.",
   addresses: [
     { locality: "Luxembourg", country: "LU" },
     { locality: "Rome", country: "IT" },
@@ -207,7 +213,7 @@ export const PRODUCTS: Product[] = [
     statusLabel: "Launched",
     features: ["iOS", "For couples"],
     ctaText: "Get it on the App Store",
-    url: "https://www.pairhabit.app/",
+    url: "https://pairhabit.app/",
     cardUrl: "https://apps.apple.com/app/id6759855681",
     appStoreUrl: "https://apps.apple.com/app/id6759855681",
     applicationCategory: "LifestyleApplication",
@@ -256,7 +262,7 @@ export const PRODUCTS: Product[] = [
     statusLabel: "Web + iOS",
     features: ["iOS", "Web", "Family"],
     ctaText: "Try Kikko",
-    url: "https://www.kikko.ai/",
+    url: "https://kikko.ai/",
     appStoreUrl:
       "https://apps.apple.com/us/app/kikko-ai-family-assistant/id6789952071",
     applicationCategory: "LifestyleApplication",

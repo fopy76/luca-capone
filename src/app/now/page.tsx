@@ -12,11 +12,12 @@ import {
   type NowBlock,
   type NowItem,
 } from "@/lib/now"
-import { PERSON_ID, SITE_URL, TWITTER_HANDLE, WEBSITE_ID } from "@/lib/site"
+import { AGE, PERSON_ID, SITE_URL, TWITTER_HANDLE, WEBSITE_ID } from "@/lib/site"
 
 export const metadata: Metadata = {
-  title: "Now",
-  description: `What Luca Capone is building, creating, and learning right now. A living snapshot, updated ${nowLastUpdatedDisplay}.`,
+  // Absolute: the "%s | Luca Capone" template would say the name twice.
+  title: { absolute: "Now: what Luca Capone is building, writing and learning" },
+  description: `What Luca Capone, a non-technical founder building AI products at ${AGE}, is building, creating, and learning right now. A living snapshot, updated ${nowLastUpdatedDisplay}.`,
   keywords: [
     "now page",
     "what Luca Capone is doing now",

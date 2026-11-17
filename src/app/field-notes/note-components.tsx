@@ -120,7 +120,11 @@ export function NoteLayout({
             <div className="tb">
               <h1>{note.title}</h1>
               <p className="mono byline">
-                By Luca Capone · Updated{" "}
+                By{" "}
+                <Link href="/#my-story" rel="author">
+                  Luca Capone
+                </Link>{" "}
+                · Updated{" "}
                 <time dateTime={note.dateModified}>
                   {note.dateModifiedDisplay}
                 </time>

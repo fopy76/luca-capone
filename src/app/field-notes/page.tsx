@@ -10,10 +10,12 @@ import { AGE, PERSON_ID, SITE_URL, TWITTER_HANDLE, WEBSITE_ID } from "@/lib/site
 
 const pageUrl = `${SITE_URL}/field-notes`
 const pageTitle = "Field Notes"
-const pageDescription = `Longer answers to the questions people actually ask a non-technical founder building AI products at ${AGE} — written from the build log, not theory.`
+// The <title>. pageTitle stays the short name used on share cards and in the schema.
+const documentTitle = "Field Notes: building AI products without a tech background"
+const pageDescription = `Longer answers to the questions people actually ask a non-technical founder building AI products at ${AGE}, written from the build log, not theory.`
 
 export const metadata: Metadata = {
-  title: pageTitle,
+  title: { absolute: documentTitle },
   description: pageDescription,
   alternates: { canonical: pageUrl },
   openGraph: {

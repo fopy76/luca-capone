@@ -1,7 +1,12 @@
 import { MetadataRoute } from 'next'
 import { nowLastUpdated } from '@/lib/now'
 import { FIELD_NOTES } from '@/lib/field-notes'
+import { homeLastModified, notesLastModified } from '@/lib/freshness'
 import { SITE_URL } from '@/lib/site'
+
+// lastModified is the day a page's content last changed (src/lib/freshness.ts),
+// not the day of the deploy: search engines stop trusting a lastmod that moves
+// on every build.
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = SITE_URL
@@ -9,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: baseUrl,
-      lastModified: new Date(),
+      lastModified: new Date(homeLastModified),
       changeFrequency: 'weekly',
       priority: 1,
     },
@@ -21,11 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/field-notes`,
-      lastModified: new Date(
-        FIELD_NOTES.map((n) => n.dateModified)
-          .sort()
-          .at(-1) ?? nowLastUpdated,
-      ),
+      lastModified: new Date(notesLastModified),
       changeFrequency: 'monthly',
       priority: 0.7,
     },
