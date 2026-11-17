@@ -14,6 +14,9 @@ export type FieldNote = {
   slug: string
   // H1 and metadata title (the "%s | Luca Capone" template appends the name).
   title: string
+  // The words of the title the share image runs the highlighter over. They
+  // must appear in the title exactly as written here, or the build stops.
+  highlight: string
   // Meta description, index-card blurb, and Article schema description.
   description: string
   datePublished: string
@@ -21,10 +24,15 @@ export type FieldNote = {
   dateModifiedDisplay: string
 }
 
+// The handwritten line beside the "Field notes" heading of the index. The
+// share images of the index and of every note carry it too.
+export const FIELD_NOTES_ASIDE = "from the build log, not theory."
+
 export const FIELD_NOTES: FieldNote[] = [
   {
     slug: "build-an-app-without-coding",
     title: "Can a non-technical person really build an app with AI?",
+    highlight: "non-technical person",
     description:
       "A straight answer from someone doing it: seven products shipped since March 2025 with zero CS background. What AI actually handles, what stays on your plate, and how to start.",
     datePublished: "2026-08-17",
@@ -34,6 +42,7 @@ export const FIELD_NOTES: FieldNote[] = [
   {
     slug: "what-is-vibe-coding",
     title: "What is vibe coding?",
+    highlight: "vibe coding",
     description:
       "Vibe coding explained by someone who ships with it every night: the loop, the tools, what it is not, and where it breaks.",
     datePublished: "2026-08-17",
@@ -43,6 +52,7 @@ export const FIELD_NOTES: FieldNote[] = [
   {
     slug: "too-old-to-learn-to-code",
     title: `Is ${AGE} too old to learn to code?`,
+    highlight: "too old",
     description:
       "I started at 49 with no CS background and shipped my first product within months. What age costs, what it buys you, and why the real barrier isn't ability.",
     datePublished: "2026-08-17",
@@ -52,6 +62,7 @@ export const FIELD_NOTES: FieldNote[] = [
   {
     slug: "how-long-does-it-take-to-build-an-app-with-ai",
     title: "How long does it take to build an app with AI?",
+    highlight: "How long",
     description:
       "Where the time goes when you build with AI: what a working version takes, why the last 20 percent eats the calendar, and what the app-in-a-day claims leave out.",
     datePublished: "2026-08-17",
@@ -61,6 +72,7 @@ export const FIELD_NOTES: FieldNote[] = [
   {
     slug: "build-a-side-project-with-a-full-time-job",
     title: "How to build a side project with a full-time job (and kids)",
+    highlight: "full-time job",
     description:
       "The system behind seven shipped products: fixed windows instead of stolen hours, ruthless scope, and consistency math that beats motivation.",
     datePublished: "2026-08-17",
