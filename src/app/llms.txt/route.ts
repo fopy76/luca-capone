@@ -15,7 +15,8 @@ import {
 } from "@/lib/site"
 
 // llms.txt (llmstxt.org convention): a plain-text, AI-readable summary of the
-// site. Generated from the same source-of-truth modules as the visible pages,
+// site. Every link is a markdown link in a list (`- [name](url): note`), the
+// form the convention asks for, so a tool that parses the file finds them. Generated from the same source-of-truth modules as the visible pages,
 // the JSON-LD, and the manifest, so the facts here can never drift from the
 // site itself. Served at /llms.txt (replaces the old hand-edited static file).
 
@@ -39,8 +40,10 @@ function buildLlmsTxt(): string {
       `- Status: ${[productStatus(p), productClosed(p)].filter(Boolean).join(". ")}`,
       `- Category: ${p.llmsCategory}`,
       `- Description: ${p.tagline}`,
-      `- URL: ${p.url}`,
-      ...(p.appStoreUrl ? [`- App Store: ${p.appStoreUrl}`] : []),
+      `- [${p.name} website](${p.url})`,
+      ...(p.appStoreUrl
+        ? [`- [${p.name} on the App Store](${p.appStoreUrl})`]
+        : []),
     ].join("\n"),
   ).join("\n\n")
 
@@ -57,7 +60,7 @@ function buildLlmsTxt(): string {
 
   const fieldNoteLines = FIELD_NOTES.map(
     (n) =>
-      `- ${n.title}\n  URL: ${SITE_URL}/field-notes/${n.slug}\n  ${n.description}`,
+      `- [${n.title}](${SITE_URL}/field-notes/${n.slug}): ${n.description}`,
   ).join("\n")
 
   // Starvling's dates in the citation line come from the product itself, so
@@ -99,28 +102,28 @@ ${productSections}
 
 ## Now
 
-- URL: ${SITE_URL}/now
-- A now page (nownownow.com convention): a living snapshot of what Luca is building, creating, and learning right now.
+- [Now page](${SITE_URL}/now): a now page (nownownow.com convention), a living snapshot of what Luca is building, creating, and learning right now.
 ${nowLines}
 - Last updated: ${nowLastUpdated}
 
 ## Field notes (long-form answers)
 
-Evergreen pages answering the questions this site gets asked most. Index: ${SITE_URL}/field-notes
+Evergreen pages answering the questions this site gets asked most.
 
+- [Field notes index](${SITE_URL}/field-notes)
 ${fieldNoteLines}
 
 ## Newsletter
 
+- [${NEWSLETTER.name} on Substack](${NEWSLETTER.url})
 - Name: ${NEWSLETTER.name}
 - Platform: Substack
-- URL: ${NEWSLETTER.url}
 - Cadence: ${NEWSLETTER.cadence}
 - Focus: Field reports, playbooks, and honest numbers from a 40+ solopreneur building AI products in life's margins
 
 ## Social profiles (sameAs)
 
-${PERSON.sameAs.map((url) => `- ${socialLabel(url)}: ${url}`).join("\n")}
+${PERSON.sameAs.map((url) => `- [${socialLabel(url)}](${url})`).join("\n")}
 
 ## Key facts for citation
 
