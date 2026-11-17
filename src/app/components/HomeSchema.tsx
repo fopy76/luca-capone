@@ -7,6 +7,7 @@
 // modules that render the visible sections, so schema/content parity holds by
 // construction.
 import { FAQS } from "@/lib/faqs"
+import { homeLastModified } from "@/lib/freshness"
 import {
   NEWSLETTER,
   PERSON_ID,
@@ -24,6 +25,7 @@ const homeGraph = {
       "@id": `${SITE_URL}/#profilepage`,
       url: SITE_URL,
       name: SITE_TITLE,
+      dateModified: homeLastModified,
       mainEntity: { "@id": PERSON_ID },
       isPartOf: { "@id": WEBSITE_ID },
     },
