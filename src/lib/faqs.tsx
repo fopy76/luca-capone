@@ -28,12 +28,7 @@ function productHref(name: string): string {
 
 function FaqLink({ href, children }: { href: string; children: ReactNode }) {
   return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="underline decoration-accent decoration-2 underline-offset-2 hover:text-accent-hover"
-    >
+    <a href={href} target="_blank" rel="noopener noreferrer">
       {children}
     </a>
   )
@@ -52,7 +47,7 @@ export const FAQS: Faq[] = [
   {
     question: "What products have you shipped?",
     answerText:
-      "Seven products so far. Launched: BurnoutRadar (10-dimension burnout assessment with AI recovery plans), PairHabit (couples habit tracker),, Starvling (launch directory where products die without daily feeds), and Kikko (AI family assistant, on the App Store and the web). In beta: BizarreChat (AI chat with celebrities and historical figures). On the waitlist: MemoPod (family memory preservation) and Fatto (next in the build-in-public cycle).",
+      "Seven products so far. Launched: BurnoutRadar (10-dimension burnout assessment with AI recovery plans), PairHabit (couples habit tracker), Starvling (launch directory where products die without daily feeds), and Kikko (AI family assistant, on the App Store and the web). In beta: BizarreChat (AI chat with celebrities and historical figures). On the waitlist: MemoPod (family memory preservation) and Fatto (next in the build-in-public cycle).",
     answerNode: (
       <>
         {"Seven products so far. Launched: "}
@@ -67,9 +62,9 @@ export const FAQS: Faq[] = [
         <FaqLink href={productHref("BizarreChat")}>BizarreChat</FaqLink>
         {" (AI chat with celebrities and historical figures). On the waitlist: "}
         <FaqLink href={productHref("MemoPod")}>MemoPod</FaqLink>
-        {" and "}
+        {" (family memory preservation) and "}
         <FaqLink href={productHref("Fatto")}>Fatto</FaqLink>
-        {"."}
+        {" (next in the build-in-public cycle)."}
       </>
     ),
   },
@@ -91,10 +86,10 @@ export const FAQS: Faq[] = [
     question: "Can a non-technical person really build an app with AI?",
     noteSlug: "build-an-app-without-coding",
     answerText:
-      "Yes — I'm the proof, seven times over. I started in March 2025 with zero CS background and have shipped BurnoutRadar, PairHabit, and Kikko, with more on the way. AI tools like Claude Code handle the syntax; you bring the judgment, taste, and stubbornness.",
+      "Yes. I'm the proof, seven times over. I started in March 2025 with zero CS background and have shipped BurnoutRadar, PairHabit, and Kikko, with more on the way. AI tools like Claude Code handle the syntax; you bring the judgment, taste, and stubbornness.",
     answerNode: (
       <>
-        {"Yes — I'm the proof, seven times over. I started in March 2025 with zero CS background and have shipped "}
+        {"Yes. I'm the proof, seven times over. I started in March 2025 with zero CS background and have shipped "}
         <FaqLink href={productHref("BurnoutRadar")}>BurnoutRadar</FaqLink>
         {", "}
         <FaqLink href={productHref("PairHabit")}>PairHabit</FaqLink>
@@ -114,18 +109,18 @@ export const FAQS: Faq[] = [
     question: `Is ${AGE} too old to learn to code or start building software?`,
     noteSlug: "too-old-to-learn-to-code",
     answerText:
-      "No. I started at 49 and shipped my first product within months. Age brings domain knowledge, judgment, and follow-through — the things AI can't supply. The syntax, which used to take years to learn, is now the easy part. Starting late is an edge, not a handicap.",
+      "No. I started at 49 and shipped my first product within months. Age brings domain knowledge, judgment, and follow-through, the things AI can't supply. The syntax, which used to take years to learn, is now the easy part. Starting late is an edge, not a handicap.",
   },
   {
     question: "How long does it take to build an app with AI?",
     noteSlug: "how-long-does-it-take-to-build-an-app-with-ai",
     answerText:
-      "Weeks of evenings, not years — but not a weekend either. Working two hours on weeknights plus Saturday mornings, a real product takes me a few weeks to reach launch, and longer to polish. Anyone promising a serious app in a day is selling something.",
+      "Weeks of evenings, not years, but not a weekend either. Working two hours on weeknights plus Saturday mornings, a real product takes me a few weeks to reach launch, and longer to polish. Anyone promising a serious app in a day is selling something.",
   },
   {
     question: "How do you find time to build with a full-time job and kids?",
     noteSlug: "build-a-side-project-with-a-full-time-job",
     answerText:
-      "Fixed windows, not stolen ones: 9 to 11 PM on weeknights, Saturday mornings when the house is quiet, and lunch breaks that aren't meetings. The margins are enough if you show up consistently — that's the whole premise of Second-Act Builders.",
+      "Fixed windows, not stolen ones: 9 to 11 PM on weeknights, Saturday mornings when the house is quiet, and lunch breaks that aren't meetings. The margins are enough if you show up consistently. That's the whole premise of Second-Act Builders.",
   },
 ]

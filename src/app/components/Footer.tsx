@@ -1,26 +1,25 @@
-"use client"
-
-import { motion } from "framer-motion"
 import Link from "next/link"
-import { Twitter, Mail, Instagram, Youtube, Linkedin } from "lucide-react"
+import { EMAIL, PERSON } from "@/lib/site"
 
-function RedditIcon({ className, ...props }: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className={className}
-      aria-hidden="true"
-      {...props}
-    >
-      <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056L14.166 5.5l-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z" />
-    </svg>
-  )
+// How each profile in PERSON.sameAs is named in the footer. The newsletter
+// has its own block above, so Substack is left out here.
+const SOCIAL_NAMES: Record<string, string> = {
+  "x.com": "X",
+  "linkedin.com": "LinkedIn",
+  "youtube.com": "YouTube",
+  "instagram.com": "Instagram",
+  "reddit.com": "Reddit",
 }
 
-// "Proudly Built in Italy" brand lockup (inverted tricolore). Linework + wordmark use
-// currentColor so they inherit the footer text colour; the slash keeps the flag colours.
-function BuiltInItaly({ className, ...props }: React.SVGProps<SVGSVGElement>) {
+const socials = PERSON.sameAs.flatMap((href) => {
+  const label = SOCIAL_NAMES[new URL(href).hostname.replace(/^www\./, "")]
+  return label ? [{ label, href }] : []
+})
+
+// "Proudly Built in Italy" brand lockup (inverted tricolore). Linework and
+// wordmark use currentColor so they inherit the footer text colour; the slash
+// keeps the flag colours.
+function BuiltInItaly({ className }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 232 56"
@@ -28,7 +27,6 @@ function BuiltInItaly({ className, ...props }: React.SVGProps<SVGSVGElement>) {
       role="img"
       aria-label="Proudly Built in Italy"
       className={className}
-      {...props}
     >
       <title>Proudly Built in Italy</title>
       <path d="M18 14 8 28 18 42" stroke="currentColor" strokeWidth="5.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -44,104 +42,82 @@ function BuiltInItaly({ className, ...props }: React.SVGProps<SVGSVGElement>) {
         </g>
         <rect x="26.5" y="11" width="11" height="34" rx="5.5" fill="none" stroke="currentColor" strokeWidth="2.5" />
       </g>
-      <text x="80" y="26" fontFamily="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" fontSize="15" fontWeight="400" fill="currentColor">Proudly</text>
-      <text x="80" y="46" fontFamily="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" fontSize="18" fontWeight="600" fill="currentColor">Built in Italy</text>
+      <text
+        x="80"
+        y="26"
+        fontSize="15"
+        fill="currentColor"
+        style={{ fontFamily: "var(--f-display-i)", fontStyle: "italic" }}
+      >
+        Proudly
+      </text>
+      <text
+        x="80"
+        y="46"
+        fontSize="19"
+        fill="currentColor"
+        style={{ fontFamily: "var(--f-display)", fontWeight: 500 }}
+      >
+        Built in Italy
+      </text>
     </svg>
   )
 }
 
-type SocialIconProps = React.SVGProps<SVGSVGElement> & { className?: string }
-
-const socials: {
-  label: string
-  href: string
-  Icon: React.ComponentType<SocialIconProps>
-}[] = [
-  { label: "X (Twitter)", href: "https://x.com/LucaCaponeX", Icon: Twitter },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/luca76/", Icon: Linkedin },
-  { label: "YouTube", href: "https://www.youtube.com/@LucaCaponeYT", Icon: Youtube },
-  { label: "Instagram", href: "https://www.instagram.com/lucacapone.builds/", Icon: Instagram },
-  { label: "Reddit", href: "https://www.reddit.com/user/LucaCapone/", Icon: RedditIcon },
-]
-
-export default function Footer() {
+// The colophon: where to find Luca, and the small print. Server component,
+// shared by every page. `inner` gives it the wider text block of the pages
+// other than the home page (.leaf.inner), so its two hairlines continue theirs.
+// `late` is for a page whose colophon is far below the first screen: the
+// upright face in the lockup above can then wait for the first paint ("Faces
+// that can wait" in styles/margins.css).
+export default function Footer({
+  inner = false,
+  late = false,
+}: {
+  inner?: boolean
+  late?: boolean
+}) {
   return (
-    <footer id="connect" className="py-16 bg-foreground text-background">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="font-grotesk text-2xl md:text-3xl font-bold mb-4"
-        >
-          Connect
-        </motion.h2>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-background/75 mb-8 max-w-md mx-auto"
-        >
-          I&apos;m always open to connecting with fellow builders and creators. Drop a line or find me on any of these.
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex flex-col items-center gap-6"
-        >
-          <a
-            href="mailto:hello@lucacapone.io"
-            className="inline-flex items-center gap-3 text-background/85 hover:text-accent transition-colors duration-200 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-foreground rounded-sm px-2 py-1"
-          >
-            <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" aria-hidden="true" />
-            <span className="font-medium">hello@lucacapone.io</span>
-          </a>
-
-          <ul className="flex flex-wrap items-center justify-center gap-2 sm:gap-3" aria-label="Social links">
-            {socials.map(({ label, href, Icon }) => (
-              <li key={label}>
-                <a
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={label}
-                  title={label}
-                  className="flex items-center justify-center w-11 h-11 rounded-full border border-background/20 text-background/80 hover:text-on-accent hover:bg-accent hover:border-accent transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-foreground"
-                >
-                  <Icon className="w-5 h-5" aria-hidden="true" />
-                </a>
-              </li>
-            ))}
-          </ul>
-        </motion.div>
-
-        <div className="mt-12 pt-8 border-t border-background/20">
-          <nav aria-label="Site" className="mb-4 flex flex-wrap justify-center gap-x-2 gap-y-1">
-            <Link
-              href="/now"
-              className="text-background/60 hover:text-accent text-sm font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-foreground rounded-sm px-2 py-1"
-            >
-              What I&apos;m doing now
-            </Link>
-            <Link
-              href="/field-notes"
-              className="text-background/60 hover:text-accent text-sm font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-foreground rounded-sm px-2 py-1"
-            >
-              Field notes
-            </Link>
-          </nav>
-          <p className="text-background/60 text-sm">
-            © 2026 Luca Capone. All rights reserved.
-          </p>
-          <div className="mt-4 flex justify-center">
-            <BuiltInItaly className="h-7 w-auto text-background/60" />
+    <footer className={late ? "colophon late" : "colophon"} id="connect">
+      <div className={inner ? "leaf inner" : "leaf"}>
+        <div className="grid">
+          <div className="ml side-head">
+            <h2>Connect</h2>
           </div>
+          <div className="tb">
+            <p className="day">
+              I'm always open to connecting with fellow builders and creators.
+              Drop a line or find me on any of these.
+            </p>
+            <a className="email" href={`mailto:${EMAIL}`}>
+              {EMAIL}
+            </a>
+          </div>
+          <div className="mr">
+            <ul className="socials" aria-label="Social links">
+              {socials.map(({ label, href }) => (
+                <li key={label}>
+                  <a href={href} target="_blank" rel="noopener noreferrer">
+                    {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div className="imprint">
+          <p className="mono">
+            Colophon. Set in Fraunces, Newsreader, Caveat and IBM Plex Mono.
+            Vibe coded with Claude Code, in the margins. The drawings are
+            AI-generated.
+            <span className="imprint-links">
+              <Link href="/now">What I'm doing now</Link> ·{" "}
+              <Link href="/field-notes">Field notes</Link>
+            </span>
+            © 2026 {PERSON.name}. All rights reserved.
+          </p>
+          <BuiltInItaly className="italy" />
         </div>
       </div>
     </footer>

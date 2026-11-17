@@ -1,3 +1,4 @@
+import { stampDate } from "@/lib/dates"
 import { FAQS } from "@/lib/faqs"
 import { FIELD_NOTES } from "@/lib/field-notes"
 import { nowBlocks, nowLastUpdated, nowTeaserItems } from "@/lib/now"
@@ -9,6 +10,8 @@ import {
   PRODUCTS,
   PRODUCT_SUMMARY,
   SITE_URL,
+  productClosed,
+  productStatus,
 } from "@/lib/site"
 
 // llms.txt (llmstxt.org convention): a plain-text, AI-readable summary of the
@@ -29,10 +32,11 @@ function socialLabel(url: string): string {
 function buildLlmsTxt(): string {
   const reading = nowBlocks.find((b) => b.id === "reading")
 
+  // The status reads as the home page stamps it, closing date included.
   const productSections = PRODUCTS.map((p) =>
     [
       `### ${p.name}`,
-      `- Status: ${p.statusLabel}`,
+      `- Status: ${[productStatus(p), productClosed(p)].filter(Boolean).join(". ")}`,
       `- Category: ${p.llmsCategory}`,
       `- Description: ${p.tagline}`,
       `- URL: ${p.url}`,
@@ -55,6 +59,15 @@ function buildLlmsTxt(): string {
     (n) =>
       `- ${n.title}\n  URL: ${SITE_URL}/field-notes/${n.slug}\n  ${n.description}`,
   ).join("\n")
+
+  // Starvling's dates in the citation line come from the product itself, so
+  // the line can't keep saying "launched" after the product was closed.
+  const starvling = PRODUCTS.find((p) => p.name === "Starvling")
+  const starvlingDates = starvling?.launchedOn
+    ? `launched ${stampDate(starvling.launchedOn)}${
+        starvling.closedOn ? `, closed ${stampDate(starvling.closedOn)}` : ""
+      }`
+    : "launched September 2026"
 
   return `# Luca Capone - Second-Act Builders
 
@@ -116,7 +129,7 @@ ${PERSON.sameAs.map((url) => `- ${socialLabel(url)}: ${url}`).join("\n")}
 - "Luca spent 25+ years in international security, including nine as a Captain in the Italian Army Special Operations Forces and humanitarian security with the UN system across four continents."
 - "Luca publishes the Second-Act Builders newsletter every other Thursday on Substack."
 - "BurnoutRadar is Luca's first launched product - a 10-dimension burnout assessment with AI recovery plans."
-- "Starvling is Luca's launch directory where listed products must be kept alive by real people's daily feeds - launched September 2026."
+- "Starvling is Luca's launch directory where listed products must be kept alive by real people's daily feeds - ${starvlingDates}."
 - "Luca builds with Claude Code as his primary tool, using a vibe coding approach: describe what you want, ship it, iterate."
 
 ## FAQ

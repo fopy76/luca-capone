@@ -1,47 +1,39 @@
 // Shared scaffolding for /field-notes pages: typography, the note layout with
-// per-note Article + BreadcrumbList JSON-LD, the newsletter CTA, and related
-// links. Server components only — note prose must reach crawlers as plain
+// per-note Article + BreadcrumbList JSON-LD, the newsletter slip, and related
+// links. Server components only: note prose must reach crawlers as plain
 // HTML, never gated behind JS.
+//
+// A note is a reading page (see "a field note" in styles/margins.css). Its
+// body is a flat run of <Lede>, <H2>, <P> and <UL>; the stylesheet puts each
+// paragraph in the text block and hangs each H2 in the left margin beside the
+// paragraph that follows it. Nothing in the body animates.
 import type { ReactNode } from "react"
 import Link from "next/link"
 import Navigation from "../components/Navigation"
 import Footer from "../components/Footer"
+import InkEffects from "../components/InkEffects"
+import { CtaArrow } from "../components/ink"
 import { FIELD_NOTES, type FieldNote } from "@/lib/field-notes"
 import { NEWSLETTER, PERSON_ID, SITE_URL, WEBSITE_ID } from "@/lib/site"
 
 export function P({ children }: { children: ReactNode }) {
-  return (
-    <p className="text-[17px] text-text-secondary leading-[1.7] mb-5">
-      {children}
-    </p>
-  )
+  return <p>{children}</p>
 }
 
-// Opening paragraph: the direct answer, visually weighted like the About lede.
+// Opening paragraph: the direct answer, set in the display face.
 export function Lede({ children }: { children: ReactNode }) {
-  return (
-    <p className="text-lg md:text-xl font-medium text-text leading-snug mb-8">
-      {children}
-    </p>
-  )
+  return <p className="answer">{children}</p>
 }
 
 export function H2({ children }: { children: ReactNode }) {
-  return (
-    <h2 className="font-grotesk text-2xl md:text-3xl font-bold text-text tracking-tight mt-12 mb-5">
-      {children}
-    </h2>
-  )
+  return <h2>{children}</h2>
 }
 
 export function UL({ children }: { children: ReactNode }) {
-  return (
-    <ul className="list-disc pl-5 space-y-3 mb-5 text-[17px] text-text-secondary leading-[1.7]">
-      {children}
-    </ul>
-  )
+  return <ul>{children}</ul>
 }
 
+// A link inside the prose, in pen.
 export function NoteLink({
   href,
   children,
@@ -55,7 +47,7 @@ export function NoteLink({
     <a
       href={href}
       {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-      className="underline decoration-accent decoration-2 underline-offset-2 hover:text-accent-hover"
+      className="pen"
     >
       {children}
     </a>
@@ -109,71 +101,83 @@ export function NoteLayout({
   const related = FIELD_NOTES.filter((n) => n.slug !== note.slug)
 
   return (
-    <div className="min-h-screen bg-background">
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(noteSchema(note)) }}
       />
       <Navigation />
-      <main>
-        <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
-          <header className="mb-10">
-            <nav aria-label="Breadcrumb" className="mb-6 text-sm font-medium">
-              <Link
-                href="/field-notes"
-                className="text-text-muted hover:text-text transition-colors"
-              >
-                ← Field notes
-              </Link>
+      <main id="main">
+        <article className="leaf inner">
+          <span className="read" aria-hidden="true" />
+          <header className="grid page-head note-head">
+            <nav aria-label="Breadcrumb" className="ml crumb">
+              <Link href="/field-notes">← Field notes</Link>
             </nav>
-            <h1 className="font-grotesk text-3xl md:text-5xl font-bold text-text tracking-tight text-balance mb-4">
-              {note.title}
-            </h1>
-            <p className="text-sm font-medium text-text-muted">
-              By Luca Capone · Updated{" "}
-              <time dateTime={note.dateModified}>
-                {note.dateModifiedDisplay}
-              </time>
-            </p>
+            <div className="tb">
+              <h1>{note.title}</h1>
+              <p className="mono byline">
+                By Luca Capone · Updated{" "}
+                <time dateTime={note.dateModified}>
+                  {note.dateModifiedDisplay}
+                </time>
+              </p>
+            </div>
           </header>
 
-          {children}
+          <div className="note-body">{children}</div>
 
-          <aside className="mt-14 bg-bg-subtle border border-border rounded-lg p-6 md:p-8">
-            <h2 className="font-grotesk text-xl md:text-2xl font-bold text-text tracking-tight mb-3">
-              Get the field report
-            </h2>
-            <p className="text-[17px] text-text-secondary leading-[1.7] mb-5">
-              Everything on this page comes from the build log, not theory. The
-              full version — real experiments, real numbers, no hustle-bro
-              nonsense — lands every other Thursday in{" "}
-              <NoteLink href={NEWSLETTER.url} external>
-                Second-Act Builders
-              </NoteLink>
-              . Free forever.
-            </p>
-            <a
-              href={NEWSLETTER.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center bg-accent text-on-accent font-semibold text-sm px-5 py-3 rounded-md hover:bg-accent-hover motion-safe:hover:-translate-y-0.5 transition-all duration-200 shadow-sm hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 min-h-[44px]"
-            >
-              Subscribe on Substack
-            </a>
-          </aside>
+          <div className="grid note-slip-row">
+            <div className="wide">
+              <aside className="slip note-slip">
+                <svg
+                  className="scissors"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <circle cx="6" cy="7" r="2.6" />
+                  <circle cx="6" cy="17" r="2.6" />
+                  <path d="M8.2 8.4 20 17M8.2 15.6 20 7" />
+                </svg>
+                <h2>Get the field report</h2>
+                <p>
+                  Everything on this page comes from the build log, not theory.
+                  The full version (real experiments, real numbers, no
+                  hustle-bro nonsense) lands every other Thursday in{" "}
+                  <NoteLink href={NEWSLETTER.url} external>
+                    Second-Act Builders
+                  </NoteLink>
+                  . Free forever.
+                </p>
+                <div className="acts">
+                  <a
+                    className="cta"
+                    href={NEWSLETTER.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Subscribe on Substack
+                    <CtaArrow />
+                  </a>
+                </div>
+              </aside>
+            </div>
+          </div>
 
-          <section className="mt-14 border-t border-border pt-10">
-            <h2 className="font-grotesk text-xl md:text-2xl font-bold text-text tracking-tight mb-5">
-              More field notes
-            </h2>
-            <ul className="space-y-3">
+          <section className="note-body more">
+            <h2>More field notes</h2>
+            <ul className="reading">
               {related.map((n) => (
                 <li key={n.slug}>
-                  <Link
-                    href={`/field-notes/${n.slug}`}
-                    className="text-[17px] font-medium text-text underline decoration-accent decoration-2 underline-offset-2 hover:text-accent-hover"
-                  >
-                    {n.title}
+                  <Link href={`/field-notes/${n.slug}`}>
+                    <span className="t">
+                      <span>{n.title}</span>
+                    </span>
                   </Link>
                 </li>
               ))}
@@ -181,7 +185,8 @@ export function NoteLayout({
           </section>
         </article>
       </main>
-      <Footer />
-    </div>
+      <Footer inner />
+      <InkEffects />
+    </>
   )
 }

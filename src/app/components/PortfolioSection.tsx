@@ -1,107 +1,183 @@
-"use client"
-
-import { motion } from "framer-motion"
 import Image from "next/image"
-import { ArrowRight } from "lucide-react"
-import { PRODUCTS, type Product, type ProductStatus } from "@/lib/site"
+import {
+  PRODUCTS,
+  countWord,
+  productClosed,
+  productStatus,
+  type Product,
+  type ProductStatus,
+} from "@/lib/site"
+import { GoArrow, Hand, Written } from "./ink"
 
-const statusBadgeClass: Record<ProductStatus, string> = {
-  launched: "bg-[#DCFCE7] text-[#166534]",
-  beta: "bg-accent-subtle text-on-accent",
-  waitlist: "bg-bg-muted text-text-secondary",
+// The products, one row each: drawn mark and name in the left margin, the
+// canonical tagline in the text block, the honest status stamped in the right
+// margin with one handwritten note. Everything printed here comes from
+// PRODUCTS in src/lib/site.ts. A product with a postmortem gets the longer
+// "feature" row with its numbers.
+//
+// Server component: taglines and links must reach crawlers as plain HTML
+// (the taglines are also the JSON-LD descriptions in HomeSchema).
+
+const stampClass: Record<ProductStatus, string> = {
+  launched: "stamp",
+  beta: "stamp beta",
+  waitlist: "stamp wait",
 }
 
-function ProductCardInner({ product }: { product: Product }) {
+// The wording comes from site.ts (productStatus, productClosed), which
+// llms.txt uses too: what is stamped here is what is listed there.
+function Stamps({ product }: { product: Product }) {
+  const closed = productClosed(product)
   return (
     <>
-      <div className="flex items-start justify-between mb-4">
-        <span
-          className={`text-xs font-semibold px-3 py-1 rounded-full ${statusBadgeClass[product.status]}`}
-        >
-          {product.statusLabel}
+      <span className={stampClass[product.status]} data-ink="">
+        {productStatus(product)}
+      </span>
+      {closed && (
+        <span className="stamp closed" data-ink="">
+          {closed}
         </span>
-        <div className="w-12 h-12 flex-shrink-0">
-          {product.icon ? (
-            <Image
-              src={product.icon}
-              alt={`${product.name} app icon`}
-              width={48}
-              height={48}
-              className="rounded-lg"
-            />
-          ) : product.iconInitial ? (
-            <div
-              className="w-12 h-12 rounded-lg bg-accent-subtle text-on-accent flex items-center justify-center font-grotesk font-bold text-xl"
-              aria-hidden="true"
-            >
-              {product.iconInitial}
-            </div>
-          ) : null}
+      )}
+    </>
+  )
+}
+
+function Name({ product }: { product: Product }) {
+  // The mark is drawn 84px tall (60px below 1040px wide, see .work-name .mark)
+  // and as wide as its own proportions make it.
+  const { src, width, height } = product.mark
+  const drawn = (tall: number): number => Math.round((tall * width) / height)
+  return (
+    <div className="ml work-name" data-ink="">
+      <Image
+        className="mark boil"
+        src={src}
+        alt=""
+        width={width}
+        height={height}
+        sizes={`(max-width: 1039px) ${drawn(60)}px, ${drawn(84)}px`}
+      />
+      {/* One link for the whole name block. Its ::after is stretched over
+          the drawing too (.work-name h3 a in styles/margins.css), so the
+          mark is clickable without a second link that has no name. */}
+      <h3>
+        <a
+          href={product.cardUrl ?? product.url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {product.name}
+        </a>
+      </h3>
+    </div>
+  )
+}
+
+function Body({ product }: { product: Product }) {
+  return (
+    <div className="tb work-body">
+      <p className="tagline">{product.tagline}</p>
+      <ul className="tags">
+        {product.features.map((feature) => (
+          <li key={feature}>{feature}</li>
+        ))}
+      </ul>
+      <a
+        className="go"
+        href={product.cardUrl ?? product.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`${product.name}: ${product.ctaText}`}
+      >
+        {product.ctaText}
+        <GoArrow />
+      </a>
+      {product.postmortem && (
+        <Written as="span" className="caret" text={`^ ${product.postmortem.aside}`} />
+      )}
+    </div>
+  )
+}
+
+function Work({ product }: { product: Product }) {
+  const { postmortem } = product
+
+  if (!postmortem) {
+    return (
+      <article className="work grid">
+        <Name product={product} />
+        <Body product={product} />
+        <div className="mr work-notes">
+          <Stamps product={product} />
+          {product.note && (
+            <Hand text={product.note} red={product.status === "beta"} />
+          )}
+        </div>
+      </article>
+    )
+  }
+
+  return (
+    <article className="work feature">
+      <div className="grid">
+        <Name product={product} />
+        <Body product={product} />
+        <div className="mr work-notes">
+          <div className="stamps">
+            <Stamps product={product} />
+          </div>
+          <Hand red text={postmortem.verdict} />
         </div>
       </div>
-
-      <h3 className="font-grotesk text-2xl font-bold text-text mb-2">
-        {product.name}
-      </h3>
-
-      <p className="text-base text-text-secondary mb-4 leading-relaxed">
-        {product.tagline}
-      </p>
-
-      <div className="flex flex-wrap gap-1.5 mb-6">
-        {product.features.map((feature) => (
-          <span
-            key={feature}
-            className="inline-block bg-bg-muted text-text-secondary text-xs font-medium px-2 py-0.5 rounded-sm"
-          >
-            {feature}
-          </span>
-        ))}
+      <div className="grid">
+        <div className="wide grave-host" data-ink="">
+          <div className="tally">
+            {postmortem.stats.map((stat) => (
+              <div key={stat.label}>
+                <b>{stat.value}</b>
+                <span className="mono">{stat.label}</span>
+              </div>
+            ))}
+          </div>
+          <Image
+            className="doodle boil d-grave"
+            src="/margins/doodles/tombstone.webp"
+            alt=""
+            width={355}
+            height={450}
+            sizes="(max-width: 1039px) 69px, 107px"
+          />
+          <Hand red className="aftermath" text={postmortem.aftermath} />
+        </div>
       </div>
-
-      <span className="inline-flex items-center gap-1 text-text font-semibold text-sm group-hover:text-accent-hover transition-colors mt-auto">
-        {product.ctaText}
-        <ArrowRight className="w-4 h-4" aria-hidden="true" />
-      </span>
-    </>
+    </article>
   )
 }
 
 export default function PortfolioSection() {
   return (
-    <section id="products" className="py-20 bg-muted scroll-mt-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="font-grotesk text-3xl md:text-5xl font-bold text-center mb-4 text-text">
-          Shipped and shipping
-        </h2>
-        <p className="text-base md:text-lg text-text-secondary text-center mb-16 max-w-xl mx-auto">
-          Status over platform. What&apos;s live, in beta, and on the way.
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {PRODUCTS.map((product, index) => (
-            <motion.div
-              key={product.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="h-full"
-            >
-              <a
-                href={product.cardUrl ?? product.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group block h-full flex flex-col bg-card border border-border rounded-lg p-6 shadow-sm transition-all duration-200 motion-safe:hover:-translate-y-1 hover:shadow-md hover:border-border-strong focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
-                aria-label={`${product.name}: ${product.ctaText}`}
-              >
-                <article className="contents">
-                  <ProductCardInner product={product} />
-                </article>
-              </a>
-            </motion.div>
-          ))}
+    <section className="sec" id="products" aria-labelledby="h-products">
+      <div className="grid sec-top">
+        <div className="ml side-head">
+          <h2 id="h-products">Shipped and shipping</h2>
         </div>
+        <div className="tb">
+          <p className="day">
+            Status over platform. What's live, in beta, and on the way.
+          </p>
+        </div>
+        <div className="mr">
+          <Hand
+            className="aside-note"
+            text={`${countWord(PRODUCTS.length)} so far. the honest status is stamped on each one.`}
+          />
+        </div>
+      </div>
+
+      <div className="works">
+        {PRODUCTS.map((product) => (
+          <Work key={product.name} product={product} />
+        ))}
       </div>
     </section>
   )

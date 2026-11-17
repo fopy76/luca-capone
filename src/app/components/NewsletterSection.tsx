@@ -1,50 +1,79 @@
+import Image from "next/image"
 import { AGE, NEWSLETTER } from "@/lib/site"
+import { Hand } from "./ink"
+import SubstackEmbed from "./SubstackEmbed"
 
+// The newsletter block, drawn as a subscription slip cut along a dashed
+// line. Every "Get the field report" button on the site lands here, on
+// Substack's own signup form.
 export default function NewsletterSection() {
   return (
-    <section
-      id="newsletter"
-      className="py-20 bg-bg-subtle border-y border-border scroll-mt-16"
-    >
-      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="font-grotesk text-3xl md:text-5xl font-bold text-text mb-4 tracking-tight">
-          Second-Act Builders, every other Thursday.
+    <section className="slip-wrap" id="newsletter" aria-labelledby="h-news">
+      <div className="slip" data-ink="">
+        <Image
+          className="doodle boil d-plane"
+          src="/margins/doodles/airplane.webp"
+          alt=""
+          width={492}
+          height={314}
+          sizes="(max-width: 1039px) 112px, 158px"
+        />
+        <Image
+          className="doodle boil d-envelope"
+          src="/margins/doodles/envelope.webp"
+          alt=""
+          width={375}
+          height={285}
+          sizes="(max-width: 560px) 84px, 112px"
+        />
+        <svg
+          className="scissors"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
+          <circle cx="6" cy="7" r="2.6" />
+          <circle cx="6" cy="17" r="2.6" />
+          <path d="M8.2 8.4 20 17M8.2 15.6 20 7" />
+        </svg>
+
+        <p className="mono">
+          <span>Subscription slip</span>
+          <span>Free forever</span>
+        </p>
+        <h2 id="h-news">
+          {NEWSLETTER.name},{" "}
+          <mark className="hl" data-ink="">
+            every other Thursday.
+          </mark>
         </h2>
-        <p className="text-base md:text-lg text-text-secondary mb-10 max-w-xl mx-auto leading-relaxed">
+        <p className="pitch">
           The messy middle of building AI products at {AGE}. Real experiments,
           real numbers, no hustle-bro nonsense. Free forever.
         </p>
 
-        <div className="max-w-md mx-auto bg-background border border-border-strong rounded-lg shadow-sm p-4">
-          <iframe
-            src="https://secondactbuilders.substack.com/embed"
-            width="100%"
-            height="120"
-            style={{
-              border: "none",
-              background: "transparent",
-            }}
-            frameBorder="0"
-            scrolling="no"
-            title="Subscribe to Second-Act Builders"
+        <div className="slip-form">
+          <SubstackEmbed
+            src={`${NEWSLETTER.url}/embed`}
+            title={`Subscribe to ${NEWSLETTER.name}`}
           />
+          <Hand text="it runs on Substack." />
         </div>
 
         {/* Crawlable fallback: the iframe is invisible to non-JS crawlers. */}
-        <p className="text-sm text-text-secondary mt-4">
+        <p className="slip-alt">
           Or subscribe directly on{" "}
-          <a
-            href={NEWSLETTER.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline decoration-accent decoration-2 underline-offset-2 hover:text-accent-hover"
-          >
+          <a href={NEWSLETTER.url} target="_blank" rel="noopener noreferrer">
             Substack
           </a>
           .
         </p>
 
-        <p className="text-sm text-text-muted mt-6">
+        <p className="fine">
           Field report every other Thursday. No spam. Unsubscribe in one click.
         </p>
       </div>

@@ -87,7 +87,7 @@ export default function Page() {
       <P>From my own builds:</P>
       <UL>
         <li>
-          <strong className="text-text">The unglamorous 80 percent.</strong>{" "}
+          <strong>The unglamorous 80 percent.</strong>{" "}
           The demo took evenings; accounts, payments, and polish took the weeks
           after. I wrote up the real timelines in{" "}
           <NoteLink href="/field-notes/how-long-does-it-take-to-build-an-app-with-ai">
@@ -96,12 +96,12 @@ export default function Page() {
           .
         </li>
         <li>
-          <strong className="text-text">App review.</strong> Getting PairHabit
+          <strong>App review.</strong> Getting PairHabit
           through the App Store taught me more about Apple's rules than I ever
           wanted to know.
         </li>
         <li>
-          <strong className="text-text">Understanding enough.</strong> You
+          <strong>Understanding enough.</strong> You
           don't need to write code, but you do need to slowly learn what the
           pieces are — or you'll ask for the wrong things and believe the wrong
           answers.
