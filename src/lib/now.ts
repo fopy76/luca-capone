@@ -22,8 +22,8 @@ export type NowTeaserItem = {
 }
 
 // ISO date: used by <time dateTime>, JSON-LD dateModified, and sitemap lastModified.
-export const nowLastUpdated = "2026-11-16"
-export const nowLastUpdatedDisplay = "November 16, 2026"
+export const nowLastUpdated = "2026-11-17"
+export const nowLastUpdatedDisplay = "November 17, 2026"
 
 // Curated one-liners for the landing-page teaser.
 export const nowTeaserItems: NowTeaserItem[] = [
@@ -37,7 +37,7 @@ export const nowTeaserItems: NowTeaserItem[] = [
   },
   {
     label: "Learning",
-    text: "Distribution, the skill I never built — practising it on short-form video, where the feedback arrives in hours instead of months.",
+    text: "Distribution, the skill I never built. I'm practising it on short-form video, where the feedback arrives in hours instead of months.",
   },
 ]
 
@@ -49,7 +49,7 @@ export const nowBlocks: NowBlock[] = [
       {
         title: "Kikko",
         description:
-          "AI family assistant for schedules and school communication — on the web since July, on the App Store since September 14. Both halves are live and nothing is broken, but it hasn't had my build hours this autumn. I stopped adding features to a product nobody was finding, and went to learn the finding part somewhere cheaper. The families already using it are still using it, and that's the number I check.",
+          "AI family assistant for schedules and school communication. On the web since July, on the App Store since September 14. Both halves are live and nothing is broken, but it hasn't had my build hours this autumn. I stopped adding features to a product nobody was finding, and went to learn the finding part somewhere cheaper. The families already using it are still using it, and that's the number I check.",
         href: "https://www.kikko.ai/",
         external: true,
       },
@@ -63,7 +63,7 @@ export const nowBlocks: NowBlock[] = [
       {
         title: "Starvling",
         description:
-          "Closed on September 22. Launched September 8 as a launch directory where every listed product was a pixel creature losing HP around the clock, kept alive only by free daily feeds from real people. I wrote the kill rule before launch: a decision date and the numbers that would make me stop. It came in at 297 feeds, all fifteen listings had starved by September 16, and not one person paid. So the rule fired and I stopped. The site stays up — directory, graveyard, every tombstone — and I published the teardown instead of quietly deleting it.",
+          "Closed on September 22. Launched September 8 as a launch directory where every listed product was a pixel creature losing HP around the clock, kept alive only by free daily feeds from real people. I wrote the kill rule before launch: a decision date and the numbers that would make me stop. It came in at 297 feeds, all fifteen listings had starved by September 16, and not one person paid. So the rule fired and I stopped. The site stays up: directory, graveyard, every tombstone. And I published the teardown instead of quietly deleting it.",
         href: "https://starvling.com",
         external: true,
       },
@@ -83,7 +83,7 @@ export const nowBlocks: NowBlock[] = [
       {
         title: "Italy Did What?",
         description:
-          "A YouTube Shorts channel I started this month: true, strange stories from Ancient Rome and Italian history, told as short cartoons. Sixteen Shorts up so far, animated in code rather than filmed — no camera, no face, nothing that needs me to be presentable at 6am. The spread is the whole reason I am doing it: the best one has about 1,500 views, the worst has eleven, and the channel is still on ten subscribers. Same channel, same effort per video, wildly different results. That teaches me more about what makes someone click than another month of planning would.",
+          "A YouTube Shorts channel I started this month: true, strange stories from Ancient Rome and Italian history, told as short cartoons. Sixteen Shorts up so far, animated in code rather than filmed: no camera, no face, nothing that needs me to be presentable at 6am. The spread is the whole reason I am doing it: the best one has about 1,500 views, the worst has eleven, and the channel is still on ten subscribers. Same channel, same effort per video, wildly different results. That teaches me more about what makes someone click than another month of planning would.",
         href: "https://www.youtube.com/@ItalyDidWhat",
         external: true,
       },
@@ -97,14 +97,14 @@ export const nowBlocks: NowBlock[] = [
       {
         title: "Second-Act Builders",
         description:
-          "The Substack newsletter for 40+ professionals building AI products alongside careers and families. Field reports, playbooks, honest numbers — every other Thursday.",
+          "The Substack newsletter for 40+ professionals building AI products alongside careers and families. Field reports, playbooks, honest numbers. Every other Thursday.",
         href: "https://secondactbuilders.substack.com",
         external: true,
       },
       {
         title: "Building in public",
         description:
-          "Daily progress on X (@LucaCaponeX), plus LinkedIn, YouTube, Instagram, and Reddit. The Starvling teardown ran there for two weeks with the numbers attached — the failure got the same airtime the launch did. The video experiment is getting the same treatment, view counts included.",
+          "Daily progress on X (@LucaCaponeX), plus LinkedIn, YouTube, Instagram, and Reddit. The Starvling teardown ran there for two weeks with the numbers attached. The failure got the same airtime the launch did. The video experiment is getting the same treatment, view counts included.",
         href: "https://x.com/LucaCaponeX",
         external: true,
       },
@@ -121,24 +121,24 @@ export const nowBlocks: NowBlock[] = [
     heading: "Learning",
     items: [
       {
-        title: "Distribution — the skill I never built",
+        title: "Distribution, the skill I never built",
         description:
-          "I can ship a product in a weekend. I had no idea how to get one found, and after twenty months of building I stopped pretending that was a scheduling problem. This month I moved the practice off my own products and onto two YouTube channels, because the loop there is hours instead of months: publish, read the number, publish again. I had already worked through the marketing books and the channels that hold up — this is the part where I stop reading and run the plays, on something I do not mind getting wrong. Then I bring what works back to Kikko and PairHabit.",
+          "I can ship a product in a weekend. I had no idea how to get one found, and after twenty months of building I stopped pretending that was a scheduling problem. This month I moved the practice off my own products and onto two YouTube channels, because the loop there is hours instead of months: publish, read the number, publish again. I had already worked through the marketing books and the channels that hold up. This is the part where I stop reading and run the plays, on something I do not mind getting wrong. Then I bring what works back to Kikko and PairHabit.",
       },
       {
         title: "What actually makes a short get watched",
         description:
-          "The first second decides it. After that it's a question you want answered before you have decided to care, and a reason to still be there at the end. Twenty-four Shorts across two channels so far, and I am reading the retention on each one rather than guessing — which is the opposite of how I launched every product before this.",
+          "The first second decides it. After that it's a question you want answered before you have decided to care, and a reason to still be there at the end. Twenty-four Shorts across two channels so far, and I am reading the retention on each one rather than guessing. That's the opposite of how I launched every product before this.",
       },
       {
         title: "Kill rules, and when to stop",
         description:
-          "Starvling was the first thing I shipped with its stopping condition written down in advance. Writing it took ten minutes in August; on decision day it turned what could have been an argument with myself into arithmetic. The surprise is that the hard part isn't the launch — it's deciding beforehand what result would make you walk away, while you still like the idea. Both channels have one now too.",
+          "Starvling was the first thing I shipped with its stopping condition written down in advance. Writing it took ten minutes in August; on decision day it turned what could have been an argument with myself into arithmetic. The surprise is that the hard part isn't the launch. It's deciding beforehand what result would make you walk away, while you still like the idea. Both channels have one now too.",
       },
       {
         title: "Deeper agentic workflows with Claude Code",
         description:
-          "Skills, subagents, and scheduled automation to ship faster in two-hour evening windows. Both Shorts channels run off a production line I built this way — the animation, the voice, and the publishing step are all code, which is the only reason one person can keep two channels fed.",
+          "Skills, subagents, and scheduled automation to ship faster in two-hour evening windows. Both Shorts channels run off a production line I built this way. The animation, the voice, and the publishing step are all code, which is the only reason one person can keep two channels fed.",
       },
       {
         title: "Swift and SwiftUI",
@@ -152,12 +152,12 @@ export const nowBlocks: NowBlock[] = [
     heading: "Reading",
     items: [
       {
-        title: "AI Demystified — Antonio Weiss",
+        title: "AI Demystified, by Antonio Weiss",
         description:
           "Sharpening the mental models behind the tools I use every day.",
       },
       {
-        title: "$100M Offers — Alex Hormozi",
+        title: "$100M Offers, by Alex Hormozi",
         description:
           "How to make offers so good people feel stupid saying no. Applying it to how I package and price my products.",
       },
