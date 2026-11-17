@@ -5,7 +5,7 @@
 // card chooses the breaks: the words are measured (headlineMeasure in
 // kit.tsx), the lines are balanced the way `text-wrap: balance` balances the
 // headlines on the pages, and the type is set as large as the space allows.
-import { HEADLINE_LEADING, HEADLINE_TRACKING, Swipe, headlineStyle } from "./kit"
+import { HEADLINE_LEADING, HEADLINE_TRACKING, Swipe, headlineStyle, plain } from "./kit"
 import type { Measure } from "./kit"
 
 // A run of letters with no break in it. `swipe` marks the highlighted words.
@@ -128,7 +128,8 @@ export function setHeadline(
     maxLines = 3,
   }: { sizes: number[]; maxWidth: number; maxHeight: number; maxLines?: number },
 ): SetHeadline {
-  const units = unitsOf(text, swipe)
+  // Made plain first, so the words that are measured are the words drawn.
+  const units = unitsOf(plain(text), plain(swipe))
   let best: (SetHeadline & { score: number }) | null = null
   let fallback: SetHeadline | null = null
 

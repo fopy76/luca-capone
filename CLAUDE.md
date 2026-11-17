@@ -255,9 +255,10 @@ home, `/now`, `/field-notes`, and one in each note folder.
   OTF or WOFF fonts, one fixed style per file. So the cards have their own
   font files in `src/app/fonts/og/` (see "Fonts") and none of
   `styles/margins.css` applies to them.
-- No em dash or en dash is drawn on a card: `render()` sets any that reach it
-  as a hyphen. There is no handwriting on the `/now` card, for the same
-  reason as on the page. Nothing that matters goes in the bottom left corner,
+- No em dash or en dash is drawn on a card. The copy has none, and as a net
+  under that, `render()` sets one that slips through as a comma, or as "to"
+  between two numbers (never as a hyphen). There is no handwriting on the
+  `/now` card, for the same reason as on the page. Nothing that matters goes in the bottom left corner,
   where X lays the site's address over a shared image.
 - A field note's card needs two things. `highlight` in its entry in
   `field-notes.ts`: the words the swipe goes over, which must be in the title

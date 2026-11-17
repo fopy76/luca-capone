@@ -199,13 +199,24 @@ export function balancedWidth(text: string, measure: Measure, px: number, width:
 
 // --- rendering ------------------------------------------------------------
 
-// No em dash or en dash is ever drawn on a share image, whatever the copy it
-// is given (the /now snapshot is rewritten weekly). Any that arrive are set
-// as a plain hyphen: render() passes every string on a card through plain().
-// The cards use it for their alt text too. The range is U+2012 to U+2015:
-// figure dash, en dash, em dash and horizontal bar.
-const DASHES = /[\u2012-\u2015]/g
-export const plain = (text: string): string => text.replace(DASHES, "-")
+// No em dash or en dash is ever drawn on a share image. The site's copy has
+// none: a sentence that wants one is rewritten, and a dash is never swapped
+// for a hyphen. This is the net under that rule, for copy that changes without
+// anyone looking at the card (the /now snapshot is rewritten weekly). A dash
+// between two numbers is a range and reads "to"; any other is a pause, and a
+// comma takes its place. render() passes every string on a card through
+// plain(), a headline is made plain before it is set, and the cards use it
+// for their alt text too. The range is U+2012 to U+2015: figure dash, en
+// dash, em dash and horizontal bar.
+const EDGE_DASH = /^\s*[\u2012-\u2015]\s*|\s*[\u2012-\u2015]\s*$/g
+const RANGE_DASH = /(\d)\s*[\u2012-\u2015]\s*(?=\d)/g
+const PAUSE_DASH = /\s*[\u2012-\u2015]\s*/g
+export const plain = (text: string): string =>
+  text
+    // one that opens or closes the text has nothing to join, and goes
+    .replace(EDGE_DASH, "")
+    .replace(RANGE_DASH, "$1 to ")
+    .replace(PAUSE_DASH, ", ")
 
 // Walks a card and returns it with every string made plain. It calls the
 // small components in this file itself, so none of them is skipped.
