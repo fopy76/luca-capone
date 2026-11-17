@@ -18,7 +18,10 @@ export default function NowSection() {
       <div className="grid">
         <div className="ml side-head">
           <h2 id="h-now">What I'm doing now</h2>
-          <Hand text="kill rules: decide what would make you stop, before you launch." />
+          {/* Evergreen on purpose: the teaser beside it is rewritten weekly
+              and nothing rewrites this note. The words are the /now page's
+              own promise. */}
+          <Hand text="updated whenever my focus genuinely changes." />
         </div>
         <div className="wide">
           <p className="day above">

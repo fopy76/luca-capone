@@ -9,8 +9,8 @@ import { useEffect, useRef } from "react"
 // fetches it as the reader scrolls near. Two nudges make sure it is ready
 // before anyone arrives: a few seconds after the page has finished loading,
 // or as soon as the pointer or the keyboard reaches a "Get the field report"
-// link, it is switched to load straight away. With JavaScript off the
-// browser's own lazy loading still applies.
+// link, it is switched to load straight away. With JavaScript off, browsers
+// ignore loading="lazy" and fetch the form with the page, so it still works.
 //
 // Size: see ".slip-form" in styles/margins.css before changing width/height.
 export default function SubstackEmbed({ src, title }: { src: string; title: string }) {

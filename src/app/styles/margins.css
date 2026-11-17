@@ -38,7 +38,8 @@
   --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .07 0 0 0 0 .09 0 0 0 0 .16 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
+/* scroll-padding: anchors and keyboard focus stop below the sticky head instead of under it */
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem;-webkit-text-size-adjust:100%;overflow-x:clip}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-text);font-size:1.0625rem;line-height:1.6;font-optical-sizing:auto;-webkit-font-smoothing:antialiased;overflow-x:clip;
   background-image:var(--grain)}
 ::selection{background:var(--hl);color:var(--on-hl)}
@@ -50,7 +51,8 @@ h1,h2,h3{margin:0;font-family:var(--f-display);font-weight:380;text-wrap:balance
 /* emphasis inside upright display type takes the italic family (see the note on --f-display) */
 :is(h1,h2,h3,.lead,.answer) :is(em,i,cite){font-family:var(--f-display-i)}
 :focus-visible{outline:2.5px solid var(--pen);outline-offset:3px;border-radius:2px}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+/* for screen readers only; kept out of a text selection so a copied note is not copied twice */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;-webkit-user-select:none;user-select:none}
 .skip{position:absolute;left:var(--gut);top:-4rem;z-index:100;background:var(--ink);color:var(--paper);padding:.7rem 1rem;font-family:var(--f-mono);font-size:.8rem}
 .skip:focus{top:.5rem}
 
@@ -125,7 +127,6 @@ h1,h2,h3{margin:0;font-family:var(--f-display);font-weight:380;text-wrap:balance
 .mr{grid-column:3;padding-left:var(--pad);min-width:0}
 .wide{grid-column:2/-1;padding-left:1.5rem;min-width:0}
 .full{grid-column:1/-1;min-width:0}
-section{scroll-margin-top:4.5rem}
 .sec{padding-block:clamp(4rem,9vw,7.5rem) 0}
 .sec-top{margin-bottom:clamp(1.8rem,4vw,3rem)}
 .side-head{text-align:right}
@@ -209,7 +210,7 @@ section{scroll-margin-top:4.5rem}
 .work-body .tagline{font-size:.98rem;line-height:1.55;color:var(--grey)}
 .tags{list-style:none;margin:.7rem 0 0;padding:0;font-family:var(--f-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--grey)}
 .tags li{display:inline}
-.tags li+li::before{content:"/";margin:0 .5em;color:var(--rule)}
+.tags li+li::before{content:"/";content:"/" / "";margin:0 .5em;color:var(--rule)}
 .go{margin-top:.5rem;display:inline-flex;align-items:center;gap:.5rem;min-height:44px;font-family:var(--f-display-i);font-style:italic;font-size:1.18rem;color:var(--ink);text-decoration:none;background:linear-gradient(var(--hl),var(--hl)) no-repeat 0 72%/0% 40%;transition:background-size .35s ease}
 .go:hover,.go:focus-visible{background-size:100% 40%}
 .go svg{width:1em;height:1em;transition:transform .25s ease}
@@ -280,7 +281,7 @@ section{scroll-margin-top:4.5rem}
 .notes-foot summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:2.2rem minmax(0,1fr) 1.4rem;gap:.2rem;align-items:baseline;padding-block:.95rem;min-height:48px;font-family:var(--f-display);font-size:1.2rem;line-height:1.25;font-variation-settings:"opsz" 30;font-weight:420}
 .notes-foot summary::-webkit-details-marker{display:none}
 .notes-foot summary::before{content:counter(fn);font-family:var(--f-mono);font-size:.72rem;color:var(--pencil);transform:translateY(-.5em)}
-.notes-foot summary::after{content:"+";font-family:var(--f-mono);font-size:1rem;color:var(--grey);justify-self:end;transition:transform .25s ease}
+.notes-foot summary::after{content:"+";content:"+" / "";font-family:var(--f-mono);font-size:1rem;color:var(--grey);justify-self:end;transition:transform .25s ease}
 .notes-foot details[open] summary::after{transform:rotate(45deg);color:var(--pencil)}
 .notes-foot summary:hover{color:var(--pen)}
 .notes-foot .a{padding:0 1.4rem 1.2rem 2.4rem;font-size:.98rem;line-height:1.58;color:var(--ink-2);max-width:44rem}
@@ -489,12 +490,8 @@ section{scroll-margin-top:4.5rem}
 [data-write] .wd{display:inline-block;clip-path:inset(-35% -14% -35% -14%);transition:clip-path var(--u,.3s) linear var(--t,0s)}
 [data-write].ink-wait .wd{clip-path:inset(-35% 100% -35% -14%);transition:none}
 
-/* the proofreader's correction in My Story: the struck number and the right one never split across two lines */
+/* words that must stay on one line, such as the newsletter's name inside a button */
 .nb{white-space:nowrap}
-.struck{position:relative;display:inline-block;font-family:var(--f-hand);font-weight:700;font-size:1.55em;line-height:.74;color:var(--pencil);transform:rotate(-6deg) translateY(.03em);margin:0 .22em 0 .2em;-webkit-user-select:none;user-select:none}
-.struck::before{content:attr(data-struck)}
-.struck::after{content:"";position:absolute;left:-9%;right:-14%;top:56%;height:2px;border-radius:2px;background:var(--pencil);transform:rotate(-17deg) scaleX(1);transform-origin:left center;transition:transform .45s cubic-bezier(.3,.7,.2,1) 1s}
-.hl.ink-wait .struck::after{transform:rotate(-17deg) scaleX(0);transition:none}
 
 /* press harder: hovering the highlighted words swells the ink along Fraunces' weight axis.
    Each word reserves the width of its heavier self (the hidden ::after in the same grid cell), so nothing reflows. */

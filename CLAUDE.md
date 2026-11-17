@@ -53,9 +53,11 @@ Consumers: page components, `GlobalSchema.tsx` (Person + WebSite, site-wide),
 it.** Schema and llms.txt must always match visible copy; search engines and AI
 crawlers cross-check. Bump `AGE` in site.ts on Luca's birthday — everything derives.
 
-## Canonical facts (as of 2026-09)
+## Canonical facts (as of 2026-11)
 
-Seven products: Starvling (launched, starvling.com), BurnoutRadar (launched),
+Seven products: Starvling (launched 2026-09-08, closed 2026-09-22 when its kill
+rule fired; starvling.com stays up; `site.ts` still counts it as launched and
+carries the closing date and the numbers), BurnoutRadar (launched),
 PairHabit (launched, App Store), Kikko (launched, on the App Store since
 2026-09 and live on web — "AI family assistant"), BizarreChat (beta), MemoPod (waitlist),
 Fatto (waitlist).
@@ -91,7 +93,8 @@ Where things live:
   drawn layer is retraced about six times a second and rests while the page
   scrolls). Mount it once on any page that uses `data-ink`.
 - `src/app/components/ink.tsx` has the shared pieces: `Hand` and `Written`
-  (handwriting), `MarginArrow`, `CtaArrow`, `GoArrow`, `stampDate`, `shortDate`.
+  (handwriting), `MarginArrow`, `CtaArrow`, `GoArrow`. The two short date
+  formats (`stampDate`, `shortDate`) are in `src/lib/dates.ts`.
 - `Plate.tsx` is the moving drawing (fig. 2), `LiveClock.tsx` the two time
   dependent pieces of the hero, `SubstackEmbed.tsx` the signup form.
 - Drawings are in `public/margins/`: `marks/` (one per product), `doodles/`,
@@ -105,8 +108,20 @@ Rules:
 - Copy is never hidden by default. The server sends every word and every
   drawing in its final, visible state. `.ink-wait` (the "not drawn yet" state)
   is added by `InkEffects` after hydration, and only to elements still below
-  the viewport. First screen entrances are CSS animations that start visible.
+  the viewport. First screen entrances are CSS animations and need no script.
+  The headline, the paragraph under it and the links start visible (pale) and
+  are inked in. The hero margin notes and the live clock line are the
+  exception: they fade in from nothing about a second and a half after load.
   Never add a rule that hides copy until a script runs.
+- Words that animate one by one (the headline, every handwritten note) are
+  inline blocks, and VoiceOver stops on each inline block. So they are hidden
+  from screen readers and the sentence is given once, whole. `Written` does
+  this itself with a visually hidden copy of its text. The hero `<h1>` does it
+  with `aria-label`, which means the headline is typed twice in
+  `HeroSection.tsx` (`HEADLINE` and the words): change both together.
+- A product's status wording comes from `productStatus()` and
+  `productClosed()` in `site.ts`. The home page stamps use them and so does
+  `llms.txt`, so what is stamped is what is listed.
 - The home page uses the narrow text block (`.leaf`). Every other page uses the
   wider reading block (`.leaf.inner`) and passes `inner` to `<Footer />`. Every
   page has `<main id="main">`, the target of the skip link.
@@ -124,7 +139,12 @@ Rules:
 - There are no handwritten notes on `/now`. Its copy changes weekly.
 - The weeknight build window lives in `site.ts` (`DAY_PLAN`, `MARGIN_HOURS`,
   `MARGIN_OPENS`). The planner, the plate caption, the margin notes and the
-  live line in the hero all derive from it.
+  live line in the hero all derive from it. Three places still type "9 to 11
+  PM" by hand and have to be changed with it: the My Story paragraph in
+  `AboutSection.tsx`, the "How do you find time" answer in `faqs.tsx` (which
+  is also the FAQ schema), and the field note prose.
+- The handwritten note beside the home Now teaser must stay evergreen too.
+  The teaser is rewritten weekly and nothing rewrites the note.
 - The circled labels on the home Now teaser come from `nowTeaserItems` and may
   be any wording or length.
 
@@ -141,7 +161,10 @@ Fonts:
   after touching fonts. (The old design, one font file, scored 93 on the home
   page and 98 on the others in the same test.)
 - Preloaded on every page: Fraunces italic, Newsreader and IBM Plex Mono
-  regular. Every first screen is set in them.
+  regular, the faces of every headline, paragraph and label. `/now` and the
+  field notes also show upright Fraunces on their first screen (entry names,
+  the opening paragraph of a note). It is not preloaded, so on a first visit
+  those lines appear in the stand in and then swap.
 - Loaded when a page first lays out text in them: Fraunces upright and IBM
   Plex Mono medium.
 - Never preloaded: Caveat. On the home page it and Fraunces upright are held
@@ -172,7 +195,10 @@ Fonts:
   (the paragraph under it).
 - IBM Plex Mono is used without the stand in next/font generates for it
   (`--font-plex-mono-face`). A system monospace has the same advance width
-  and matches it better.
+  and matches it better. Its two weights are two `IBM_Plex_Mono` calls that
+  Turbopack gives one family name, which is what lets `font-weight: 500` find
+  the medium file. If the bundler ever changes, check the built CSS for two
+  `@font-face` blocks named `IBM Plex Mono`.
 
 To add a product: add it to `PRODUCTS` in `site.ts` with a `mark`
 (`{ src, width, height }`). Put the drawing in `public/margins/marks/` as a

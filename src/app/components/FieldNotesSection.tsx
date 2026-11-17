@@ -1,7 +1,8 @@
 import Image from "next/image"
 import Link from "next/link"
+import { shortDate } from "@/lib/dates"
 import { FIELD_NOTES } from "@/lib/field-notes"
-import { GoArrow, Hand, shortDate } from "./ink"
+import { GoArrow, Hand } from "./ink"
 
 // Homepage teaser for /field-notes, set as a reading list. Server component
 // on purpose: the question-phrased links are in-content homepage links to the

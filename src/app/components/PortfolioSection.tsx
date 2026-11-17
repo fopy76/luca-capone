@@ -2,10 +2,12 @@ import Image from "next/image"
 import {
   PRODUCTS,
   countWord,
+  productClosed,
+  productStatus,
   type Product,
   type ProductStatus,
 } from "@/lib/site"
-import { GoArrow, Hand, Written, stampDate } from "./ink"
+import { GoArrow, Hand, Written } from "./ink"
 
 // The products, one row each: drawn mark and name in the left margin, the
 // canonical tagline in the text block, the honest status stamped in the right
@@ -16,35 +18,24 @@ import { GoArrow, Hand, Written, stampDate } from "./ink"
 // Server component: taglines and links must reach crawlers as plain HTML
 // (the taglines are also the JSON-LD descriptions in HomeSchema).
 
-const statusWord: Record<ProductStatus, string> = {
-  launched: "Launched",
-  beta: "Beta",
-  waitlist: "Waitlist",
-}
-
 const stampClass: Record<ProductStatus, string> = {
   launched: "stamp",
   beta: "stamp beta",
   waitlist: "stamp wait",
 }
 
-// "Launched", "Launched · Web + iOS", "Launched 8 Sep 2026".
-function stampText(product: Product): string {
-  const word = statusWord[product.status]
-  const label =
-    product.statusLabel === word ? word : `${word} · ${product.statusLabel}`
-  return product.launchedOn ? `${label} ${stampDate(product.launchedOn)}` : label
-}
-
+// The wording comes from site.ts (productStatus, productClosed), which
+// llms.txt uses too: what is stamped here is what is listed there.
 function Stamps({ product }: { product: Product }) {
+  const closed = productClosed(product)
   return (
     <>
       <span className={stampClass[product.status]} data-ink="">
-        {stampText(product)}
+        {productStatus(product)}
       </span>
-      {product.closedOn && (
+      {closed && (
         <span className="stamp closed" data-ink="">
-          Closed {stampDate(product.closedOn)}
+          {closed}
         </span>
       )}
     </>

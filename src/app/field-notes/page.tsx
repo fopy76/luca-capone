@@ -6,12 +6,11 @@ import Footer from "../components/Footer"
 import InkEffects from "../components/InkEffects"
 import { Hand } from "../components/ink"
 import { FIELD_NOTES } from "@/lib/field-notes"
-import { PERSON_ID, SITE_URL, TWITTER_HANDLE, WEBSITE_ID } from "@/lib/site"
+import { AGE, PERSON_ID, SITE_URL, TWITTER_HANDLE, WEBSITE_ID } from "@/lib/site"
 
 const pageUrl = `${SITE_URL}/field-notes`
 const pageTitle = "Field Notes"
-const pageDescription =
-  "Longer answers to the questions people actually ask a non-technical founder building AI products at 50 — written from the build log, not theory."
+const pageDescription = `Longer answers to the questions people actually ask a non-technical founder building AI products at ${AGE} — written from the build log, not theory.`
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -102,7 +101,7 @@ export default function FieldNotesPage() {
           </div>
         </div>
       </main>
-      {/* late: the colophon is the only upright Fraunces on this page, and it is far below the first screen */}
+      {/* late: the colophon's lockup is the only upright Fraunces on this page, and on all but the tallest screens it is below the first one */}
       <Footer inner late />
       <InkEffects />
     </>

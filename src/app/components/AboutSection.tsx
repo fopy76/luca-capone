@@ -25,17 +25,11 @@ export default function AboutSection() {
           </div>
         </div>
         <div className="tb">
-          {/* The struck number is a proofreader's joke. It is drawn by CSS
-              from data-struck, so it is not in the page text: read aloud,
-              copied or crawled, the line is exactly "Started coding at 49." */}
           <p className="lead">
             Former Italian Army Special Ops. UN security across four continents.
             Two kids. One full-time job.{" "}
             <mark className="hl" data-ink="">
-              Started coding at{" "}
-              <span className="nb">
-                <span className="struck" data-struck="19" aria-hidden="true" /> 49.
-              </span>
+              Started coding at 49.
             </mark>
           </p>
         </div>

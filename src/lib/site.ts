@@ -5,6 +5,7 @@
 //
 // Plain data only (no JSX) so this file is importable from server components,
 // client components, route handlers, and metadata files alike.
+import { stampDate } from "./dates"
 
 export const SITE_URL = "https://lucacapone.io"
 
@@ -282,6 +283,28 @@ export const PRODUCTS: Product[] = [
     note: "next up.",
   },
 ]
+
+const STATUS_WORDS: Record<ProductStatus, string> = {
+  launched: "Launched",
+  beta: "Beta",
+  waitlist: "Waitlist",
+}
+
+// A product's status in words: "Launched", "Launched · Web + iOS",
+// "Launched 8 Sep 2026". The home page stamps exactly this and llms.txt
+// lists it, so the two can't drift.
+export function productStatus(product: Product): string {
+  const word = STATUS_WORDS[product.status]
+  const label =
+    product.statusLabel === word ? word : `${word} · ${product.statusLabel}`
+  return product.launchedOn ? `${label} ${stampDate(product.launchedOn)}` : label
+}
+
+// "Closed 22 Sep 2026" for a product that was closed in public, else null.
+// Stamped beside the status on the home page and listed in llms.txt.
+export function productClosed(product: Product): string | null {
+  return product.closedOn ? `Closed ${stampDate(product.closedOn)}` : null
+}
 
 const launchedCount = PRODUCTS.filter((p) => p.status === "launched").length
 const betaCount = PRODUCTS.filter((p) => p.status === "beta").length

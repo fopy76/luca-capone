@@ -1,6 +1,6 @@
-// Small shared pieces of the Margins design: handwriting, the pen-drawn
-// arrows, and the two date formats the home page prints. No hooks and no
-// state, so these render on the server and inside client components alike.
+// Small shared pieces of the Margins design: handwriting and the pen-drawn
+// arrows. No hooks and no state, so these render on the server and inside
+// client components alike.
 import type { CSSProperties, ReactNode } from "react"
 import { Fragment } from "react"
 
@@ -18,6 +18,12 @@ type WrittenProps = {
 // place in the queue (--t, when the pen reaches it; --u, how long it takes),
 // at about 34 ms a letter and never more than 2.4 s for a whole note.
 // styles/margins.css does the wipe; InkEffects.tsx only decides when.
+//
+// The note is in the HTML twice on purpose. The word spans are inline blocks
+// (the wipe needs that), and VoiceOver stops on every inline block, so a note
+// would be read one word per swipe. The spans are therefore hidden from
+// screen readers, and the sentence is given to them once, whole, in a
+// visually hidden span.
 export function Written({ text, as: Tag = "p", className, children }: WrittenProps) {
   const words = text.split(/\s+/).filter(Boolean)
   const letters = words.reduce((sum, word) => sum + word.length, 0)
@@ -39,14 +45,17 @@ export function Written({ text, as: Tag = "p", className, children }: WrittenPro
   return (
     <Tag className={className} data-ink="" data-write="">
       {children}
-      {queue.map(({ word, style }, index) => (
-        <Fragment key={index}>
-          {index > 0 ? " " : null}
-          <span className="wd" style={style}>
-            {word}
-          </span>
-        </Fragment>
-      ))}
+      <span className="sr">{text}</span>
+      <span aria-hidden="true">
+        {queue.map(({ word, style }, index) => (
+          <Fragment key={index}>
+            {index > 0 ? " " : null}
+            <span className="wd" style={style}>
+              {word}
+            </span>
+          </Fragment>
+        ))}
+      </span>
     </Tag>
   )
 }
@@ -102,26 +111,4 @@ export function GoArrow() {
       <path d="M7 17 17 7M9 7h8v8" />
     </svg>
   )
-}
-
-const MONTHS = [
-  "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
-]
-
-function parts(iso: string): { year: string; month: string; day: number } {
-  const [year, month, day] = iso.split("-")
-  return { year, month: MONTHS[Number(month) - 1] ?? month, day: Number(day) }
-}
-
-// "2026-09-08" becomes "8 Sep 2026", the way a rubber stamp prints it.
-export function stampDate(iso: string): string {
-  const { year, month, day } = parts(iso)
-  return `${day} ${month} ${year}`
-}
-
-// "2026-09-12" becomes "Sep 12, 2026", for the date column of a list.
-export function shortDate(iso: string): string {
-  const { year, month, day } = parts(iso)
-  return `${month} ${day}, ${year}`
 }

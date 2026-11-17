@@ -46,6 +46,13 @@ function Press({ i, word }: { i: number; word: string }) {
 
 const pad = (hour: number): string => String(hour).padStart(2, "0")
 
+// The headline as one sentence, for screen readers. It must read exactly as
+// the words in the <h1> below: change one, change the other. Each word there
+// is an inline block (the write-in needs that), and VoiceOver stops on every
+// inline block, so the words are hidden from it and it gets this instead.
+const HEADLINE =
+  "I'm Luca Capone. I build AI products in the margins of a full-time job and two kids."
+
 export default function HeroSection() {
   const { firstHour, lastHour, job, kids, margin, windows } = DAY_PLAN
   const hours = Array.from({ length: lastHour - firstHour + 1 }, (_, n) => firstHour + n)
@@ -63,26 +70,26 @@ export default function HeroSection() {
           {/* Five phrases (.ph). On a phone each takes its own line; wider,
               they flow and the browser balances them. "of a" and "two kids."
               never split (.keep), so no word is left alone on the last line. */}
-          <h1>
-            <span className="ph">
+          <h1 aria-label={HEADLINE}>
+            <span className="ph" aria-hidden="true">
               <W i={0}>I'm</W> <W i={1}>Luca</W> <W i={2}>Capone.</W>
             </span>{" "}
-            <span className="ph">
+            <span className="ph" aria-hidden="true">
               <W i={4}>I</W> <W i={5}>build</W> <W i={6}>AI</W> <W i={7}>products</W>
             </span>{" "}
-            <span className="ph">
+            <span className="ph" aria-hidden="true">
               <mark className="hl">
                 <Press i={8} word="in" /> <Press i={9} word="the" />{" "}
                 <Press i={10} word="margins" />
               </mark>
             </span>{" "}
-            <span className="ph">
+            <span className="ph" aria-hidden="true">
               <span className="keep">
                 <W i={11}>of</W> <W i={12}>a</W>
               </span>{" "}
               <W i={13}>full-time</W> <W i={14}>job</W>
             </span>{" "}
-            <span className="ph">
+            <span className="ph" aria-hidden="true">
               <W i={15}>and</W>{" "}
               <span className="keep">
                 <W i={16}>two</W> <W i={17}>kids.</W>

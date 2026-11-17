@@ -213,8 +213,12 @@ export default function RootLayout({
   return (
     // suppressHydrationWarning: FACES_AFTER_PAINT may have put .faces on this
     // element before React hydrates it.
+    // data-scroll-behavior: the stylesheet scrolls smoothly, and with this
+    // attribute Next switches that off while it moves to a new page, so a
+    // link clicked far down one page doesn't glide down the next.
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`${frauncesItalic.variable} ${fraunces.variable} ${newsreader.variable} ${caveat.variable} ${plexMono.variable} ${plexMonoMedium.variable}`}
       style={faceParts}
       suppressHydrationWarning

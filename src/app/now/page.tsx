@@ -62,7 +62,7 @@ const nowPageSchema = {
   "isPartOf": { "@id": WEBSITE_ID },
 }
 
-// A small drawing beside three of the blocks. Decoration only (alt=""), and
+// A small drawing beside two of the blocks. Decoration only (alt=""), and
 // keyed by block id, so a block that disappears from now.ts takes its drawing
 // with it. There are no handwritten notes on this page on purpose: its copy
 // changes weekly and nothing would rewrite a note to match.
