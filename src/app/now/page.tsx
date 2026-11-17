@@ -1,11 +1,16 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import Link from "next/link"
 import Navigation from "../components/Navigation"
 import Footer from "../components/Footer"
+import InkEffects from "../components/InkEffects"
+import { CtaArrow, GoArrow } from "../components/ink"
 import {
   nowBlocks,
   nowLastUpdated,
   nowLastUpdatedDisplay,
+  type NowBlock,
+  type NowItem,
 } from "@/lib/now"
 import { PERSON_ID, SITE_URL, TWITTER_HANDLE, WEBSITE_ID } from "@/lib/site"
 
@@ -57,93 +62,159 @@ const nowPageSchema = {
   "isPartOf": { "@id": WEBSITE_ID },
 }
 
+// A small drawing beside three of the blocks. Decoration only (alt=""), and
+// keyed by block id, so a block that disappears from now.ts takes its drawing
+// with it. There are no handwritten notes on this page on purpose: its copy
+// changes weekly and nothing would rewrite a note to match.
+const BLOCK_DRAWINGS: Partial<
+  Record<NowBlock["id"], { src: string; width: number; height: number; kind: string; sizes: string }>
+> = {
+  reading: {
+    src: "/margins/doodles/notebook.webp",
+    width: 510,
+    height: 289,
+    kind: "notebook",
+    sizes: "(max-width: 1039px) 112px, 140px",
+  },
+  "open-to": {
+    src: "/margins/doodles/envelope.webp",
+    width: 375,
+    height: 285,
+    kind: "envelope",
+    sizes: "(max-width: 1039px) 84px, 104px",
+  },
+}
+
+// An entry's title: plain text, or a link with the arrow when now.ts gives it
+// somewhere to go (a product, a profile, a page here, a mailto).
+function EntryTitle({ item }: { item: NowItem }) {
+  if (!item.href) return <>{item.title}</>
+  if (item.href.startsWith("/")) {
+    return (
+      <Link href={item.href}>
+        {item.title}
+        <GoArrow />
+      </Link>
+    )
+  }
+  return (
+    <a
+      href={item.href}
+      {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+    >
+      {item.title}
+      <GoArrow />
+    </a>
+  )
+}
+
 export default function NowPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(nowPageSchema) }}
       />
       <Navigation />
-      <main>
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
-          <header className="mb-14">
-            <h1 className="font-grotesk text-4xl md:text-5xl font-bold text-text tracking-tight mb-4">
-              What I&apos;m doing now
-            </h1>
-            <p className="text-sm font-medium text-text-muted mb-6">
-              Updated <time dateTime={nowLastUpdated}>{nowLastUpdatedDisplay}</time>{" "}
-              · Luxembourg / Rome
-            </p>
-            <p className="text-[17px] text-text-secondary leading-[1.7]">
-              A living snapshot of what I&apos;m building, creating, and
-              learning right now — updated whenever my focus genuinely changes.
-            </p>
+      <main id="main">
+        <div className="leaf inner">
+          <header className="grid page-head roomy">
+            <div className="ml side-head hang" data-ink="">
+              <h1>What I'm doing now</h1>
+              <Image
+                className="doodle boil d-side pins"
+                src="/margins/doodles/pins.webp"
+                alt=""
+                width={465}
+                height={210}
+                sizes="(max-width: 1039px) 104px, 136px"
+              />
+            </div>
+            <div className="tb">
+              <p className="mono">
+                Updated <time dateTime={nowLastUpdated}>{nowLastUpdatedDisplay}</time>{" "}
+                · Luxembourg / Rome
+              </p>
+              <p className="standfirst">
+                A living snapshot of what I'm building, creating, and learning
+                right now, updated whenever my focus genuinely changes.
+              </p>
+            </div>
           </header>
 
-          {nowBlocks.map((block) => (
-            <section
-              key={block.id}
-              aria-labelledby={`now-${block.id}`}
-              className="border-t border-border pt-10 mb-12"
-            >
-              <h2
-                id={`now-${block.id}`}
-                className="font-grotesk text-2xl md:text-3xl font-bold text-text tracking-tight mb-6"
+          {nowBlocks.map((block) => {
+            const drawing = BLOCK_DRAWINGS[block.id]
+            return (
+              <section
+                key={block.id}
+                aria-labelledby={`now-${block.id}`}
+                className="sec tight"
               >
-                {block.heading}
-              </h2>
-              <ul className="space-y-6">
-                {block.items.map((item) => (
-                  <li key={item.title}>
-                    <h3 className="font-grotesk text-lg font-bold text-text mb-1">
-                      {item.href ? (
-                        <a
-                          href={item.href}
-                          {...(item.external
-                            ? { target: "_blank", rel: "noopener noreferrer" }
-                            : {})}
-                          className="underline decoration-accent decoration-2 underline-offset-2 hover:text-accent-hover transition-colors"
-                        >
-                          {item.title}
-                        </a>
-                      ) : (
-                        item.title
-                      )}
-                    </h3>
-                    <p className="text-[17px] text-text-secondary leading-[1.7]">
-                      {item.description}
-                    </p>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          ))}
+                <div className="grid">
+                  <div className="ml side-head" data-ink="">
+                    <h2 id={`now-${block.id}`} className="minor">
+                      {block.heading}
+                    </h2>
+                    {drawing && (
+                      <Image
+                        className={`doodle boil d-side ${drawing.kind}`}
+                        src={drawing.src}
+                        alt=""
+                        width={drawing.width}
+                        height={drawing.height}
+                        sizes={drawing.sizes}
+                      />
+                    )}
+                  </div>
+                  <div className="tb">
+                    <ul className="entries">
+                      {block.items.map((item) => (
+                        <li key={item.title}>
+                          <h3>
+                            <EntryTitle item={item} />
+                          </h3>
+                          <p>{item.description}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </section>
+            )
+          })}
 
-          <section className="border-t border-border pt-10">
-            <p className="text-[17px] text-text-secondary leading-[1.7] mb-8">
-              This is a{" "}
-              <a
-                href="https://nownownow.com/about"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline decoration-accent decoration-2 underline-offset-2 hover:text-accent-hover"
-              >
-                now page
-              </a>
-              . If you want the full story behind it, it lands in your inbox
-              every other Thursday.
-            </p>
-            <Link
-              href="/#newsletter"
-              className="inline-flex items-center gap-2 bg-accent text-on-accent font-semibold text-sm px-5 py-3 rounded-md hover:bg-accent-hover motion-safe:hover:-translate-y-0.5 transition-all duration-200 shadow-sm hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 min-h-[44px]"
-            >
-              Subscribe to Second-Act Builders
-            </Link>
+          <section className="sec tight last">
+            <div className="grid">
+              <div className="tb">
+                <p className="standfirst">
+                  This is a{" "}
+                  <a
+                    href="https://nownownow.com/about"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    now page
+                  </a>
+                  . If you want the full story behind it, it lands in your inbox
+                  every other Thursday.
+                </p>
+                <div className="acts">
+                  <Link className="cta" href="/#newsletter">
+                    {/* One span, so a narrow phone can wrap the label
+                        without splitting the newsletter's name. */}
+                    <span>
+                      Subscribe to <span className="nb">Second-Act Builders</span>
+                    </span>
+                    <CtaArrow />
+                  </Link>
+                </div>
+              </div>
+            </div>
           </section>
         </div>
       </main>
-      <Footer />
-    </div>
+      <Footer inner />
+      <InkEffects />
+    </>
   )
 }

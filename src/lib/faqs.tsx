@@ -28,12 +28,7 @@ function productHref(name: string): string {
 
 function FaqLink({ href, children }: { href: string; children: ReactNode }) {
   return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="underline decoration-accent decoration-2 underline-offset-2 hover:text-accent-hover"
-    >
+    <a href={href} target="_blank" rel="noopener noreferrer">
       {children}
     </a>
   )

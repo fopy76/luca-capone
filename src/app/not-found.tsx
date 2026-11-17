@@ -1,7 +1,10 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import Link from "next/link"
 import Navigation from "./components/Navigation"
 import Footer from "./components/Footer"
+import InkEffects from "./components/InkEffects"
+import { CtaArrow } from "./components/ink"
 
 export const metadata: Metadata = {
   title: "Page not found",
@@ -10,37 +13,53 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-background">
+    <>
       <Navigation />
-      <main>
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-40 pb-24 text-center">
-          <p className="inline-block px-3 py-1 rounded-full bg-accent-subtle text-on-accent text-xs font-semibold uppercase tracking-wider mb-6">
-            404
-          </p>
-          <h1 className="font-grotesk text-4xl md:text-5xl font-bold text-text mb-4 tracking-tight">
-            Page not found
-          </h1>
-          <p className="text-lg text-text-secondary mb-10 max-w-xl mx-auto leading-relaxed">
-            This page doesn&apos;t exist — or it shipped, broke, and got rolled
-            back. Either way, the good stuff is a click away.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link
-              href="/"
-              className="inline-flex items-center justify-center bg-accent text-on-accent font-semibold px-6 py-3 rounded-md text-base shadow-sm hover:bg-accent-hover hover:shadow-md motion-safe:hover:-translate-y-0.5 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 min-h-[44px]"
-            >
-              Back to the homepage
-            </Link>
-            <Link
-              href="/now"
-              className="inline-flex items-center justify-center bg-background text-text border-2 border-accent font-semibold px-6 py-3 rounded-md text-base hover:bg-accent-subtle motion-safe:hover:-translate-y-0.5 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 min-h-[44px]"
-            >
-              See what I&apos;m doing now
-            </Link>
-          </div>
+      <main id="main">
+        <div className="leaf inner">
+          <section className="grid page-head lost">
+            <div className="ml side-head" data-ink="">
+              <Image
+                className="doodle boil d-side grave"
+                src="/margins/doodles/tombstone.webp"
+                alt=""
+                width={355}
+                height={450}
+                sizes="(max-width: 1039px) 84px, 118px"
+              />
+            </div>
+            <div className="tb">
+              <p>
+                <span className="stamp closed">404</span>
+              </p>
+              <h1>Page not found</h1>
+              <p className="standfirst">
+                This page doesn't exist, or it shipped, broke, and got rolled
+                back. Either way, the good stuff is a click away.
+              </p>
+              <div className="acts">
+                <Link className="cta" href="/">
+                  Back to the homepage
+                  <CtaArrow />
+                </Link>
+                <Link className="plain" href="/now">
+                  See what I'm doing now
+                  <svg
+                    className="draw"
+                    viewBox="0 0 200 12"
+                    preserveAspectRatio="none"
+                    aria-hidden="true"
+                  >
+                    <path pathLength={1} d="M2 7 C 30 2, 62 11, 96 6 S 160 3, 198 7" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+          </section>
         </div>
       </main>
-      <Footer />
-    </div>
+      <Footer inner />
+      <InkEffects />
+    </>
   )
 }

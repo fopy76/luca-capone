@@ -14,8 +14,9 @@ export default function manifest(): MetadataRoute.Manifest {
     scope: "/",
     lang: "en",
     display: "standalone",
-    background_color: "#ffffff",
-    theme_color: "#FACF39",
+    // The paper colour (--paper in app/styles/margins.css).
+    background_color: "#FBFAF7",
+    theme_color: "#FBFAF7",
     icons: [
       {
         src: "/android-chrome-192x192.png",
