@@ -199,7 +199,11 @@ h1,h2,h3{margin:0;font-family:var(--f-display);font-weight:380;text-wrap:balance
 /* works */
 .work{border-top:1px solid var(--rule);padding-block:clamp(1.7rem,3.4vw,2.7rem);position:relative}
 .works>.work:last-child{border-bottom:1px solid var(--rule)}
-.work-name{text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:.55rem}
+.work-name{text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:.55rem;position:relative}
+/* the name is the link to the product; its hit area is stretched over the drawing beside it */
+.work-name h3 a{text-decoration:none;background:linear-gradient(var(--hl),var(--hl)) no-repeat 0 80%/0% 30%;transition:background-size .3s ease}
+.work-name h3 a::after{content:"";position:absolute;inset:0}
+.work-name h3 a:hover,.work-name h3 a:focus-visible{background-size:100% 30%}
 .work-name h3{font-size:clamp(2rem,4.2vw,4.4rem);line-height:.95;letter-spacing:-.02em;font-weight:360;font-variation-settings:"opsz" 144}
 .work-name .mark{display:block;flex:none;height:84px;width:auto;max-width:none;transform:rotate(-2deg);clip-path:inset(-10px);transition:clip-path .85s cubic-bezier(.3,.7,.2,1),transform .4s cubic-bezier(.2,1.6,.4,1)}
 .work:nth-child(even) .work-name .mark{transform:rotate(2.5deg)}

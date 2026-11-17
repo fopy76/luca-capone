@@ -57,7 +57,18 @@ function Name({ product }: { product: Product }) {
         height={height}
         sizes={`(max-width: 1039px) ${drawn(60)}px, ${drawn(84)}px`}
       />
-      <h3>{product.name}</h3>
+      {/* One link for the whole name block. Its ::after is stretched over
+          the drawing too (.work-name h3 a in styles/margins.css), so the
+          mark is clickable without a second link that has no name. */}
+      <h3>
+        <a
+          href={product.cardUrl ?? product.url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {product.name}
+        </a>
+      </h3>
     </div>
   )
 }
