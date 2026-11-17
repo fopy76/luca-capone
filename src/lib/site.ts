@@ -66,7 +66,7 @@ export const PERSON = {
   description: `Luca Capone is a ${AGE}-year-old non-technical founder who started coding in March 2025 and ships AI products in life's margins. Creator of Starvling, BurnoutRadar, PairHabit, Kikko, and BizarreChat, with MemoPod and Fatto in the pipeline. Based in Luxembourg and Rome.`,
   // Distinguishes this Luca Capone from unrelated academics with the same name.
   disambiguatingDescription:
-    "Italian non-technical founder and second-act builder, a former Italian Army Special Operations captain and UN humanitarian security professional who started coding in March 2025 at 49 and builds AI products with Claude Code.",
+    "Italian non-technical founder and second-act builder — former Italian Army Special Operations captain and UN humanitarian security professional who started coding in March 2025 at 49 and builds AI products with Claude Code.",
   addresses: [
     { locality: "Luxembourg", country: "LU" },
     { locality: "Rome", country: "IT" },
