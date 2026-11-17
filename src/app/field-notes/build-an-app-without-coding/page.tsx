@@ -47,7 +47,7 @@ export default function Page() {
           Kikko
         </NoteLink>
         , with three more in various stages behind them. The honest version of
-        &quot;yes&quot; comes with conditions, though — and the conditions are
+        &quot;yes&quot; comes with conditions, though. And the conditions are
         the useful part.
       </Lede>
 
@@ -57,7 +57,7 @@ export default function Page() {
         security, not one line of code. Until March 2025 I had never opened a
         code editor. Nine years as a Captain in the Italian Army Special
         Operations Forces, then humanitarian security with the UN system across
-        four continents — useful training for many things. Not for reading a
+        four continents. Useful training for many things. Not for reading a
         stack trace.
       </P>
       <P>
@@ -69,10 +69,10 @@ export default function Page() {
         production.
       </P>
 
-      <H2>What the AI handles — and what stays on your plate</H2>
+      <H2>What the AI handles, and what stays on your plate</H2>
       <P>
         Claude Code writes essentially all of my code. Syntax, frameworks,
-        boilerplate — the things that used to take years to learn are the
+        boilerplate: the things that used to take years to learn are the
         machine's job now.
       </P>
       <P>
@@ -103,8 +103,8 @@ export default function Page() {
         <li>
           <strong>Understanding enough.</strong> You
           don't need to write code, but you do need to slowly learn what the
-          pieces are — or you'll ask for the wrong things and believe the wrong
-          answers.
+          pieces are. Otherwise you'll ask for the wrong things and believe the
+          wrong answers.
         </li>
       </UL>
       <P>
@@ -120,7 +120,7 @@ export default function Page() {
 
       <H2>How I'd start this week</H2>
       <P>
-        Pick one small annoyance from your own life. Not a startup idea — an
+        Pick one small annoyance from your own life. Not a startup idea. An
         annoyance. Describe it to an AI coding tool the way you'd brief a
         colleague. Ship the ugly first version to exactly one person. Everything
         I've learned came from that loop, repeated in{" "}

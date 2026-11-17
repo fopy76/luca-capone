@@ -43,7 +43,7 @@ export default function Page() {
       <H2>A session, start to finish</H2>
       <P>
         Mine run 9 to 11 PM, after the kids are down. I open Claude Code and
-        describe the next piece in ordinary sentences — the screen, the tap,
+        describe the next piece in ordinary sentences: the screen, the tap,
         the one thing that must never happen. The tool writes the code, and I
         react to results instead of syntax: run it, poke at it, say what's
         wrong, go again. On a good night the loop turns over enough times to
@@ -82,7 +82,7 @@ export default function Page() {
         Claude Code is my primary tool; Cursor shows up occasionally. Web
         products run on Next.js, Supabase, and Vercel. Mobile is React Native,
         with new iOS builds moving to Swift and SwiftUI. Stripe for payments.
-        Nothing exotic — the boring stack is the point, because every hour
+        Nothing exotic. The boring stack is the point, because every hour
         spent on infrastructure novelty is an hour not spent shipping.
       </P>
       <P>
