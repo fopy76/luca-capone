@@ -67,9 +67,9 @@ export const FAQS: Faq[] = [
         <FaqLink href={productHref("BizarreChat")}>BizarreChat</FaqLink>
         {" (AI chat with celebrities and historical figures). On the waitlist: "}
         <FaqLink href={productHref("MemoPod")}>MemoPod</FaqLink>
-        {" and "}
+        {" (family memory preservation) and "}
         <FaqLink href={productHref("Fatto")}>Fatto</FaqLink>
-        {"."}
+        {" (next in the build-in-public cycle)."}
       </>
     ),
   },
