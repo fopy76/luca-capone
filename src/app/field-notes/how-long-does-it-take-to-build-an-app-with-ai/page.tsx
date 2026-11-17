@@ -32,7 +32,7 @@ export default function Page() {
   return (
     <NoteLayout note={note}>
       <Lede>
-        Weeks of evenings, not years — but not a weekend either. Working two
+        Weeks of evenings, not years, but not a weekend either. Working two
         hours on weeknights plus Saturday mornings, a real product takes me a
         few weeks to reach launch, and longer to reach the version I'm not
         embarrassed by. Anyone promising a serious app in a day is selling
@@ -42,10 +42,10 @@ export default function Page() {
       <H2>The demo comes fast</H2>
       <P>
         The first working version is genuinely quick now. A screen, a flow,
-        data being saved — with{" "}
-        <NoteLink href="/field-notes/what-is-vibe-coding">vibe coding</NoteLink>{" "}
-        that can exist within the first few sessions. This is the part the hype
-        videos show, and the part that makes &quot;I built an app in 24
+        data being saved. With{" "}
+        <NoteLink href="/field-notes/what-is-vibe-coding">vibe coding</NoteLink>
+        , that can exist within the first few sessions. This is the part the
+        hype videos show, and the part that makes &quot;I built an app in 24
         hours&quot; technically true and practically misleading: nobody's data
         is in a demo.
       </P>
@@ -59,7 +59,7 @@ export default function Page() {
       </P>
       <P>
         If you're shipping to phones, add store review. PairHabit's App Store
-        release was its own education — guidelines, review cycles, launch
+        release was its own education: guidelines, review cycles, launch
         mechanics I learned live, on the clock.
       </P>
 
@@ -73,7 +73,7 @@ export default function Page() {
         And your hours. My math is simple: two hours a night, five nights, plus
         a Saturday morning is around 13 hours a week. So a &quot;three
         month&quot; project is really a 150-hour project. Count your hours, not
-        your months — it's the only estimate that survives contact with a
+        your months. It's the only estimate that survives contact with a
         full-time job.
       </P>
 
@@ -81,7 +81,7 @@ export default function Page() {
       <P>
         The tools removed the years of training. They didn't remove the work.
         And if you're building around a job and a family, the schedule itself
-        becomes the skill — that one gets{" "}
+        becomes the skill. That one gets{" "}
         <NoteLink href="/field-notes/build-a-side-project-with-a-full-time-job">
           its own field note
         </NoteLink>

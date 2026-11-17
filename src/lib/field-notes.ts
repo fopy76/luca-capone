@@ -28,8 +28,8 @@ export const FIELD_NOTES: FieldNote[] = [
     description:
       "A straight answer from someone doing it: seven products shipped since March 2025 with zero CS background. What AI actually handles, what stays on your plate, and how to start.",
     datePublished: "2026-08-17",
-    dateModified: "2026-09-12",
-    dateModifiedDisplay: "September 12, 2026",
+    dateModified: "2026-11-17",
+    dateModifiedDisplay: "November 17, 2026",
   },
   {
     slug: "what-is-vibe-coding",
@@ -37,8 +37,8 @@ export const FIELD_NOTES: FieldNote[] = [
     description:
       "Vibe coding explained by someone who ships with it every night: the loop, the tools, what it is not, and where it breaks.",
     datePublished: "2026-08-17",
-    dateModified: "2026-09-12",
-    dateModifiedDisplay: "September 12, 2026",
+    dateModified: "2026-11-17",
+    dateModifiedDisplay: "November 17, 2026",
   },
   {
     slug: "too-old-to-learn-to-code",
@@ -46,8 +46,8 @@ export const FIELD_NOTES: FieldNote[] = [
     description:
       "I started at 49 with no CS background and shipped my first product within months. What age costs, what it buys you, and why the real barrier isn't ability.",
     datePublished: "2026-08-17",
-    dateModified: "2026-09-12",
-    dateModifiedDisplay: "September 12, 2026",
+    dateModified: "2026-11-17",
+    dateModifiedDisplay: "November 17, 2026",
   },
   {
     slug: "how-long-does-it-take-to-build-an-app-with-ai",
@@ -55,8 +55,8 @@ export const FIELD_NOTES: FieldNote[] = [
     description:
       "Where the time goes when you build with AI: what a working version takes, why the last 20 percent eats the calendar, and what the app-in-a-day claims leave out.",
     datePublished: "2026-08-17",
-    dateModified: "2026-08-17",
-    dateModifiedDisplay: "August 17, 2026",
+    dateModified: "2026-11-17",
+    dateModifiedDisplay: "November 17, 2026",
   },
   {
     slug: "build-a-side-project-with-a-full-time-job",
@@ -64,8 +64,8 @@ export const FIELD_NOTES: FieldNote[] = [
     description:
       "The system behind seven shipped products: fixed windows instead of stolen hours, ruthless scope, and consistency math that beats motivation.",
     datePublished: "2026-08-17",
-    dateModified: "2026-09-12",
-    dateModifiedDisplay: "September 12, 2026",
+    dateModified: "2026-11-17",
+    dateModifiedDisplay: "November 17, 2026",
   },
 ]
 

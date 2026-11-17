@@ -32,7 +32,7 @@ export default function Page() {
   return (
     <NoteLayout note={note}>
       <Lede>
-        No — and I'm not saying that to be kind. I started at 49, with zero
+        No. And I'm not saying that to be kind. I started at 49, with zero
         computer science background, and shipped my first product within
         months. The question that matters is different: can you stand being a
         beginner again for a while? That part has nothing to do with age.
@@ -77,7 +77,7 @@ export default function Page() {
 
       <H2>If you start at {AGE}, start like this</H2>
       <P>
-        Don't enroll in a bootcamp built to make you employable — you're not
+        Don't enroll in a bootcamp built to make you employable. You're not
         trying to get hired. Pick a real problem from your own life, put an AI
         coding tool in front of it, and aim for one shipped, ugly thing within
         a month. The approach is called{" "}
@@ -86,7 +86,7 @@ export default function Page() {
       </P>
       <P>
         Evenings are enough. Mine are 9 to 11 PM, plus Saturday mornings when
-        the house is quiet — I laid the whole system out in{" "}
+        the house is quiet. I laid the whole system out in{" "}
         <NoteLink href="/field-notes/build-a-side-project-with-a-full-time-job">
           how to build a side project with a full-time job
         </NoteLink>
