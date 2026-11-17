@@ -74,6 +74,9 @@ Builds with Claude Code (primary) + Cursor; "vibe coding".
   JS state (see the reveal rule under "Design system").
 - OG/Twitter images come from the file-convention `opengraph-image.tsx` files — do not
   add manual `images` entries to metadata.
+- A page that states its own `openGraph` in its metadata drops the image of the
+  segment above it. That is why every field note has its own
+  `opengraph-image.tsx` (see "Share images").
 - `public/robots.txt` allowlists AI crawlers (GPTBot, ClaudeBot, PerplexityBot, …) —
   keep it that way.
 
@@ -193,6 +196,21 @@ Fonts:
   file rests. next/font sizes the stand in face from that instance, which is
   why the italic rests at its display cut (the headline) and Newsreader at 18
   (the paragraph under it).
+- `src/app/fonts/og/` holds seven TTF files that only the share images use
+  (see "Share images"). The image renderer rejects woff2 and does not
+  understand variable fonts, so these are fixed cuts of the same fonts, made
+  with fonttools in two steps: `fonttools varLib.instancer in.woff2 opsz=144
+  wght=340 -o cut.woff2`, then `fonttools ttLib.woff2 decompress cut.woff2 -o
+  fraunces-italic-display.ttf`. Four come from the files beside them:
+  `fraunces-italic-display.ttf` (opsz 144, wght 340, the headlines),
+  `fraunces-italic-text.ttf` (opsz 30, wght 420), `fraunces-upright.ttf`
+  (opsz 36, wght 420) and `newsreader.ttf` (opsz 19.2, wght 400). Three come
+  from the latin woff2 files `next/font/google` leaves in
+  `.next/static/media/` after a build: `caveat.ttf` (wght 500), and
+  `plex-mono-regular.ttf` and `plex-mono-medium.ttf`, which are only
+  decompressed. None of them is sent to a browser, so they cost nothing in
+  Lighthouse. The four licences are the `OFL-*.txt` files in
+  `src/app/fonts/`.
 - IBM Plex Mono is used without the stand in next/font generates for it
   (`--font-plex-mono-face`). A system monospace has the same advance width
   and matches it better. Its two weights are two `IBM_Plex_Mono` calls that
@@ -206,6 +224,65 @@ transparent WebP about 440px on its long side, drawn in the same pen as the
 others. Optionally give it one evergreen `note`. The home page row, the schema,
 `llms.txt` and the counts follow from the list. A product that was closed in
 public can also carry `launchedOn`, `closedOn` and a `postmortem`.
+
+To add a field note: add its entry to `FIELD_NOTES` in `field-notes.ts`
+(with its `highlight`), create `src/app/field-notes/<slug>/page.tsx` like its
+siblings, and copy a sibling's `opengraph-image.tsx` into the folder with the
+new slug. The index, the home page teaser, the sitemap, `llms.txt` and the
+share image follow from the entry.
+
+## Share images
+
+The Open Graph and Twitter cards are drawn in the Margins look by `next/og`,
+at build time, 1200 by 630 px. There is one `opengraph-image.tsx` per page:
+home, `/now`, `/field-notes`, and one in each note folder.
+
+- `src/app/og/kit.tsx` has the shared pieces (the paper and its hairlines,
+  mono labels, the swipe, handwriting, pen strokes, the stamp, the running
+  head) and `render()`. `src/app/og/headline.tsx` sets a headline with a
+  swipe in it, line by line. `src/app/og/note.tsx` draws the card of a field
+  note.
+- Each card is the first screen of its page in small, and reads its words
+  from the files the page reads: `site.ts`, `now.ts`, `field-notes.ts`. The
+  one exception is the home card, which types the hero sentence a third time
+  (`PHRASES` in `src/app/opengraph-image.tsx`): change it with the two in
+  `HeroSection.tsx`. The `/now` card redraws itself from `now.ts` (the date,
+  the first one-liner, the names in the first block), so look at it after an
+  update that changes the shape of either.
+- `next/og` is not a browser. It lays out with flexbox and absolute
+  positions only, it needs `display: flex` on any box with more than one
+  child, and it stops on a style whose value is `undefined`. It takes TTF,
+  OTF or WOFF fonts, one fixed style per file. So the cards have their own
+  font files in `src/app/fonts/og/` (see "Fonts") and none of
+  `styles/margins.css` applies to them.
+- No em dash or en dash is drawn on a card. The copy has none, and as a net
+  under that, `render()` sets one that slips through as a comma, or as "to"
+  between two numbers (never as a hyphen). There is no handwriting on the
+  `/now` card, for the same reason as on the page. Nothing that matters goes in the bottom left corner,
+  where X lays the site's address over a shared image.
+- A field note's card needs two things. `highlight` in its entry in
+  `field-notes.ts`: the words the swipe goes over, which must be in the title
+  as written or the build stops. And an `opengraph-image.tsx` in its folder:
+  copy a sibling's and change the slug. Without that file the note is shared
+  with no image at all.
+- A card's address is its page's address plus `/opengraph-image`. The
+  `og:image` and `twitter:image` tags add `?` and 16 characters after it: a
+  hash Next makes from the `opengraph-image.tsx` file itself, not from the
+  picture, so it stays the same when only the words on the card change. The
+  address answers with or without it. Each note's Article schema
+  (`noteSchema()` in `note-components.tsx`) names the address without it.
+- To look at a card, run `npm run dev` and open `/opengraph-image`,
+  `/now/opengraph-image`, `/field-notes/opengraph-image` or
+  `/field-notes/<slug>/opengraph-image`. After an edit in `src/app/og/`, load
+  it twice: the first answer can still be the old drawing.
+- To check every page at once: `node scripts/check-share-images.mjs` asks the
+  live site, and `node scripts/check-share-images.mjs http://localhost:3000`
+  asks a local `npm run build` and `npm run start`. It reads the pages from
+  `/sitemap.xml` and wants, on each, one `og:image` and one `twitter:image`
+  with width, height, type and alt text, an absolute address that answers
+  200 with no redirect as a 1200 by 630 PNG, and on a note the same image in
+  the Article schema. Run it after anything that touches metadata, and after
+  adding a page.
 
 ## Commands
 

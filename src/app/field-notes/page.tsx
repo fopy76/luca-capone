@@ -5,7 +5,7 @@ import Navigation from "../components/Navigation"
 import Footer from "../components/Footer"
 import InkEffects from "../components/InkEffects"
 import { Hand } from "../components/ink"
-import { FIELD_NOTES } from "@/lib/field-notes"
+import { FIELD_NOTES, FIELD_NOTES_ASIDE } from "@/lib/field-notes"
 import { AGE, PERSON_ID, SITE_URL, TWITTER_HANDLE, WEBSITE_ID } from "@/lib/site"
 
 const pageUrl = `${SITE_URL}/field-notes`
@@ -61,7 +61,7 @@ export default function FieldNotesPage() {
           <div className="grid page-head sec last">
             <header className="ml side-head" data-ink="">
               <h1>Field notes</h1>
-              <Hand text="from the build log, not theory." />
+              <Hand text={FIELD_NOTES_ASIDE} />
               <Image
                 className="doodle boil d-notebook"
                 src="/margins/doodles/notebook.webp"
