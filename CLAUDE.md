@@ -265,10 +265,24 @@ home, `/now`, `/field-notes`, and one in each note folder.
   as written or the build stops. And an `opengraph-image.tsx` in its folder:
   copy a sibling's and change the slug. Without that file the note is shared
   with no image at all.
+- A card's address is its page's address plus `/opengraph-image`. The
+  `og:image` and `twitter:image` tags add `?` and 16 characters after it: a
+  hash Next makes from the `opengraph-image.tsx` file itself, not from the
+  picture, so it stays the same when only the words on the card change. The
+  address answers with or without it. Each note's Article schema
+  (`noteSchema()` in `note-components.tsx`) names the address without it.
 - To look at a card, run `npm run dev` and open `/opengraph-image`,
   `/now/opengraph-image`, `/field-notes/opengraph-image` or
   `/field-notes/<slug>/opengraph-image`. After an edit in `src/app/og/`, load
   it twice: the first answer can still be the old drawing.
+- To check every page at once: `node scripts/check-share-images.mjs` asks the
+  live site, and `node scripts/check-share-images.mjs http://localhost:3000`
+  asks a local `npm run build` and `npm run start`. It reads the pages from
+  `/sitemap.xml` and wants, on each, one `og:image` and one `twitter:image`
+  with width, height, type and alt text, an absolute address that answers
+  200 with no redirect as a 1200 by 630 PNG, and on a note the same image in
+  the Article schema. Run it after anything that touches metadata, and after
+  adding a page.
 
 ## Commands
 
