@@ -64,6 +64,9 @@ function noteSchema(note: FieldNote) {
         "@id": `${url}#article`,
         headline: note.title,
         description: note.description,
+        // The note's share image (its opengraph-image.tsx). The og:image tag
+        // carries a build hash after it; the address serves the same file.
+        image: `${url}/opengraph-image`,
         url,
         mainEntityOfPage: url,
         datePublished: note.datePublished,
