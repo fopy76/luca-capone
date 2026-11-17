@@ -13,7 +13,7 @@ export const SITE_URL = "https://lucacapone.io"
 export const AGE = 50
 
 export const SITE_NAME = "Luca Capone - Second-Act Builders"
-export const SITE_TITLE = `Luca Capone — Non-Technical Founder Building AI Products at ${AGE}`
+export const SITE_TITLE = `Luca Capone: Non-Technical Founder Building AI Products at ${AGE}`
 export const SITE_DESCRIPTION = `I'm Luca, ${AGE}. Non-technical founder vibe coding AI products in life's margins. Seven products, honest numbers, built in public. Field report every other Thursday.`
 
 // The day the home page's own copy last changed in a way a reader would
