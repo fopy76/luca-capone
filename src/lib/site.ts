@@ -124,7 +124,7 @@ export const PRODUCTS: Product[] = [
   {
     name: "Starvling",
     tagline:
-      "A launch directory where every product is a pixel creature kept alive by real people's daily feeds — or it starves into a public graveyard. Rank can't be bought.",
+      "A launch directory where every product is a pixel creature kept alive by real people's daily feeds, or it starves into a public graveyard. Rank can't be bought.",
     status: "launched",
     statusLabel: "Launched",
     features: ["Web", "For makers"],
