@@ -22,14 +22,14 @@ export type NowTeaserItem = {
 }
 
 // ISO date: used by <time dateTime>, JSON-LD dateModified, and sitemap lastModified.
-export const nowLastUpdated = "2026-11-17"
-export const nowLastUpdatedDisplay = "November 17, 2026"
+export const nowLastUpdated = "2026-11-23"
+export const nowLastUpdatedDisplay = "November 23, 2026"
 
 // Curated one-liners for the landing-page teaser.
 export const nowTeaserItems: NowTeaserItem[] = [
   {
     label: "Shipping",
-    text: "Two YouTube Shorts channels, started this month and twenty-five videos in. Kikko and PairHabit are live and steady.",
+    text: "Thirty Shorts between two YouTube channels, five of them in the past week. Kikko and PairHabit are live and steady.",
   },
   {
     label: "Writing",
@@ -37,7 +37,7 @@ export const nowTeaserItems: NowTeaserItem[] = [
   },
   {
     label: "Learning",
-    text: "Distribution, the skill I never built. I'm practising it on short-form video, where the feedback arrives in hours instead of months.",
+    text: "Distribution, the skill I never built. I'm practising it on short-form video, where the feedback arrives in hours instead of months. Friday's review found my posting schedule was burying my own videos.",
   },
 ]
 
@@ -83,7 +83,7 @@ export const nowBlocks: NowBlock[] = [
       {
         title: "Two YouTube Shorts channels",
         description:
-          "Both started this month, twenty-five Shorts in between them, animated in code rather than filmed: no camera, no face, nothing that needs me to be presentable at 6am. I'm keeping the names to myself for now. The spread is the whole reason I'm doing it: the best Short has about 1,500 views and the worst has four. Same effort per video, wildly different results. That teaches me more about what makes someone click than another month of planning would. Running two at once is the cheapest test I could think of for whether the format travels or the topic does. So far the topic matters more than the format.",
+          "Both started this month, thirty Shorts between them now, five of those in the past week. Animated in code rather than filmed: no camera, no face, nothing that needs me to be presentable at 6am. I'm keeping the names to myself for now. When I last read the numbers, the best Short had about 1,500 views and the worst had four, for the same effort per video. That spread is the whole reason I'm doing it, and it teaches me more about what makes someone click than another month of planning would. Running two at once is the cheapest test I could think of for whether the format travels or the topic does. So far the topic matters more than the format. This week I also started packaging each Short for Instagram and TikTok, so one video gets three shots instead of one.",
       },
       {
         title: "Second-Act Builders",
@@ -119,7 +119,7 @@ export const nowBlocks: NowBlock[] = [
       {
         title: "What actually makes a short get watched",
         description:
-          "The first second decides it. After that it's a question you want answered before you've decided to care, and a reason to still be there at the end. Twenty-five Shorts across two channels so far, and I'm reading the retention on each one rather than guessing. That's the opposite of how I launched every product before this.",
+          "The first second decides it. After that it's a question you want answered before you've decided to care, and a reason to still be there at the end. Thirty Shorts across two channels so far, and there's now a slot in the week, Friday afternoon, where I read the 48-hour and 7-day numbers on every one of them instead of guessing. The first review told me something about me rather than about the videos: I had been publishing in bursts, several in a day and then nothing for days, which buried half of them under my own uploads. The schedule turned out to matter as much as the video. That's the opposite of how I launched every product before this.",
       },
       {
         title: "Kill rules, and when to stop",
