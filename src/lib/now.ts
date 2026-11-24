@@ -8,12 +8,17 @@ export type NowItem = {
   description: string
   href?: string
   external?: boolean
+  // An affiliate link (Amazon): rendered with rel="sponsored", and the block
+  // that holds it must carry the disclosure in its `note`.
+  affiliate?: boolean
 }
 
 export type NowBlock = {
   id: "building" | "creating" | "learning" | "reading" | "open-to"
   heading: string
   items: NowItem[]
+  // A short line printed under the block's entries (the affiliate disclosure).
+  note?: string
 }
 
 export type NowTeaserItem = {
@@ -144,15 +149,30 @@ export const nowBlocks: NowBlock[] = [
     items: [
       {
         title: "AI Demystified, by Antonio Weiss",
+        href: "https://link.amazon/B08Qt1qWt",
+        external: true,
+        affiliate: true,
         description:
           "Sharpening the mental models behind the tools I use every day.",
       },
       {
         title: "$100M Offers, by Alex Hormozi",
+        href: "https://link.amazon/B0aiXljhw",
+        external: true,
+        affiliate: true,
         description:
           "How to make offers so good people feel stupid saying no. Applying it to how I package and price my products.",
       },
+      {
+        title: "In cosa posso esserti utile?, by Raffaele Gaito",
+        href: "https://link.amazon/B00qX9v1O",
+        external: true,
+        affiliate: true,
+        description:
+          "A very practical, unemotional guide to artificial intelligence. In Italian.",
+      },
     ],
+    note: "Book links are Amazon affiliate links. As an Amazon Associate I earn from qualifying purchases.",
   },
   {
     id: "open-to",
