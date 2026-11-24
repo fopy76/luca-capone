@@ -651,3 +651,6 @@ h1,h2,h3{margin:0;font-family:var(--f-display);font-weight:380;text-wrap:balance
   .slip.note-slip{transform:rotate(-.5deg)}
   .slip.note-slip .cta{width:100%}
 }
+
+/* /now: the line under a block (the affiliate disclosure) */
+.block-note{margin-top:1.4rem;line-height:1.6;text-wrap:pretty}

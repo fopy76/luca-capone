@@ -101,7 +101,12 @@ function EntryTitle({ item }: { item: NowItem }) {
   return (
     <a
       href={item.href}
-      {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+      {...(item.external
+        ? {
+            target: "_blank",
+            rel: item.affiliate ? "sponsored noopener noreferrer" : "noopener noreferrer",
+          }
+        : {})}
     >
       {item.title}
       <GoArrow />
@@ -178,6 +183,7 @@ export default function NowPage() {
                         </li>
                       ))}
                     </ul>
+                    {block.note && <p className="mono block-note">{block.note}</p>}
                   </div>
                 </div>
               </section>
