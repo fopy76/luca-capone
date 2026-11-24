@@ -149,7 +149,7 @@ export const nowBlocks: NowBlock[] = [
     items: [
       {
         title: "AI Demystified, by Antonio Weiss",
-        href: "https://link.amazon/B08Qt1qWt",
+        href: "https://link.amazon/B02gnCThw",
         external: true,
         affiliate: true,
         description:
